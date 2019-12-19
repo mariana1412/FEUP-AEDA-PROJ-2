@@ -6,7 +6,7 @@
 #include <vector>
 #include <fstream>
 #include "Order.h"
-
+//ATENCAO FALTA ACABAR DOCUMENTACAO DO BOOL OPERATOR
 using namespace std;
 /**
  * Pessoa
@@ -264,7 +264,59 @@ public:
     void addDelivery(Delivery delivery);
 
 };
+/**
+ * Tecnico
+ */
+class Tec: public Person{
+private:
+    int hours_to_available;
+    int number_of_maintenances;
+public:
 
+    /**
+* @brief Construtor por default da classe Tec
+*/
+    Tec(){};
+    /**
+* @brief Construtor da classe Tec
+ * @param h - numero de horas ate o tecnico estar disponivel
+ * @param n - numero de manutençoes efetuadas pelo tecnico
+*/
+
+    Tec(int h, int n);
+    /**
+     * @brief Permite definir o numero de horas ate o tecnico estar disponivel
+     * @param h - numero de horas ate o tecnico estar dispnonivel
+     */
+    void setHoursToAvailable(int h);
+    /**
+  * @brief Permite definir o numero de manutençoes efetuadas pelo tecnico
+  * @param n - numero de manutençoes efetuadas pelo tecnico
+  */
+    void setNumberOfMaintenances(int n);
+    /**
+     * @brief Permite obter o numero de horas ate o tecnico estar disponivel
+     * @return Retorna o numero de horas ate o tecnico estar disponivel
+     */
+    int getHoursToAvailable () const;
+    /**
+  * @brief Permite obter  o numero de manutençoes efetuadas pelo tecnico
+  * @return Retorna o numero de manutençoes efetuadas pelo tecnico
+  */
+    int getNumberOfMaintenances() const;
+    /**
+*    @brief Permite saber se um tempo é depois do outro
+* @param date - um outro tempo para comparar ao tempo em questão
+*   @return Retorna verdadeiro se  for depois, caso contrário retorna falso
+*/
+    /**
+     * @brief Operador < para comparar Técnicos
+     * @param tec1 - um outro tecnico para comparar com o tecnico em questao
+     * @return Retorna verdadeiro se  for depois...., caso contrário retorna falso, falso caso contrário.
+     */
+    bool operator<(const Tec & tec1) const;
+
+};
 
 
 

@@ -150,3 +150,28 @@ ostream &operator<<(ostream &os, const Deliverer *d){
 void Deliverer::addDelivery(Delivery delivery) {
     background.push_back(delivery);
 }
+
+Tec::Tec(int h, int n) {
+    this-> hours_to_available =h;
+    this -> number_of_maintenances =n;
+}
+void Tec::setHoursToAvailable(int h) {
+    this-> hours_to_available= h;
+}
+void Tec::setNumberOfMaintenances(int n) {
+    this->number_of_maintenances = n;
+}
+
+int Tec::getHoursToAvailable() const {
+    return hours_to_available;
+}
+int Tec::getNumberOfMaintenances() const {
+    return number_of_maintenances;
+}
+
+bool Tec::operator<(const Tec & tec1) const{
+    if(this->hours_to_available > tec1.getHoursToAvailable()){
+       return(this->number_of_maintenances < tec1.getNumberOfMaintenances());
+    }
+    return false;
+}

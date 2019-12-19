@@ -5,14 +5,18 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <queue>
 #include "Location.h"
 #include "Person.h"
+
 
 
 using namespace std;
 /**
  * Base da empresa Ugh Eats
  */
+
+typedef std::priority_queue<Tec> TecPriorityQueue;
 
 class Base{
 private:
@@ -24,6 +28,7 @@ private:
     vector<Client> blacklist;/**Lista negra da organização*/
     vector<Restaurant> restaurants;/**Conjunto de fornecedores da base*/
     vector<Delivery> deliveries;/**Encomendas feitas a esta base*/
+    TecPriorityQueue tecnicos; /**Tecnicos especializados em manutenção de veiculos*/
 
 public:
     /**
@@ -185,6 +190,8 @@ public:
      */
      void addClientToBlacklist(Client client);
 };
+
+
 
 
 #endif //UGH_EATS_BASE_H
