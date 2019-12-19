@@ -110,17 +110,584 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named UghEats2
+# Target rules for targets named projeto
 
 # Build rule for target.
-UghEats2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 UghEats2
-.PHONY : UghEats2
+projeto: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 projeto
+.PHONY : projeto
 
 # fast build rule for target.
-UghEats2/fast:
-	$(MAKE) -f CMakeFiles\UghEats2.dir\build.make CMakeFiles/UghEats2.dir/build
-.PHONY : UghEats2/fast
+projeto/fast:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/build
+.PHONY : projeto/fast
+
+Classes/Base.obj: Classes/Base.cpp.obj
+
+.PHONY : Classes/Base.obj
+
+# target to build an object file
+Classes/Base.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Base.cpp.obj
+.PHONY : Classes/Base.cpp.obj
+
+Classes/Base.i: Classes/Base.cpp.i
+
+.PHONY : Classes/Base.i
+
+# target to preprocess a source file
+Classes/Base.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Base.cpp.i
+.PHONY : Classes/Base.cpp.i
+
+Classes/Base.s: Classes/Base.cpp.s
+
+.PHONY : Classes/Base.s
+
+# target to generate assembly for a file
+Classes/Base.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Base.cpp.s
+.PHONY : Classes/Base.cpp.s
+
+Classes/Company.obj: Classes/Company.cpp.obj
+
+.PHONY : Classes/Company.obj
+
+# target to build an object file
+Classes/Company.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Company.cpp.obj
+.PHONY : Classes/Company.cpp.obj
+
+Classes/Company.i: Classes/Company.cpp.i
+
+.PHONY : Classes/Company.i
+
+# target to preprocess a source file
+Classes/Company.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Company.cpp.i
+.PHONY : Classes/Company.cpp.i
+
+Classes/Company.s: Classes/Company.cpp.s
+
+.PHONY : Classes/Company.s
+
+# target to generate assembly for a file
+Classes/Company.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Company.cpp.s
+.PHONY : Classes/Company.cpp.s
+
+Classes/Location.obj: Classes/Location.cpp.obj
+
+.PHONY : Classes/Location.obj
+
+# target to build an object file
+Classes/Location.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Location.cpp.obj
+.PHONY : Classes/Location.cpp.obj
+
+Classes/Location.i: Classes/Location.cpp.i
+
+.PHONY : Classes/Location.i
+
+# target to preprocess a source file
+Classes/Location.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Location.cpp.i
+.PHONY : Classes/Location.cpp.i
+
+Classes/Location.s: Classes/Location.cpp.s
+
+.PHONY : Classes/Location.s
+
+# target to generate assembly for a file
+Classes/Location.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Location.cpp.s
+.PHONY : Classes/Location.cpp.s
+
+Classes/Order.obj: Classes/Order.cpp.obj
+
+.PHONY : Classes/Order.obj
+
+# target to build an object file
+Classes/Order.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Order.cpp.obj
+.PHONY : Classes/Order.cpp.obj
+
+Classes/Order.i: Classes/Order.cpp.i
+
+.PHONY : Classes/Order.i
+
+# target to preprocess a source file
+Classes/Order.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Order.cpp.i
+.PHONY : Classes/Order.cpp.i
+
+Classes/Order.s: Classes/Order.cpp.s
+
+.PHONY : Classes/Order.s
+
+# target to generate assembly for a file
+Classes/Order.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Order.cpp.s
+.PHONY : Classes/Order.cpp.s
+
+Classes/Person.obj: Classes/Person.cpp.obj
+
+.PHONY : Classes/Person.obj
+
+# target to build an object file
+Classes/Person.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Person.cpp.obj
+.PHONY : Classes/Person.cpp.obj
+
+Classes/Person.i: Classes/Person.cpp.i
+
+.PHONY : Classes/Person.i
+
+# target to preprocess a source file
+Classes/Person.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Person.cpp.i
+.PHONY : Classes/Person.cpp.i
+
+Classes/Person.s: Classes/Person.cpp.s
+
+.PHONY : Classes/Person.s
+
+# target to generate assembly for a file
+Classes/Person.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Person.cpp.s
+.PHONY : Classes/Person.cpp.s
+
+Classes/Product.obj: Classes/Product.cpp.obj
+
+.PHONY : Classes/Product.obj
+
+# target to build an object file
+Classes/Product.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Product.cpp.obj
+.PHONY : Classes/Product.cpp.obj
+
+Classes/Product.i: Classes/Product.cpp.i
+
+.PHONY : Classes/Product.i
+
+# target to preprocess a source file
+Classes/Product.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Product.cpp.i
+.PHONY : Classes/Product.cpp.i
+
+Classes/Product.s: Classes/Product.cpp.s
+
+.PHONY : Classes/Product.s
+
+# target to generate assembly for a file
+Classes/Product.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Product.cpp.s
+.PHONY : Classes/Product.cpp.s
+
+Classes/Restaurant.obj: Classes/Restaurant.cpp.obj
+
+.PHONY : Classes/Restaurant.obj
+
+# target to build an object file
+Classes/Restaurant.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Restaurant.cpp.obj
+.PHONY : Classes/Restaurant.cpp.obj
+
+Classes/Restaurant.i: Classes/Restaurant.cpp.i
+
+.PHONY : Classes/Restaurant.i
+
+# target to preprocess a source file
+Classes/Restaurant.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Restaurant.cpp.i
+.PHONY : Classes/Restaurant.cpp.i
+
+Classes/Restaurant.s: Classes/Restaurant.cpp.s
+
+.PHONY : Classes/Restaurant.s
+
+# target to generate assembly for a file
+Classes/Restaurant.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Restaurant.cpp.s
+.PHONY : Classes/Restaurant.cpp.s
+
+Classes/Time.obj: Classes/Time.cpp.obj
+
+.PHONY : Classes/Time.obj
+
+# target to build an object file
+Classes/Time.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Time.cpp.obj
+.PHONY : Classes/Time.cpp.obj
+
+Classes/Time.i: Classes/Time.cpp.i
+
+.PHONY : Classes/Time.i
+
+# target to preprocess a source file
+Classes/Time.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Time.cpp.i
+.PHONY : Classes/Time.cpp.i
+
+Classes/Time.s: Classes/Time.cpp.s
+
+.PHONY : Classes/Time.s
+
+# target to generate assembly for a file
+Classes/Time.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Time.cpp.s
+.PHONY : Classes/Time.cpp.s
+
+Classes/Vehicle.obj: Classes/Vehicle.cpp.obj
+
+.PHONY : Classes/Vehicle.obj
+
+# target to build an object file
+Classes/Vehicle.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Vehicle.cpp.obj
+.PHONY : Classes/Vehicle.cpp.obj
+
+Classes/Vehicle.i: Classes/Vehicle.cpp.i
+
+.PHONY : Classes/Vehicle.i
+
+# target to preprocess a source file
+Classes/Vehicle.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Vehicle.cpp.i
+.PHONY : Classes/Vehicle.cpp.i
+
+Classes/Vehicle.s: Classes/Vehicle.cpp.s
+
+.PHONY : Classes/Vehicle.s
+
+# target to generate assembly for a file
+Classes/Vehicle.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Classes/Vehicle.cpp.s
+.PHONY : Classes/Vehicle.cpp.s
+
+Functions/Clients_functions.obj: Functions/Clients_functions.cpp.obj
+
+.PHONY : Functions/Clients_functions.obj
+
+# target to build an object file
+Functions/Clients_functions.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Clients_functions.cpp.obj
+.PHONY : Functions/Clients_functions.cpp.obj
+
+Functions/Clients_functions.i: Functions/Clients_functions.cpp.i
+
+.PHONY : Functions/Clients_functions.i
+
+# target to preprocess a source file
+Functions/Clients_functions.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Clients_functions.cpp.i
+.PHONY : Functions/Clients_functions.cpp.i
+
+Functions/Clients_functions.s: Functions/Clients_functions.cpp.s
+
+.PHONY : Functions/Clients_functions.s
+
+# target to generate assembly for a file
+Functions/Clients_functions.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Clients_functions.cpp.s
+.PHONY : Functions/Clients_functions.cpp.s
+
+Functions/Employees_functions.obj: Functions/Employees_functions.cpp.obj
+
+.PHONY : Functions/Employees_functions.obj
+
+# target to build an object file
+Functions/Employees_functions.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Employees_functions.cpp.obj
+.PHONY : Functions/Employees_functions.cpp.obj
+
+Functions/Employees_functions.i: Functions/Employees_functions.cpp.i
+
+.PHONY : Functions/Employees_functions.i
+
+# target to preprocess a source file
+Functions/Employees_functions.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Employees_functions.cpp.i
+.PHONY : Functions/Employees_functions.cpp.i
+
+Functions/Employees_functions.s: Functions/Employees_functions.cpp.s
+
+.PHONY : Functions/Employees_functions.s
+
+# target to generate assembly for a file
+Functions/Employees_functions.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Employees_functions.cpp.s
+.PHONY : Functions/Employees_functions.cpp.s
+
+Functions/Menus.obj: Functions/Menus.cpp.obj
+
+.PHONY : Functions/Menus.obj
+
+# target to build an object file
+Functions/Menus.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Menus.cpp.obj
+.PHONY : Functions/Menus.cpp.obj
+
+Functions/Menus.i: Functions/Menus.cpp.i
+
+.PHONY : Functions/Menus.i
+
+# target to preprocess a source file
+Functions/Menus.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Menus.cpp.i
+.PHONY : Functions/Menus.cpp.i
+
+Functions/Menus.s: Functions/Menus.cpp.s
+
+.PHONY : Functions/Menus.s
+
+# target to generate assembly for a file
+Functions/Menus.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Menus.cpp.s
+.PHONY : Functions/Menus.cpp.s
+
+Functions/Order_functions.obj: Functions/Order_functions.cpp.obj
+
+.PHONY : Functions/Order_functions.obj
+
+# target to build an object file
+Functions/Order_functions.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Order_functions.cpp.obj
+.PHONY : Functions/Order_functions.cpp.obj
+
+Functions/Order_functions.i: Functions/Order_functions.cpp.i
+
+.PHONY : Functions/Order_functions.i
+
+# target to preprocess a source file
+Functions/Order_functions.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Order_functions.cpp.i
+.PHONY : Functions/Order_functions.cpp.i
+
+Functions/Order_functions.s: Functions/Order_functions.cpp.s
+
+.PHONY : Functions/Order_functions.s
+
+# target to generate assembly for a file
+Functions/Order_functions.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Order_functions.cpp.s
+.PHONY : Functions/Order_functions.cpp.s
+
+Functions/ProfitsCalculation.obj: Functions/ProfitsCalculation.cpp.obj
+
+.PHONY : Functions/ProfitsCalculation.obj
+
+# target to build an object file
+Functions/ProfitsCalculation.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/ProfitsCalculation.cpp.obj
+.PHONY : Functions/ProfitsCalculation.cpp.obj
+
+Functions/ProfitsCalculation.i: Functions/ProfitsCalculation.cpp.i
+
+.PHONY : Functions/ProfitsCalculation.i
+
+# target to preprocess a source file
+Functions/ProfitsCalculation.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/ProfitsCalculation.cpp.i
+.PHONY : Functions/ProfitsCalculation.cpp.i
+
+Functions/ProfitsCalculation.s: Functions/ProfitsCalculation.cpp.s
+
+.PHONY : Functions/ProfitsCalculation.s
+
+# target to generate assembly for a file
+Functions/ProfitsCalculation.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/ProfitsCalculation.cpp.s
+.PHONY : Functions/ProfitsCalculation.cpp.s
+
+Functions/ReadingFiles.obj: Functions/ReadingFiles.cpp.obj
+
+.PHONY : Functions/ReadingFiles.obj
+
+# target to build an object file
+Functions/ReadingFiles.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/ReadingFiles.cpp.obj
+.PHONY : Functions/ReadingFiles.cpp.obj
+
+Functions/ReadingFiles.i: Functions/ReadingFiles.cpp.i
+
+.PHONY : Functions/ReadingFiles.i
+
+# target to preprocess a source file
+Functions/ReadingFiles.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/ReadingFiles.cpp.i
+.PHONY : Functions/ReadingFiles.cpp.i
+
+Functions/ReadingFiles.s: Functions/ReadingFiles.cpp.s
+
+.PHONY : Functions/ReadingFiles.s
+
+# target to generate assembly for a file
+Functions/ReadingFiles.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/ReadingFiles.cpp.s
+.PHONY : Functions/ReadingFiles.cpp.s
+
+Functions/Restaurants_functions.obj: Functions/Restaurants_functions.cpp.obj
+
+.PHONY : Functions/Restaurants_functions.obj
+
+# target to build an object file
+Functions/Restaurants_functions.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Restaurants_functions.cpp.obj
+.PHONY : Functions/Restaurants_functions.cpp.obj
+
+Functions/Restaurants_functions.i: Functions/Restaurants_functions.cpp.i
+
+.PHONY : Functions/Restaurants_functions.i
+
+# target to preprocess a source file
+Functions/Restaurants_functions.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Restaurants_functions.cpp.i
+.PHONY : Functions/Restaurants_functions.cpp.i
+
+Functions/Restaurants_functions.s: Functions/Restaurants_functions.cpp.s
+
+.PHONY : Functions/Restaurants_functions.s
+
+# target to generate assembly for a file
+Functions/Restaurants_functions.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Restaurants_functions.cpp.s
+.PHONY : Functions/Restaurants_functions.cpp.s
+
+Functions/StringConverters.obj: Functions/StringConverters.cpp.obj
+
+.PHONY : Functions/StringConverters.obj
+
+# target to build an object file
+Functions/StringConverters.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/StringConverters.cpp.obj
+.PHONY : Functions/StringConverters.cpp.obj
+
+Functions/StringConverters.i: Functions/StringConverters.cpp.i
+
+.PHONY : Functions/StringConverters.i
+
+# target to preprocess a source file
+Functions/StringConverters.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/StringConverters.cpp.i
+.PHONY : Functions/StringConverters.cpp.i
+
+Functions/StringConverters.s: Functions/StringConverters.cpp.s
+
+.PHONY : Functions/StringConverters.s
+
+# target to generate assembly for a file
+Functions/StringConverters.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/StringConverters.cpp.s
+.PHONY : Functions/StringConverters.cpp.s
+
+Functions/Verification_Inputs.obj: Functions/Verification_Inputs.cpp.obj
+
+.PHONY : Functions/Verification_Inputs.obj
+
+# target to build an object file
+Functions/Verification_Inputs.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Verification_Inputs.cpp.obj
+.PHONY : Functions/Verification_Inputs.cpp.obj
+
+Functions/Verification_Inputs.i: Functions/Verification_Inputs.cpp.i
+
+.PHONY : Functions/Verification_Inputs.i
+
+# target to preprocess a source file
+Functions/Verification_Inputs.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Verification_Inputs.cpp.i
+.PHONY : Functions/Verification_Inputs.cpp.i
+
+Functions/Verification_Inputs.s: Functions/Verification_Inputs.cpp.s
+
+.PHONY : Functions/Verification_Inputs.s
+
+# target to generate assembly for a file
+Functions/Verification_Inputs.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Verification_Inputs.cpp.s
+.PHONY : Functions/Verification_Inputs.cpp.s
+
+Functions/Visualize_Information.obj: Functions/Visualize_Information.cpp.obj
+
+.PHONY : Functions/Visualize_Information.obj
+
+# target to build an object file
+Functions/Visualize_Information.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Visualize_Information.cpp.obj
+.PHONY : Functions/Visualize_Information.cpp.obj
+
+Functions/Visualize_Information.i: Functions/Visualize_Information.cpp.i
+
+.PHONY : Functions/Visualize_Information.i
+
+# target to preprocess a source file
+Functions/Visualize_Information.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Visualize_Information.cpp.i
+.PHONY : Functions/Visualize_Information.cpp.i
+
+Functions/Visualize_Information.s: Functions/Visualize_Information.cpp.s
+
+.PHONY : Functions/Visualize_Information.s
+
+# target to generate assembly for a file
+Functions/Visualize_Information.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/Visualize_Information.cpp.s
+.PHONY : Functions/Visualize_Information.cpp.s
+
+Functions/WriteToFile.obj: Functions/WriteToFile.cpp.obj
+
+.PHONY : Functions/WriteToFile.obj
+
+# target to build an object file
+Functions/WriteToFile.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/WriteToFile.cpp.obj
+.PHONY : Functions/WriteToFile.cpp.obj
+
+Functions/WriteToFile.i: Functions/WriteToFile.cpp.i
+
+.PHONY : Functions/WriteToFile.i
+
+# target to preprocess a source file
+Functions/WriteToFile.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/WriteToFile.cpp.i
+.PHONY : Functions/WriteToFile.cpp.i
+
+Functions/WriteToFile.s: Functions/WriteToFile.cpp.s
+
+.PHONY : Functions/WriteToFile.s
+
+# target to generate assembly for a file
+Functions/WriteToFile.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/WriteToFile.cpp.s
+.PHONY : Functions/WriteToFile.cpp.s
+
+Functions/utils.obj: Functions/utils.cpp.obj
+
+.PHONY : Functions/utils.obj
+
+# target to build an object file
+Functions/utils.cpp.obj:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/utils.cpp.obj
+.PHONY : Functions/utils.cpp.obj
+
+Functions/utils.i: Functions/utils.cpp.i
+
+.PHONY : Functions/utils.i
+
+# target to preprocess a source file
+Functions/utils.cpp.i:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/utils.cpp.i
+.PHONY : Functions/utils.cpp.i
+
+Functions/utils.s: Functions/utils.cpp.s
+
+.PHONY : Functions/utils.s
+
+# target to generate assembly for a file
+Functions/utils.cpp.s:
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/Functions/utils.cpp.s
+.PHONY : Functions/utils.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -128,7 +695,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\UghEats2.dir\build.make CMakeFiles/UghEats2.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -137,7 +704,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\UghEats2.dir\build.make CMakeFiles/UghEats2.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -146,7 +713,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\UghEats2.dir\build.make CMakeFiles/UghEats2.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\projeto.dir\build.make CMakeFiles/projeto.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -155,9 +722,72 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... UghEats2
 	@echo ... edit_cache
+	@echo ... projeto
 	@echo ... rebuild_cache
+	@echo ... Classes/Base.obj
+	@echo ... Classes/Base.i
+	@echo ... Classes/Base.s
+	@echo ... Classes/Company.obj
+	@echo ... Classes/Company.i
+	@echo ... Classes/Company.s
+	@echo ... Classes/Location.obj
+	@echo ... Classes/Location.i
+	@echo ... Classes/Location.s
+	@echo ... Classes/Order.obj
+	@echo ... Classes/Order.i
+	@echo ... Classes/Order.s
+	@echo ... Classes/Person.obj
+	@echo ... Classes/Person.i
+	@echo ... Classes/Person.s
+	@echo ... Classes/Product.obj
+	@echo ... Classes/Product.i
+	@echo ... Classes/Product.s
+	@echo ... Classes/Restaurant.obj
+	@echo ... Classes/Restaurant.i
+	@echo ... Classes/Restaurant.s
+	@echo ... Classes/Time.obj
+	@echo ... Classes/Time.i
+	@echo ... Classes/Time.s
+	@echo ... Classes/Vehicle.obj
+	@echo ... Classes/Vehicle.i
+	@echo ... Classes/Vehicle.s
+	@echo ... Functions/Clients_functions.obj
+	@echo ... Functions/Clients_functions.i
+	@echo ... Functions/Clients_functions.s
+	@echo ... Functions/Employees_functions.obj
+	@echo ... Functions/Employees_functions.i
+	@echo ... Functions/Employees_functions.s
+	@echo ... Functions/Menus.obj
+	@echo ... Functions/Menus.i
+	@echo ... Functions/Menus.s
+	@echo ... Functions/Order_functions.obj
+	@echo ... Functions/Order_functions.i
+	@echo ... Functions/Order_functions.s
+	@echo ... Functions/ProfitsCalculation.obj
+	@echo ... Functions/ProfitsCalculation.i
+	@echo ... Functions/ProfitsCalculation.s
+	@echo ... Functions/ReadingFiles.obj
+	@echo ... Functions/ReadingFiles.i
+	@echo ... Functions/ReadingFiles.s
+	@echo ... Functions/Restaurants_functions.obj
+	@echo ... Functions/Restaurants_functions.i
+	@echo ... Functions/Restaurants_functions.s
+	@echo ... Functions/StringConverters.obj
+	@echo ... Functions/StringConverters.i
+	@echo ... Functions/StringConverters.s
+	@echo ... Functions/Verification_Inputs.obj
+	@echo ... Functions/Verification_Inputs.i
+	@echo ... Functions/Verification_Inputs.s
+	@echo ... Functions/Visualize_Information.obj
+	@echo ... Functions/Visualize_Information.i
+	@echo ... Functions/Visualize_Information.s
+	@echo ... Functions/WriteToFile.obj
+	@echo ... Functions/WriteToFile.i
+	@echo ... Functions/WriteToFile.s
+	@echo ... Functions/utils.obj
+	@echo ... Functions/utils.i
+	@echo ... Functions/utils.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

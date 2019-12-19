@@ -1,0 +1,179 @@
+Porto
+Diogo Henrique Almeida
+298684789
+Rua dos Bragas 32, Maia
+true
+::::::::
+Porto
+Ana Rita Matos
+287564236
+Avenida dos Aliados 21, Matosinhos
+false
+::::::::
+Porto
+Rui Teixeira
+122387698
+Rua Manuel Das Cruzes, Vila Nova De Gaia
+false
+::::::::
+Porto
+Rita Antunes
+178293456
+Avenida Do Fogo, Maia
+true
+::::::::
+Porto
+Artur Carvalho
+178223456
+Avenida De Manuel Pinto de Azevedo, Gondomar
+false
+::::::::
+Porto
+Maria Dolores
+123234345
+Rua Dom Afonso Henriques, Gondomar
+true
+::::::::
+Porto
+Mariana Almeida Truta
+280541987
+Rua da Alegria 65, Porto
+true
+::::::::
+Porto
+Catarina Loureiro
+222684789
+Rua Lombarda 77, Maia
+false
+::::::::
+Porto
+Fernando Viseu
+298684789
+Rua de Sistelo 102, Gondomar
+true
+::::::::
+Lisboa
+Ines Pinto Silva
+251230654
+Travessa da Caldeira 85, Lisboa
+false
+::::::::
+Lisboa
+Andre Daniel Gomes
+210874562
+Rua 25 de Abril 96, Lisboa
+true
+::::::::
+Lisboa
+Ana Rita Matos
+193320586
+Avenida da Felicidade 56, Lisboa
+false
+::::::::
+Lisboa
+Miguel Oliveira
+876234098
+Rua Das Motas 9, Amadora
+false
+::::::::
+Lisboa
+Magda Pinto
+444123321
+Avenida Da Liberdade, Oeiras
+false
+::::::::
+Lisboa
+Rute Teixeira
+987425910
+Travessa Da Cidade, Loures
+false
+::::::::
+Lisboa
+Francisca Vieira
+198742591
+Rua Manuel Amorim, Oeira
+false
+::::::::
+Lisboa
+Pedro Antonio
+114455667
+Rua Futebol Clube Do Porto, Odivelas
+true
+::::::::
+Lisboa
+Vania Teixeira
+338684789
+Avenida da Sardinha 47, Odivelas
+true
+::::::::
+Lisboa
+Marina Silva
+852896654
+Rua Silva Porto, Oeiras
+false
+::::::::
+Lisboa
+Maria Adelaide Araujo
+654456654
+Travessa Da Cachada, Amadora
+false
+::::::::
+Lisboa
+Pedros Sachez
+298684779
+Rua Bouca da Cavadinha 20, Amadora
+false
+::::::::
+Faro
+Marcio Pedrosa
+298664789
+Rua Jaime Amorim 14, Loule
+true
+::::::::
+Faro
+Lara Machado Medicis
+265541987
+Avenida da Praia 6, Faro
+false
+::::::::
+Faro
+Diogo Henrique Almeida
+287600789
+Rua de Estudante 78, Faro
+true
+::::::::
+Faro
+Ana Luisa Matos
+287561236
+Rua de Carreira Cova 21, Faro
+true
+::::::::
+Faro
+Pedro Queiros
+987654321
+Rua do Sol 32, Faro
+false
+::::::::
+Faro
+Judite Silva
+777412589
+Avenida Do Pinhal, Loule
+false
+::::::::
+Faro
+Ana Marques
+999658231
+Travessa De Montenegro, Olhao
+false
+::::::::
+Faro
+Jose Pinto
+123344556
+Rua De Paralelo 23, Sao Bras De Alportel
+true
+::::::::
+Faro
+Fernando Pereira
+630230230
+Rua Manuel Sá Pereira, Sao Bras De Alportel
+false

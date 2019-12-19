@@ -1,0 +1,20 @@
+Rui Teixeira
+123456789
+::::::::
+Porto
+Avenida de Dom Mendo 831, Maia, [41.227493; -8.617076]
+Diogo Henrique
+122334455
+298684789, 298684789, 298684789, 298684789, 123234345, 178293456
+::::::::
+Lisboa
+Praça Duque de Saldanha 21, Lisboa, [38.728435; -9.158724]
+Inês Santos Pereira
+133333333
+210874562, 114455667
+::::::::
+Faro
+Rua do Repouso 10, Faro, [37.004822; 7.560077]
+Manuela Alves Gomes
+144444444
+287561236, 287600789, 123344556
