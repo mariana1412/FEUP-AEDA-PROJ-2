@@ -51,7 +51,7 @@ void Time::setYear(int year) {
 }
 
 bool Time::isValid() {// verifica se a data é valida,ou seja, nao tem um n maior de mês do que o possivel e o mesmo com os dias
-    if (month > 12 || day != numberOfDays(month, year) || hour > 23 || minutes > 59) {
+    if (month > 12 || day > numberOfDays(month, year) || hour > 23 || minutes > 59) {
         return false;
     }
     return true;
