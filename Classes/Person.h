@@ -6,7 +6,6 @@
 #include <vector>
 #include <fstream>
 #include "Order.h"
-//ATENCAO FALTA ACABAR DOCUMENTACAO DO BOOL OPERATOR
 using namespace std;
     /**
      * Pessoa
@@ -230,8 +229,8 @@ public:
      */
 class Deliverer: public Employee{
 private:
-    Vehicle vehicle;
-    vector<Delivery> background;
+    Vehicle vehicle;/**< veiculo do entregador*/
+    vector<Delivery> background;/**< historial de entregas do entregador*/
 public:
     /**
 * @brief Construtor por default da classe Deliverer
@@ -285,10 +284,14 @@ public:
 /**
  * Tecnico
  */
-class Tec: public Person{
+class Tec{
 private:
-    int hours_to_available;
-    int number_of_maintenances;
+    string base; /**<base a que o tecnico pertence*/
+    static int id_g;/**id global para saber o proximo tecnico<*/
+    int id; /**< numero identificador do tecnico*/
+    int hours_to_available;/**< numero de horas ate o tecnico estar disponivel*/
+    int minutes_to_available; /**<numero de minutos ate o tecnico estar disponivel*/
+    int number_of_maintenances;/**< numero de manutençoes efetuadas pelo tecnico*/
 public:
 
     /**
@@ -297,26 +300,68 @@ public:
     Tec(){};
     /**
 * @brief Construtor da classe Tec
+* @param base - base a que o tecnico pertence
+* @param h - numero de horas ate o tecnico estar disponive
+     * @param m - numero de minutos ate o tecnico estar disponivel
+* @param n - numero de manutençoes efetuadas pelo tecnico
+*/
+
+    Tec(string base,int h,int m, int n);
+    /**
+* @brief Construtor da classe Tec
+ * @param base - base a que o tecnico pertence
+ * @param id- numero identificador do tecnico
  * @param h - numero de horas ate o tecnico estar disponivel
+ * @param m - numero de minutos ate o tecnico estar disponivel
  * @param n - numero de manutençoes efetuadas pelo tecnico
 */
 
-    Tec(int h, int n);
+    Tec(string base, int id,int h,int m, int n);
+    /**
+* @brief Permite definir a base da pessoa
+* @param base - base da pessoa
+*/
+    void setBase(string base);
+    /**
+    * @brief Permite definir o numero identificador do tecnico
+    * @param i - numero identificador do tecnico
+    */
+    void setId(int i);
     /**
      * @brief Permite definir o numero de horas ate o tecnico estar disponivel
      * @param h - numero de horas ate o tecnico estar dispnonivel
      */
     void setHoursToAvailable(int h);
     /**
+ * @brief Permite definir o numero de horas ate o tecnico estar disponivel
+ * @param m - numero de minutos ate o tecnico estar dispnonivel
+ */
+    void setMinutesToAvailable(int m);
+    /**
   * @brief Permite definir o numero de manutençoes efetuadas pelo tecnico
   * @param n - numero de manutençoes efetuadas pelo tecnico
   */
     void setNumberOfMaintenances(int n);
     /**
+* @brief Permite obter a base da pessoa
+ * @return Retorna a base da pessoa
+*/
+    string getBase() const;
+    /**
+   * @brief Permite obter  o numero identificador do tecnico
+   * @return Retorna  o numero identificador do tecnico
+   */
+    int getId() const;
+    /**
      * @brief Permite obter o numero de horas ate o tecnico estar disponivel
      * @return Retorna o numero de horas ate o tecnico estar disponivel
      */
     int getHoursToAvailable () const;
+    /**
+  * @brief Permite obter o numero de horas ate o tecnico estar disponivel
+  * @return Retorna o numero de minutos ate o tecnico estar disponivel
+  */
+    int getMinutesToAvailable () const;
     /**
   * @brief Permite obter  o numero de manutençoes efetuadas pelo tecnico
   * @return Retorna o numero de manutençoes efetuadas pelo tecnico
@@ -330,10 +375,21 @@ public:
     /**
      * @brief Operador < para comparar Técnicos
      * @param tec1 - um outro tecnico para comparar com o tecnico em questao
-     * @return Retorna verdadeiro se  for depois...., caso contrário retorna falso, falso caso contrário.
+     * @return Retorna verdadeiro se o tecnico em questao tiver menos horas ate estar disponivel, no caso do numero de horas ate estar disponivel ser igual retorna verdadeiro se o tecnico em questao tiver maior numero de manutençoes efetuadas , caso contrário retorna falso
      */
     bool operator<(const Tec & tec1) const;
-
+/**
+ * @brief Operador == para comparar Tecnicos
+ * @param tec1 - um outro tecnico para comparar com o tecnico em questão
+ * @return Retorna verdadeiro se os tecnicos forem iguais, caso contrário retorna falso
+ */
+    bool operator==(const Tec & tec1) const;
+/**
+ * @brief Permite mostrar no ecrã o tecnico de forma formatada
+ * @param os - ostream para onde é enviada a mensagem formatada
+ * @param tecnico  - tecnico que pretendemos mostrat no ecrã
+ */
+    friend ostream & operator<<(ostream &os, const Tec & tecnico);
 };
 
 

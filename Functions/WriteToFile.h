@@ -42,6 +42,14 @@ void write_Deliveries(const Base& baseP,const Base& baseL,const Base& baseF);
  * @param Faro - toda a informação da base de Faro
  */
 void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF);
+
+/**
+ * @brief Função que escreve a informação do ficheiro de tecnicos
+ * @param Porto - toda a informação da base do Porto
+ * @param Lisboa - toda a informação da base de Lisboa
+ * @param Faro - toda a informação da base de Faro
+ */
+void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF);
 /**
  * @brief Função que escreve a informação do ficheiro de bases
  * @param Porto - toda a informação da base do Porto

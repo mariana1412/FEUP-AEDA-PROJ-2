@@ -232,7 +232,7 @@ int hire_employee(Base &Porto, Base &Lisboa, Base &Faro){
                     getline(cin, date);
                 }
                 Time v_bdate = verification_date(date);
-                Vehicle v(brand, type, v_bdate);
+                Vehicle v(brand, type, v_bdate,0,0,0);
                 g = new Deliverer(b, name, stoi(nif), v_bdate, 0, v, background, false);
                 system("cls");
                 cout << g;
@@ -467,7 +467,7 @@ int modify_employee(Base &Porto, Base &Lisboa, Base &Faro){
                     getline(cin, date);
                 }
                 Time v_bdate = verification_date(date);
-                Vehicle ve(brand, type, v_bdate);
+                Vehicle ve(brand, type, v_bdate,0,0,0);
 
                 cout << endl << "-----------------------------------------------" << endl;
                 if(confirm_modifications("modify","deliverer")){

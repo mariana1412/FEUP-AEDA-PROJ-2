@@ -584,3 +584,137 @@ int visualize_deliveries(const Base &Porto, const Base &Lisboa, const Base &Faro
     menu_int_options(option, 1, 2);
     return option;
 }
+bool SortById ( Tec tec1, Tec tec2){
+    return tec1.getId()>tec2.getId();
+}
+
+int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
+    string b;
+    int size;
+    int number;
+
+    system("cls");
+
+    cout << endl << "---------------- VISUALIZE TECS ---------------- "<< endl << endl;
+
+    cout << "Base: ";
+    getline(cin, b);
+    while(cin.fail() && cin.eof()){
+        cin.clear();
+        cout <<  "Invalid base. Please insert a valid input: ";
+        getline(cin, b);
+    }
+
+    verification_base(b);
+
+
+    if (b == "Porto") {
+        system("cls");
+        cout << endl << "---------------- VISUALIZE TECS ---------------- " << endl << endl;
+        size = Porto.getTecs().size();
+        if (size != 0) {
+            cout << "Do you wish to visualize the tecs: " << endl;
+            cout << "1. Ordered by ID" << endl;
+            cout << "2. Ordered by next available" << endl;
+            cout << "0. Return to Main Menu" << endl;
+            menu_int_options(number, 0, 2);
+            cin.ignore(1000, '\n');
+
+            if (number == 0) return 1;
+
+
+            if (number == 1) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY ID ---------------- " << endl << endl;
+                vector<Tec> aux = Porto.getTecs();
+                sort(aux.begin(), aux.end(), SortById);
+                Porto.printTecs(aux);
+            } else if (number == 2) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY AVAILABILITY ---------------- " << endl
+                     << endl;
+                vector<Tec> aux = Porto.getTecs();
+                sort(aux.begin(), aux.end());
+                Porto.printTecs(aux);
+            }
+        } else {
+            cout << "We do not have informations to show! " << endl;
+        }
+    }
+
+
+    else if (b == "Lisboa"){
+        system("cls");
+        cout << endl << "---------------- VISUALIZE TECS ---------------- " << endl << endl;
+        size = Lisboa.getTecs().size();
+        if (size != 0) {
+            cout << "Do you wish to visualize the tecs: " << endl;
+            cout << "1. Ordered by ID" << endl;
+            cout << "2. Ordered by next available" << endl;
+            cout << "0. Return to Main Menu" << endl;
+            menu_int_options(number, 0, 2);
+            cin.ignore(1000, '\n');
+
+            if (number == 0) return 1;
+
+
+            if (number == 1) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY ID ---------------- " << endl << endl;
+                vector<Tec> aux = Lisboa.getTecs();
+                sort(aux.begin(), aux.end(), SortById);
+                Porto.printTecs(aux);
+            } else if (number == 2) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY AVAILABILITY ---------------- " << endl
+                     << endl;
+                vector<Tec> aux = Lisboa.getTecs();
+                sort(aux.begin(), aux.end());
+                Lisboa.printTecs(aux);
+            }
+        }
+        else {
+            cout << "We do not have informations to show! " << endl;
+        }
+    }
+    else if (b == "Faro"){
+        system("cls");
+        cout << endl << "---------------- VISUALIZE TECS ---------------- " << endl << endl;
+        size = Faro.getTecs().size();
+        if (size != 0) {
+            cout << "Do you wish to visualize the tecs: " << endl;
+            cout << "1. Ordered by ID" << endl;
+            cout << "2. Ordered by next available" << endl;
+            cout << "0. Return to Main Menu" << endl;
+            menu_int_options(number, 0, 2);
+            cin.ignore(1000, '\n');
+
+            if (number == 0) return 1;
+
+
+            if (number == 1) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY ID ---------------- " << endl << endl;
+                vector<Tec> aux = Faro.getTecs();
+                sort(aux.begin(), aux.end(), SortById);
+                Faro.printTecs(aux);
+            } else if (number == 2) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY AVAILABILITY ---------------- " << endl
+                     << endl;
+                vector<Tec> aux = Faro.getTecs();
+                sort(aux.begin(), aux.end());
+                Faro.printTecs(aux);
+            }
+        } else {
+            cout << "We do not have informations to show! " << endl;
+        }
+    }
+
+    int option;
+    cout << endl << endl << "----------------------------------------------------- " << endl;
+    cout << endl << "1. Return to Main Menu. " << endl;
+    cout << "2. Return to Visualize Information. " << endl;
+    menu_int_options(option, 1, 2);
+    return option;
+}

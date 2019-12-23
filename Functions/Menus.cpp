@@ -164,7 +164,8 @@ int VisualizeInformation(){
     cout << "3. View all employees" << endl;
     cout << "4. View all restaurants " << endl;
     cout << "5. View all deliveries " << endl;
-    cout << "6. Return to the main menu"<<endl;
+    cout << "6. View all tecs " <<endl;
+    cout << "7. Return to the main menu"<<endl;
     cout << "0. Exit" << endl;
     cout << "-------------------------------------------------------"<<endl;
     menu_int_options(option,0,6);

@@ -5,7 +5,7 @@ Antonio Freitas
 false
 11/11/1970
 43
-Range Rover, SUV, 19/12/2015
+Range Rover, SUV, 19/12/2015, 3 0 0
 1, 3, 9, 10, 20, 22, 31, 33, 37
 ::::::::
 Porto
@@ -24,7 +24,7 @@ Luis Pereira
 false
 20/10/2016
 39
-Yamaha, Motorcycle, 20/10/2016
+Yamaha, Motorcycle, 20/10/2016, 4 0 0 
 13, 14, 15, 18, 19, 21, 32, 34, 39
 ::::::::
 Porto
@@ -34,7 +34,7 @@ Henrique Alves
 false
 18/10/2019
 0
-Mercedes, Car, 18/10/2019
+Mercedes, Car, 18/10/2019, 1 0 0
 0
 ::::::::
 Lisboa
@@ -44,7 +44,7 @@ Antonio Truta
 false
 11/09/1970
 20
-Range Rover Evoque, Suv, 19/12/2016
+Range Rover Evoque, Suv, 19/12/2016, 0 0 0
 2, 4, 7, 8, 12, 38
 ::::::::
 Lisboa
@@ -63,7 +63,7 @@ Hugo Pinto
 false
 20/07/2018
 26
-Honda, Motorcycle, 20/07/2019
+Honda, Motorcycle, 20/07/2019, 5 2 33
 16, 17, 28, 29, 30, 42
 ::::::::
 Lisboa
@@ -91,7 +91,7 @@ Diogo Pereira
 false
 12/8/1999
 11
-Honda, Car, 20/11/2018
+Honda, Car, 20/11/2018, 5 3 55
 5, 6, 11
 ::::::::
 Faro
@@ -101,7 +101,7 @@ Pedro Silva
 false
 17/3/2009
 15
-Suzuki, Motorcycle, 17/03/2009
+Suzuki, Motorcycle, 17/03/2009, 2 0 0
 25, 27, 36
 ::::::::
 Faro
@@ -111,7 +111,7 @@ Joaquim Alberto
 false
 18/10/2017
 13
-Ford, Car, 18/10/2017
+Ford, Car, 18/10/2017, 1 0 0
 26, 35, 40
 ::::::::
 Faro
@@ -121,7 +121,7 @@ Eduardo Costa
 false
 18/10/2018
 15
-Seat, Van, 18/10/2018
+Seat, Van, 18/10/2018, 4 0 0
 23, 24, 41
 ::::::::
 Faro

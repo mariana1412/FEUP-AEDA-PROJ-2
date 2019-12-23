@@ -79,5 +79,12 @@ vector<Product> stringToProductVectorSearch(string str, const Restaurant& r);
  * @return Retorna verdadeiro ou falso consoante o admin com o nif indicado existe
  */
 bool stringToAdminSearch(string str, const Base& b);
+/**
+ * @brief Função que converte uma string onde se encontra o numero de horas e minutos ate o tecnico estar disponivel  separados por um espaço, num par composto por esses dois inteiros
+ * @param line - string a ser convertida
+ * @return Retorna um par composto por esses dois inteiros
+ */
+
+pair<int,int> stringToAvail(string line);
 
 #endif //PROJETO_STRINGCONVERTERS_H

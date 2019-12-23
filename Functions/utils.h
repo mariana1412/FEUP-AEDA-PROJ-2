@@ -9,8 +9,6 @@
 #include <algorithm>
 #include "Exceptions.h"
 #include "../Classes/Time.h"
-
-
 using namespace std;
 /**
  * Funções de utéis para o programa

@@ -121,5 +121,22 @@ bool leap_year(int year);
 */
 int numberOfDays(int month, int year);
 
+/**
+ * @brief Permite fazer a subtração de dois tempos
+ * @param t1 - menor tempo
+ * @param t2  - maior tempo
+ * @return Retorna um par composto pelo numero de horas e numero de minutos resultantes desta diferença
+ */
+pair<int,int> subtractTimes(Time t1, Time t2);
+/**
+ * @brief Permite fazer a atualizaçao do tempo que passou,um certo numero de horas e um certo numero de minutos
+ * @param m1 - minutos aos quais vai ser feita a atualização
+ * @param h1 - horas às quais vai ser feita a atualizaçao
+ *  * @param m2 - minutos que vao ser usados para atualizar
+ * @param h2 - horas que vao ser usados para atualizar
+ * @return Retorna um par composto pelo numero de horas e numero de minutos resultantes desta atualizaçao
+ */
+pair<int,int>  updateMntTime (int m1, int h1,int m2, int h2 );
+
 
 #endif //UGH_EATS_TIME_H

@@ -35,6 +35,7 @@ int main() {
     extract_Restaurants(Porto, Lisboa, Faro);
     extract_Deliveries(Porto, Lisboa, Faro);
     extract_Employees(Porto, Lisboa, Faro);
+    extract_Tecs(Porto,Lisboa,Faro);
     extract_Bases(Porto, Lisboa, Faro, boss_name, boss_nif);
     Company comp(boss_name, boss_nif, Porto, Lisboa, Faro);
 
@@ -335,12 +336,21 @@ int main() {
                                 menu = 5;
                             }
                         }
+                        else if(choice == 6){
+                            aux = visualize_tecs(Porto,Lisboa,Faro);
+                            if(aux==1){
+                                break;
+                            }
+                            else if(aux==2){
+                                menu = 5;
+                            }
+                        }
                         else if (choice == 0) {
                             menu = 0;
                             break;
                         }
                     }
-                } while (choice != 6);
+                } while (choice != 7);
             }
             else if (menu == 6) {
                 changeManager(Porto, Lisboa, Faro);
@@ -582,13 +592,22 @@ int main() {
                                 menu = 5;
                             }
                         }
+                        else if(choice == 6){
+                            aux = visualize_tecs(Porto,Lisboa,Faro);
+                            if(aux==1){
+                                break;
+                            }
+                            else if(aux==2){
+                                menu = 5;
+                            }
+                        }
                         else if (choice == 0) {
                             menu = 0;
                             break;
                         }
 
                     }
-                } while (choice != 6);
+                } while (choice != 7);
             }
         } while (menu != 0);
     }
@@ -786,13 +805,22 @@ int main() {
                                 menu = 4;
                             }
                         }
+                        else if(choice == 6){
+                            aux = visualize_tecs(Porto,Lisboa,Faro);
+                            if(aux==1){
+                                break;
+                            }
+                            else if(aux==2){
+                                menu = 5;
+                            }
+                        }
                         else if (choice == 0) {
                             menu = 0;
                             break;
                         }
 
                     }
-                } while (choice != 6);
+                } while (choice != 7);
             }
         } while (menu != 0);
     }
@@ -859,6 +887,7 @@ int main() {
     write_Restaurants(Porto, Lisboa, Faro);
     write_Deliveries(Porto, Lisboa, Faro);
     write_Employees(Porto, Lisboa, Faro);
+    write_Tecs(Porto,Lisboa,Faro);
     write_Bases(boss_name,boss_nif,Porto, Lisboa, Faro);
     Sleep(10000);
     return 0;

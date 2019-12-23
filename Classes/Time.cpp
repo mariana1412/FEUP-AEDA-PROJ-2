@@ -107,3 +107,145 @@ int numberOfDays(int month, int year) {// retorna o n de dias que o respetivo m�
     }
 }
 
+
+
+pair<int,int> subtractTimes(Time t1, Time t2){//assumimos que no máximo a encomenda chega um mês depois de ter sido feito, sendo que tal ja nao é realista
+    int hour =0;
+    int minutes =0;
+    if((t1.getMonth() == t2.getMonth()) && (t1.getYear() ==t2.getYear())){
+        if((t1.getDay() ==t2.getDay()) ){//mesmo dia
+            if(t1.getHour() == t2.getHour()){//mesma hora
+                hour =0;
+                minutes = t2.getMinutes() - t1.getMinutes();
+                return make_pair(hour, minutes);
+            }
+            else{//nao sao a mesma hora
+                if(t1.getMinutes()>t2.getMinutes()){
+                    hour= (t2.getHour() -t1.getHour())-1;
+                    minutes = (60-t1.getMinutes()) + t2.getMinutes();
+                    return make_pair(hour, minutes);
+                }
+                else if(t1.getMinutes()==t2.getMinutes()){
+                    hour = t2.getHour() -t1.getHour();
+                    minutes =0;
+                    return make_pair(hour, minutes);
+                }
+                else{
+                    hour = t2.getHour() -t1.getHour();
+                    minutes = (60-t1.getMinutes()) + t2.getMinutes();
+                    return make_pair(hour, minutes);
+                }
+            }
+        }
+        else{//mesmo mês, mesmo ano, dias diferentes
+           if(t1.getHour() == t2.getHour()){//mesma hora dias diferentes
+               if(t1.getMinutes() == t2.getMinutes()){ // dias inteiros depois
+                   hour=24*(t2.getDay()-t1.getDay());
+                   minutes =0;
+                   return make_pair(hour, minutes);
+               }
+               else if(t1.getMinutes()>t2.getMinutes()){//
+                   hour = 24*(t2.getDay() -t1.getDay())-1;
+                   minutes = (60-t1.getMinutes())+t2.getMinutes();
+                   return make_pair(hour, minutes);
+               }
+               else{
+                   hour = 24*(t2.getDay() -t1.getDay());
+                   minutes = (60-t1.getMinutes())+t2.getMinutes();
+                   return make_pair(hour, minutes);
+               }
+           }
+
+        }
+
+    }
+    else if((t1.getYear()==t2.getYear()) && ((t1.getMonth()+1)==t2.getMonth())){
+        if(t1.getDay()==t2.getDay()){//mesmo dia, mês seguinte
+            int aux= numberOfDays(t1.getMonth(),t1.getYear());
+            if(t1.getHour() == t2.getHour()){ //mesma hora
+                hour = 24 * aux;
+                minutes = t2.getMinutes() - t1.getMinutes();
+                return make_pair(hour, minutes);
+            }
+            else if(t1.getHour()>t2.getHour()){
+                hour = 24 * (aux-1);
+                minutes = t2.getMinutes() - t1.getMinutes();
+                return make_pair(hour, minutes);
+            }
+        }
+
+        else if(t1.getDay()>t2.getDay()){//menos de um mês depois
+            int aux= numberOfDays(t1.getMonth(),t1.getYear());
+            int days= aux-t1.getDay() +t2.getDay();
+            if(t1.getHour() == t2.getHour()){ //mesma hora
+                hour = 24 * days;
+                minutes = t2.getMinutes() - t1.getMinutes();
+                return make_pair(hour, minutes);
+            }
+            else if(t1.getHour()>t2.getHour()){
+                hour = 24 * (days-1);
+                minutes = t2.getMinutes() - t1.getMinutes();
+                return make_pair(hour, minutes);
+            }
+
+
+        }
+    }
+    else if(t1.getYear() != t2.getYear()){
+        if((t2.getMonth() == 1) && (t1.getMonth() == 12)){
+            if(t1.getDay()==t2.getDay()){ //exatamente um mês depois
+                if(t1.getHour() == t2.getHour()){//mesma hora
+                    hour =0;
+                    minutes = t2.getMinutes() - t1.getMinutes();
+                    return make_pair(hour, minutes);
+                }
+                else{//nao sao a mesma hora
+                    if(t1.getMinutes()>t2.getMinutes()){
+                        hour= (t2.getHour() -t1.getHour())-1;
+                        minutes = (60-t1.getMinutes()) + t2.getMinutes();
+                        return make_pair(hour, minutes);
+                    }
+                    else if(t1.getMinutes()==t2.getMinutes()){
+                        hour = t2.getHour() -t1.getHour();
+                        minutes =0;
+                        return make_pair(hour, minutes);
+                    }
+                    else{
+                        hour = t2.getHour() -t1.getHour();
+                        minutes = (60-t1.getMinutes()) + t2.getMinutes();
+                        return make_pair(hour, minutes);
+                    }
+                }
+            }
+            else if(t1.getDay()>t2.getDay()){//anos diferentes mas ainda menos de um mês depois
+                int aux= numberOfDays(t1.getMonth(),t1.getYear());
+                int days= aux-t1.getDay() +t2.getDay();
+                if(t1.getHour() == t2.getHour()){ //mesma hora
+                    hour = 24 * days;
+                    minutes = t2.getMinutes() - t1.getMinutes();
+                    return make_pair(hour, minutes);
+                }
+                else if(t1.getHour()>t2.getHour()){
+                    hour = 24 * (days-1);
+                    minutes = t2.getMinutes() - t1.getMinutes();
+                    return make_pair(hour, minutes);
+                }
+            }
+        }
+    }
+    cout<<"Something went wrong, it's not possible to receive the order more than one month after you order"<<endl;
+    return make_pair (NULL, NULL);
+}
+pair<int,int>  updateMntTime (int m1,int h1,int m2, int h2 ){
+    int minutes=0;
+    int hours =h1;
+
+    minutes = m1-m2;
+    if(minutes >0){ // se esta atualizaçao fez passar mais uma hora apenas com os minutos
+        minutes = 60-abs(minutes);
+        hours--;
+    }
+    hours = hours - h2;
+
+    return make_pair(hours, minutes);
+}

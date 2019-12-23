@@ -1,5 +1,6 @@
 #include "Person.h"
 
+int Tec::id_g= 0;
 Person::Person(string base, string name, int nif){
     this->base = base;
     this->name = name;
@@ -170,27 +171,79 @@ void Deliverer::addDelivery(Delivery delivery) {
     background.push_back(delivery);
 }
 
-Tec::Tec(int h, int n) {
+Tec::Tec(string base, int h,int m, int n) {
+    this->base = base;
     this-> hours_to_available =h;
+    this->minutes_to_available = m;
     this -> number_of_maintenances =n;
+    id_g++;
+}
+Tec::Tec(string base, int i,int h,int m, int n) {
+    this->id =i;
+    this->base = base;
+    this-> hours_to_available =h;
+    this->minutes_to_available = m;
+    this -> number_of_maintenances =n;
+    id_g ++;
+}
+void Tec::setBase(string base){
+    this->base = base;
+}
+void Tec::setId(int i) {
+    this-> id = i;
 }
 void Tec::setHoursToAvailable(int h) {
     this-> hours_to_available= h;
 }
+void Tec::setMinutesToAvailable(int m) {
+    this->minutes_to_available = m;
+}
 void Tec::setNumberOfMaintenances(int n) {
     this->number_of_maintenances = n;
+}
+string Tec::getBase() const{
+    return base;
+}
+int Tec::getId() const {
+    return id;
 }
 
 int Tec::getHoursToAvailable() const {
     return hours_to_available;
+}
+int Tec::getMinutesToAvailable() const {
+    return minutes_to_available;
 }
 int Tec::getNumberOfMaintenances() const {
     return number_of_maintenances;
 }
 
 bool Tec::operator<(const Tec & tec1) const{
-    if(this->hours_to_available > tec1.getHoursToAvailable()){
-       return(this->number_of_maintenances < tec1.getNumberOfMaintenances());
+    if(this->hours_to_available < tec1.getHoursToAvailable()){
+        return true;
+    }
+    else{
+        return(this->number_of_maintenances > tec1.getNumberOfMaintenances());
+    }
+}
+
+bool Tec::operator==(const Tec &tec1) const {//verificasse tudo para nao haver casos errados
+    if (id == tec1.getId()){
+        if(hours_to_available == tec1.getHoursToAvailable()){
+            if(number_of_maintenances == tec1.getNumberOfMaintenances()){
+                return true;
+            }
+        }
     }
     return false;
 }
+ostream &operator<<(ostream &os, const Tec &tecnico){
+    os <<"Base: "<<tecnico.getBase() <<endl
+       <<"ID: "<<tecnico.getId() <<endl
+       << "Number of hours to be available: "<<tecnico.getHoursToAvailable()<<endl
+       << "Number of minutes to be available: "<<tecnico.getMinutesToAvailable()<<endl
+       << "Number of maintenances: "<< tecnico.getNumberOfMaintenances()<<endl;
+    return os;
+}
+
+

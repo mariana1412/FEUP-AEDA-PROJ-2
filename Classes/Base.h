@@ -120,6 +120,32 @@ public:
      * @return Retorna um vetor com os funcionários da tabela de dispersão
      */
     vector<Employee *> getEmployeesHash() const;
+    /**
+     *
+     * @brief Permite obter os técnicos disponiveis numa fila de prioridade
+     * @return Retorna um vetor de tecnicos com os tecnicos sendo o menor index o tecnico disponivel mais cedo e que tenha concluido o maior numero de manutençoes
+     *
+     */
+    vector<Tec> getTecs () const;
+    /**
+   * @brief Permite descobrir o indice de um restaurante no vetor de restaurantes da base
+   * @param restaurant - restaurante cujo index pretendemos encontrar
+   * @return Index do restaurante no vetor de restaurantes da base
+   */
+    int getIndexrestaurant(Restaurant restaurant);
+
+    /**
+    * @brief Permite descobrir o indice de um funcionário no vetor de funcionários da base através do NIF
+    * @param nif - nif do funcionário cujo index pretendemos encontrar
+    * @return Index do funcionário no vetor de funcionários da base
+    */
+    int getIndexEmployee(string nif) const;
+    /**
+     * @brief Permite definir os técnicos especializados em manutenção de veiculos disponiveis para prestar serviços à empresa
+     * @param tecs - vetor de tecnicos especializados em manutenção de veiculos disponiveis para prestar serviços à empresa
+     */
+
+    void setTecs(vector<Tec> tecs);
 
     /**
      * @brief Permite guardar os funcionários contidos no vetor dado como argumento na tabela de dispersão
@@ -162,6 +188,11 @@ public:
     * @param client - cliente que pretendemos adicionar à base
     */
     void addClient(Client client);
+        /**
+    * @brief Permite adicionar um cliente à blacklist
+    * @param client - cliente a adicionar à blacklist
+    */
+    void addClientToBlacklist(Client client);
     /**
     * @brief Permite adicionar um restaurante à base
     * @param restaurant - restaurante que pretendemos adicionar à base
@@ -177,30 +208,25 @@ public:
     * @param delivery - encomenda que pretendemos adicionar à base
     */
     void addDelivery(Delivery delivery);
+
+    /**
+    * @brief Permite distribuir uma encomenda pelo deliverer com menos encomendas
+    * @param delivery - encomenda a distribuir
+     * @param order_time - momento em que foi feita a encomenda na forma de objeto da classe Time
+    */
+    void addDeliveryToDeliverer(Delivery delivery, Time order_time);
+        /**
+    * @brief Permite adicionar um técnico à base
+    * @param  tecnico - tecnico que pretendemos adicionar à base
+    */
+    void addTec(Tec tecnico);
     /**
     * @brief Permite remover um restaurante da base, se este existir
     * @param name - nome do restaurante que pretendemos remover
     * @return Retorna true caso seja possivel remover o restaurante
     */
     bool removeRestaurant(string name);
-    /**
-    * @brief Permite encontrar um restaurante no vetor de restaurantes da base
-    * @param name - nome do restaurante que pretendemos procurar
-    * @return Restaurante que pretendemos
-    */
-    Restaurant searchRestaurant(string name);
-    /**
-    * @brief Permite descobrir o indice de um restaurante no vetor de restaurantes da base
-    * @param restaurant - restaurante cujo index pretendemos encontrar
-    * @return Index do restaurante no vetor de restaurantes da base
-    */
-    int getIndexrestaurant(Restaurant restaurant);
-    /**
-     * @brief Permite modificar o restaurante de índice index no vetor de restaurantes da base
-     * @param restaurant - restaurante com as modificações que pretendemos colocar no indice dado
-     * @param index  - Index do restaurante que pretendemos modificar no vetor de restaurantes da base
-     */
-    void changeRestaurant(Restaurant restaurant, int index);
+
     /**
      * @brief Permite remover um cliente do vetor de clientes
      * @param index  - Index do cliente que pretendemos remover do vetor de clientes da base
@@ -208,40 +234,39 @@ public:
 
     void removeClient(int index);
     /**
-    * @brief Permite remover um funcionário da tabela de dispersãp dos funcionários
+    * @brief Permite remover um funcionário da tabela de dispersão dos funcionários
     * @param index  - Index do funcionário que pretendemos remover do vetor de funcionários da base
     */
 
     void removeEmployee(int index);
+    /**
+     * @brief Permite remover um tecnico da fila de prioridade
+     * @param tecnico - tecnico que pretendemos remover da fila de prioridade
+     */
+    void removeTec(Tec tecnico );
+    /**
+    * @brief Permite encontrar um restaurante no vetor de restaurantes da base
+    * @param name - nome do restaurante que pretendemos procurar
+    * @return Restaurante que pretendemos
+    */
+    Restaurant searchRestaurant(string name);
 
+    /**
+     * @brief Permite modificar o restaurante de índice index no vetor de restaurantes da base
+     * @param restaurant - restaurante com as modificações que pretendemos colocar no indice dado
+     * @param index  - Index do restaurante que pretendemos modificar no vetor de restaurantes da base
+     */
+    void changeRestaurant(Restaurant restaurant, int index);
     /**
     * @brief Permite contratar um funcionário antigo da tabela de dispersão dos funcionários
     * @param index  - Index do funcionário que pretendemos contratar da tabela de dispersão dos funcionários da base
     */
 
     void hireEmployee(int index);
-
-    /**
-    * @brief Permite descobrir o indice de um funcionário no vetor de funcionários da base através do NIF
-    * @param nif - nif do funcionário cujo index pretendemos encontrar
-    * @return Index do funcionário no vetor de funcionários da base
-    */
-    int getIndexEmployee(string nif) const;
-    /**
-    * @brief Permite distribuir uma encomenda pelo deliverer com menos encomendas
-    * @param delivery - encomenda a distribuir
-    */
-    void addDeliveryToDeliverer(Delivery delivery);
     /**
     * @brief Atualiza informações acerca das bases (revenues, valor de black no cliente)
     */
     void updateBases();
-    /**
-    * @brief Permite adicionar um cliente à blacklist
-    * @param client - cliente a adicionar à blacklist
-    */
-    void addClientToBlacklist(Client client);
-
     /**
      * @brief Imprime no ecrã todos os funcionários possibilitando vários casos diferentes
      * @param former - se for true, imprime os antigos funcionários
@@ -251,6 +276,11 @@ public:
      * @return Retorna um vetor com os indices dos funcionários que foram mostrados no ecrã
      */
     vector<int> printEmployees(bool former, bool newE, bool admin, bool deliverer);
+    /**
+     * @brief Imprime no ecrã todos os tecnicos possibilitando dois modos de ordenaçao dos mesmos
+     * @param aux - vetor de tecnicos que contem os tecnicos da base correspondente
+     */
+    void printTecs(vector<Tec> aux);
 
     /**
      * @brief Escolha um funcionário dos que estão no ecrã de acordo com os argumentos dados
@@ -262,6 +292,19 @@ public:
      * @return Retorna o índice do funcionário escolhido na tabela de dispersão
      */
     int chooseEmployee(bool former, bool newE, bool admin, bool deliverer, string action);
+    /*
+     * @brief Limpa a fila de prioridade dos tecnicos
+     */
+    void clearTecs();
+/**
+ *
+ * @param del
+ */
+    void sendToMaintenance(Deliverer &del);
+    void auxupdateTecs();
+
+    void updateTecs(int m , int h);
+    void updateVehicles();
 };
 
 

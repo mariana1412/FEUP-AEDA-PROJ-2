@@ -68,25 +68,36 @@ Time stringToDate(string str){
 }
 
 Vehicle stringToVehicle(string str){
-    string delimiter = ",";
+    string delimiter = ",", delimiter1=" ";
     vector<string> data;
     vector<string> data_clean;
     Vehicle result;
     size_t pos = 0;
     string token;
-    while ((pos = str.find(delimiter)) != std::string::npos) {
+    while (((pos = str.find(delimiter)) != std::string::npos)) {
         token = str.substr(0, pos);
         data.push_back(token);
         str.erase(0, pos + delimiter.length());
     }
+
+    while (((pos = str.find(delimiter1)) != std::string::npos)) {
+        token = str.substr(0,pos);
+        data.push_back(token);
+        str.erase(0, pos + delimiter.length());
+    }
     data.push_back(str);
+
     for (auto & i : data) {
+        remove_all_whitespaces(i);
         trim(i);
         data_clean.push_back(i);
     }
     result.setBrand(data_clean.at(0));
     result.setType(data_clean.at(1));
     result.setDate(stringToDate(data_clean.at(2)));
+    //result.setNDel(stoi(data_clean.at(3)));
+    //result.setNHour(stoi(data_clean.at(4)));
+    //result.setNMin(stoi(data_clean.at(5)));
     return result;
 }
 
@@ -263,4 +274,23 @@ bool stringToAdminSearch(string str, const Base& b){
         }
     }
     return false;
+}
+
+pair<int,int> stringToAvail(string str){
+    string delimiter = " ";
+    vector<string> data;
+    vector<int> data_clean;
+    size_t pos = 0;
+    string token;
+    while ((pos = str.find(delimiter)) != std::string::npos) {
+        token = str.substr(0, pos);
+        data.push_back(token);
+        str.erase(0, pos + delimiter.length());
+    }
+    data.push_back(str);
+    for (auto & i : data) {
+        trim(i);
+        data_clean.push_back(stoi(i));
+    }
+    return make_pair(data_clean.at(0),data_clean.at(1));
 }

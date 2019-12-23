@@ -311,7 +311,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 employeefile << na->getNif() << endl;
                 if(na->getFormer()) employeefile << "true" << endl;
                 else employeefile << "false" << endl;
-                employeefile << setw(2) << setfill('0') << na->getBirthdate().getDay() << "/" << setw(2) << setfill('0') <<na->getBirthdate().getMonth() << "/" << na->getBirthdate().getYear() << endl;
+                employeefile << setw(2) << setfill('0') << na->getBirthdate().getDay() << "/" << setw(2) << setfill('0') <<na->getBirthdate().getMonth() << "/" << na->getBirthdate().getYear() <<endl;
                 employeefile << na->getIncome() << endl;
                 employeefile << na->getTask();
             }
@@ -324,7 +324,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile <<setw(2) << setfill('0') << nd->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() << endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<", "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<<  endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
@@ -373,7 +373,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile <<setw(2) << setfill('0') << nd->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " << setw(2) << setfill('0') <<nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() << endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " << setw(2) << setfill('0') <<nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<", "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<< endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
@@ -421,7 +421,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile << nd->getBirthdate().getDay() << "/" << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() << endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<", "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<< endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
@@ -444,6 +444,63 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
         cerr << "File could not be opened";
     employeefile.close();
 }
+
+void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
+    ofstream tecfile;
+    tecfile.open("../Tecs.txt");
+    int count = 0;
+    vector<Tec> tecs_porto = baseP.getTecs();
+    vector<Tec> tecs_lisboa = baseL.getTecs();
+    vector<Tec> tecs_faro = baseF.getTecs();
+    if (tecfile.is_open()){
+        for (vector<Tec>::const_iterator it = tecs_porto.begin() ; it != tecs_porto.end(); it++) {
+            if (it != tecs_porto.begin())
+                tecfile << endl << "::::::::" << endl;
+            tecfile << "Porto" << endl;
+            tecfile << it->getId() << endl;
+            tecfile << it->getHoursToAvailable() <<" "<<it->getMinutesToAvailable()<< endl;
+            tecfile << it->getNumberOfMaintenances()<<endl;
+        }
+
+        if (tecs_porto.size() != 0) {
+            if (tecs_lisboa.size() != 0 || tecs_faro.size() != 0)
+                tecfile << endl << "::::::::" << endl;
+        }
+
+        for (vector<Tec>::const_iterator it = tecs_lisboa.begin() ; it != tecs_lisboa.end(); it++)
+        {
+            if (it != tecs_lisboa.begin())
+                tecfile << endl << "::::::::" << endl;
+            tecfile << "Lisboa" << endl;
+            tecfile << it->getId() << endl;
+            tecfile << it->getHoursToAvailable() <<" "<<it->getMinutesToAvailable()<< endl;
+            tecfile << it->getNumberOfMaintenances()<<endl;
+        }
+        if (tecs_lisboa.size() != 0) {
+            if (tecs_faro.size() != 0)
+                tecfile << endl << "::::::::" << endl;
+        }
+
+        for (vector<Tec>::const_iterator it = tecs_faro.begin() ; it != tecs_faro.end(); it++) {
+            count++;
+            tecfile << "Faro" << endl;
+            tecfile << it->getId() << endl;
+            tecfile << it->getHoursToAvailable() <<" "<<it->getMinutesToAvailable()<< endl;
+            tecfile << it->getNumberOfMaintenances() << endl;
+        }
+            if (count != (tecs_faro.size()))
+                tecfile << endl << "::::::::" << endl;
+        }
+
+    else
+        cerr << "File could not be opened";
+    tecfile.close();
+}
+
+
+
+
+
 
 void write_Bases(string boss, int nif, Base& baseP,const Base& baseL,const Base& baseF){
     ofstream basefile;
@@ -513,3 +570,6 @@ void write_Bases(string boss, int nif, Base& baseP,const Base& baseL,const Base&
         cerr << "File could not be opened";
     basefile.close();
 }
+
+
+

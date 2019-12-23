@@ -3,6 +3,7 @@
 
 #include "../Classes/Base.h"
 #include "Verification_Inputs.h"
+#include<algorithm>
 
 /**
  * Funções de Visualização de informação
@@ -47,7 +48,16 @@ int visualize_restaurants(const Base &Porto, const Base &Lisboa, const Base &Far
  * @return Retorna valor inteiro para retorno de Menu
  */
 int visualize_deliveries(const Base &Porto, const Base &Lisboa, const Base &Faro);
+/**
+ * @brief Permite visualizar todos os tecnicos de uma base escolhida na função
+ * @param Porto - base do Porto
+ * @param Lisboa - base de Lisboa
+ * @param Faro - base de Faro
+ * @return Retorna valor inteiro para retorno de Menu
+ */
 
+int visualize_tecs(Base Porto,Base Lisboa,Base Faro);
 
+bool SortById ( Tec tec1, Tec tec2);
 
 #endif //PROJETO_VISUALIZE_INFORMATION_H

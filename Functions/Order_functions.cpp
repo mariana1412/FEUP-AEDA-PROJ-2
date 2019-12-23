@@ -635,13 +635,15 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     for (vector<Employee*>::const_iterator it =  employees.begin(); it != employees.end(); it++){
         Deliverer* nd = dynamic_cast<Deliverer*>(*it);
         if (nd != nullptr){
-            if (!low || low_deliverer->getBackground().size() > nd->getBackground().size()) {
+            if ((!low || low_deliverer->getBackground().size() > nd->getBackground().size()) && (nd->getVehicle().getNHour()==0) &&(nd->getVehicle().getNMin()==0)) {
                 low_deliverer = nd;
                 low = true;
             }
         }
     }
     Deliverer deliverer = *low_deliverer;
+
+    //deliverer.getVehicle().getNDel()
 
     system("cls");
     int go = 1;
@@ -744,15 +746,24 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
 
     if (base == "Porto"){
         Porto.addDelivery(delivery);
-        Porto.addDeliveryToDeliverer(delivery);
+        Porto.addDeliveryToDeliverer(delivery,order_time);//estafuncao ja deve adicionar uma entrega ao veiculo
+        //Porto.updatetecs() //funçao que decrementa o n de horas e minutpos ate estar disponivel o tecnico
+        //Porto.updateVe() //funçao que decrementa o n de horas e minutos ate acabar a manutençao
+        //Porto.checkAndChangeVehicles
+        /*funcao que verifica se com esta passagem algum veiculo acabou manutençao, caso sim
+         * - n horas e minutos do tecnico =0
+         * - n de manutencoes do tecnico ++
+         * - n de entregas do veiculo =0
+         * - n de horas e minutos do veiculo =0*/
     }
     else if (base == "Lisboa") {
         Lisboa.addDelivery(delivery);
-        Lisboa.addDeliveryToDeliverer(delivery);
+        Lisboa.addDeliveryToDeliverer(delivery,order_time);
+        //Lisboa.updateTecs()
     }
     else if (base == "Faro") {
         Faro.addDelivery(delivery);
-        Faro.addDeliveryToDeliverer(delivery);
+        Faro.addDeliveryToDeliverer(delivery,order_time);
     }
 
     return 1;

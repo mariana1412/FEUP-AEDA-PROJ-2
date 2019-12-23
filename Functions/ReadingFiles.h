@@ -52,8 +52,13 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF);
  * @param boss - nome do patrão
  */
 void extract_Bases(Base& baseP, Base& baseL, Base& baseF, string &boss, int &boss_nif);
+/**
+ * @brief Função que extrai informação do ficheiro de tecnicos
+ * @param Porto - toda a informação da base do Porto
+ * @param Lisboa - toda a informação da base de Lisboa
+ * @param Faro - toda a informação da base de Faro
+ */
 
-
-
+void extract_Tecs(Base& baseP, Base& baseL, Base& baseF);
 
 #endif //PROJETO_READINGFILES_H
