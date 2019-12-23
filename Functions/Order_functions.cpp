@@ -621,13 +621,13 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     Time delivery_time;
     vector<Employee*> employees;
     if (base == "Porto"){
-        employees = Porto.getEmployees();
+        employees = Porto.getEmployeesHash();
     }
     else if (base == "Lisboa") {
-        employees = Lisboa.getEmployees();
+        employees = Lisboa.getEmployeesHash();
     }
     else if (base == "Faro") {
-        employees = Faro.getEmployees();
+        employees = Faro.getEmployeesHash();
     }
     Deliverer* low_deliverer = new Deliverer;
     low_deliverer->setBackground({});

@@ -94,6 +94,11 @@ bool confirm_modifications(string action, string str){
              << "Insert 'yes' to continue. " << endl << "Insert 'no' to cancel. " << endl << "Answer: ";
         cin >> cancel;
     }
+    else if (action == "hire"){
+        cout << endl << endl << "Are you sure you want to hire this " << str << "?" << endl
+             << "Insert 'yes' to continue. " << endl << "Insert 'no' to cancel. " << endl << "Answer: ";
+        cin >> cancel;
+    }
 
     while (cin.fail()) {
         if (cin.eof()) {

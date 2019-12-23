@@ -252,7 +252,7 @@ vector<Delivery> stringToDeliveryVectorSearch(string str, const Base& b){
 }
 
 bool stringToAdminSearch(string str, const Base& b){
-    vector<Employee*> employees = b.getEmployees();
+    vector<Employee*> employees = b.getEmployeesHash();
     for (vector<Employee*>::const_iterator it = employees.begin(); it != employees.end(); it++) {
         Admin *na = dynamic_cast<Admin *>((*it));
         if (na == nullptr)

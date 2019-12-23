@@ -144,11 +144,13 @@ int visualize_blacklist(const Base &Porto, const Base &Lisboa, const Base &Faro)
     return option;
 }
 
-int visualize_employees(const Base &Porto, const Base &Lisboa, const Base &Faro) {
+int visualize_employees(Base Porto, Base Lisboa, Base Faro){
     string b;
     int size;
+    int number;
 
     system("cls");
+
     cout << endl << "---------------- VISUALIZE EMPLOYEES ---------------- "<< endl << endl;
 
     cout << "Base: ";
@@ -161,22 +163,90 @@ int visualize_employees(const Base &Porto, const Base &Lisboa, const Base &Faro)
 
     verification_base(b);
 
+
     if (b == "Porto"){
         system ("cls");
         cout << endl << "---------------- VISUALIZE EMPLOYEES ---------------- "<< endl << endl;
-        cout << "Base: Porto" << endl << endl;
-        size = Porto.getEmployees().size();
+        size = Porto.getEmployeesHash().size();
         if(size != 0){
-            for(int i =0; i< size; i++){
-                Admin *a= dynamic_cast<Admin *> (Porto.getEmployees()[i]);
-                if (a != NULL){
-                    cout << "--> Employee " << i+1 << endl;
-                    cout << a << endl;
+            cout << "Do you wish to visualize: " << endl;
+            cout << "1. All Employees" << endl;
+            cout << "2. Former Employees" << endl;
+            cout << "3. Current Employees" << endl;
+            cout << "0. Return to Main Menu" << endl;
+            menu_int_options(number, 0, 3);
+            cin.ignore(1000, '\n');
+
+            if(number == 0) return 1;
+
+
+            if (number == 1) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE ALL EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Base: Porto" << endl << endl;
+                Porto.printEmployees(true, true, true, true);
+            }
+            else if (number == 2){
+                system("cls");
+                cout << endl << "---------------- VISUALIZE FORMER EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Do you wish to visualize: " << endl;
+                cout << "1. All Former Employees" << endl;
+                cout << "2. Former Administrators" << endl;
+                cout << "3. Former Deliverers" << endl;
+                cout << "0. Return to Main Menu" << endl;
+                menu_int_options(number, 0, 3);
+
+                if(number == 0) return 1;
+
+                if (number == 1){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE ALL FORMER EMPLOYEES ---------------- "<< endl << endl;
+                    cout << "Base: Porto" << endl << endl;
+                    Porto.printEmployees(true, false, true, true);
                 }
-                else {
-                    Deliverer *d= dynamic_cast<Deliverer *> (Porto.getEmployees()[i]);
-                    cout << "--> Employee " << i+1 << endl;
-                    cout << d << endl;
+                else if(number == 2){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE FORMER ADMINISTRATORS ---------------- "<< endl << endl;
+                    cout << "Base: Porto" << endl << endl;
+                    Porto.printEmployees(true, false, true, false);
+                }
+                else if(number == 3){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE FORMER DELIVERERS ---------------- "<< endl << endl;
+                    cout << "Base: Porto" << endl << endl;
+                    Porto.printEmployees(true, false, false, true);
+                }
+
+            }
+            else if (number == 3){
+                system("cls");
+                cout << endl << "---------------- VISUALIZE CURRENT EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Do you wish to visualize: " << endl;
+                cout << "1. All Current Employees" << endl;
+                cout << "2. Current Administrators" << endl;
+                cout << "3. Current Deliverers" << endl;
+                cout << "0. Return to Main Menu" << endl;
+                menu_int_options(number, 0, 3);
+
+                if(number == 0) return 1;
+
+                if (number == 1){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE ALL CURRENT EMPLOYEES ---------------- "<< endl << endl;
+                    cout << "Base: Porto" << endl << endl;
+                    Porto.printEmployees(false, true, true, true);
+                }
+                else if(number == 2){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE CURRENT ADMINISTRATORS ---------------- "<< endl << endl;
+                    cout << "Base: Porto" << endl << endl;
+                    Porto.printEmployees(false, true, true, false);
+                }
+                else if(number == 3){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE CURRENT DELIVERERS ---------------- "<< endl << endl;
+                    cout << "Base: Porto" << endl << endl;
+                    Porto.printEmployees(false, true, false, true);
                 }
             }
         }
@@ -184,22 +254,90 @@ int visualize_employees(const Base &Porto, const Base &Lisboa, const Base &Faro)
             cout << "We do not have informations to show! " << endl;
         }
     }
+
     else if (b == "Lisboa"){
         system ("cls");
         cout << endl << "---------------- VISUALIZE EMPLOYEES ---------------- "<< endl << endl;
-        cout << "Base: Lisboa" << endl << endl;
-        size = Lisboa.getEmployees().size();
+        size = Lisboa.getEmployeesHash().size();
         if(size != 0){
-            for(int i =0; i< size; i++){
-                Admin *a= dynamic_cast<Admin *> (Lisboa.getEmployees()[i]);
-                if (a != NULL){
-                    cout << "--> Employee " << i+1 << endl;
-                    cout << a << endl;
+            cout << "Do you wish to visualize: " << endl;
+            cout << "1. All Employees" << endl;
+            cout << "2. Former Employees" << endl;
+            cout << "3. Current Employees" << endl;
+            cout << "0. Return to Main Menu" << endl;
+            menu_int_options(number, 0, 3);
+            cin.ignore(1000, '\n');
+
+            if(number == 0) return 1;
+
+
+            if (number == 1) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE ALL EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Base: Lisboa" << endl << endl;
+                Lisboa.printEmployees(true, true, true, true);
+            }
+            else if (number == 2){
+                system("cls");
+                cout << endl << "---------------- VISUALIZE FORMER EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Do you wish to visualize: " << endl;
+                cout << "1. All Former Employees" << endl;
+                cout << "2. Former Administrators" << endl;
+                cout << "3. Former Deliverers" << endl;
+                cout << "0. Return to Main Menu" << endl;
+                menu_int_options(number, 0, 3);
+
+                if(number == 0) return 1;
+
+                if (number == 1){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE ALL FORMER EMPLOYEES ---------------- "<< endl << endl;
+                    cout << "Base: Lisboa" << endl << endl;
+                    Lisboa.printEmployees(true, false, true, true);
                 }
-                else {
-                    Deliverer *d= dynamic_cast<Deliverer *> (Lisboa.getEmployees()[i]);
-                    cout << "--> Employee " << i+1 << endl;
-                    cout << d << endl;
+                else if(number == 2){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE FORMER ADMINISTRATORS ---------------- "<< endl << endl;
+                    cout << "Base: Lisboa" << endl << endl;
+                    Lisboa.printEmployees(true, false, true, false);
+                }
+                else if(number == 3){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE FORMER DELIVERERS ---------------- "<< endl << endl;
+                    cout << "Base: Lisboa" << endl << endl;
+                    Lisboa.printEmployees(true, false, false, true);
+                }
+
+            }
+            else if (number == 3){
+                system("cls");
+                cout << endl << "---------------- VISUALIZE CURRENT EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Do you wish to visualize: " << endl;
+                cout << "1. All Current Employees" << endl;
+                cout << "2. Current Administrators" << endl;
+                cout << "3. Current Deliverers" << endl;
+                cout << "0. Return to Main Menu" << endl;
+                menu_int_options(number, 0, 3);
+
+                if(number == 0) return 1;
+
+                if (number == 1){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE ALL CURRENT EMPLOYEES ---------------- "<< endl << endl;
+                    cout << "Base: Lisboa" << endl << endl;
+                    Lisboa.printEmployees(false, true, true, true);
+                }
+                else if(number == 2){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE CURRENT ADMINISTRATORS ---------------- "<< endl << endl;
+                    cout << "Base: Lisboa" << endl << endl;
+                    Lisboa.printEmployees(false, true, true, false);
+                }
+                else if(number == 3){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE CURRENT DELIVERERS ---------------- "<< endl << endl;
+                    cout << "Base: Lisboa" << endl << endl;
+                    Lisboa.printEmployees(false, true, false, true);
                 }
             }
         }
@@ -207,22 +345,89 @@ int visualize_employees(const Base &Porto, const Base &Lisboa, const Base &Faro)
             cout << "We do not have informations to show! " << endl;
         }
     }
-    if (b == "Faro"){
+    else if (b == "Faro"){
         system ("cls");
         cout << endl << "---------------- VISUALIZE EMPLOYEES ---------------- "<< endl << endl;
-        cout << "Base: Faro" << endl << endl;
-        size = Faro.getEmployees().size();
+        size = Faro.getEmployeesHash().size();
         if(size != 0){
-            for(int i =0; i< size; i++){
-                Admin *a= dynamic_cast<Admin *> (Faro.getEmployees()[i]);
-                if (a != NULL){
-                    cout << "--> Employee " << i+1 << endl;
-                    cout << a << endl;
+            cout << "Do you wish to visualize: " << endl;
+            cout << "1. All Employees" << endl;
+            cout << "2. Former Employees" << endl;
+            cout << "3. Current Employees" << endl;
+            cout << "0. Return to Main Menu" << endl;
+            menu_int_options(number, 0, 3);
+            cin.ignore(1000, '\n');
+
+            if(number == 0) return 1;
+
+
+            if (number == 1) {
+                system("cls");
+                cout << endl << "---------------- VISUALIZE ALL EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Base: Faro" << endl << endl;
+                Faro.printEmployees(true, true, true, true);
+            }
+            else if (number == 2){
+                system("cls");
+                cout << endl << "---------------- VISUALIZE FORMER EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Do you wish to visualize: " << endl;
+                cout << "1. All Former Employees" << endl;
+                cout << "2. Former Administrators" << endl;
+                cout << "3. Former Deliverers" << endl;
+                cout << "0. Return to Main Menu" << endl;
+                menu_int_options(number, 0, 3);
+
+                if(number == 0) return 1;
+
+                if (number == 1){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE ALL FORMER EMPLOYEES ---------------- "<< endl << endl;
+                    cout << "Base: Faro" << endl << endl;
+                    Faro.printEmployees(true, false, true, true);
                 }
-                else {
-                    Deliverer *d= dynamic_cast<Deliverer *> (Faro.getEmployees()[i]);
-                    cout << "--> Employee " << i+1 << endl;
-                    cout << d << endl;
+                else if(number == 2){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE FORMER ADMINISTRATORS ---------------- "<< endl << endl;
+                    cout << "Base: Faro" << endl << endl;
+                    Faro.printEmployees(true, false, true, false);
+                }
+                else if(number == 3){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE FORMER DELIVERERS ---------------- "<< endl << endl;
+                    cout << "Base: Faro" << endl << endl;
+                    Faro.printEmployees(true, false, false, true);
+                }
+
+            }
+            else if (number == 3){
+                system("cls");
+                cout << endl << "---------------- VISUALIZE CURRENT EMPLOYEES ---------------- "<< endl << endl;
+                cout << "Do you wish to visualize: " << endl;
+                cout << "1. All Current Employees" << endl;
+                cout << "2. Current Administrators" << endl;
+                cout << "3. Current Deliverers" << endl;
+                cout << "0. Return to Main Menu" << endl;
+                menu_int_options(number, 0, 3);
+
+                if(number == 0) return 1;
+
+                if (number == 1){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE ALL CURRENT EMPLOYEES ---------------- "<< endl << endl;
+                    cout << "Base: Faro" << endl << endl;
+                    Faro.printEmployees(false, true, true, true);
+                }
+                else if(number == 2){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE CURRENT ADMINISTRATORS ---------------- "<< endl << endl;
+                    cout << "Base: Faro" << endl << endl;
+                    Faro.printEmployees(false, true, true, false);
+                }
+                else if(number == 3){
+                    system("cls");
+                    cout << endl << "---------------- VISUALIZE CURRENT DELIVERERS ---------------- "<< endl << endl;
+                    cout << "Base: Faro" << endl << endl;
+                    Faro.printEmployees(false, true, false, true);
                 }
             }
         }
@@ -230,6 +435,8 @@ int visualize_employees(const Base &Porto, const Base &Lisboa, const Base &Faro)
             cout << "We do not have informations to show! " << endl;
         }
     }
+
+
     int option;
     cout << endl << endl << "----------------------------------------------------- " << endl;
     cout << endl << "1. Return to Main Menu. " << endl;

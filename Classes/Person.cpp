@@ -69,9 +69,10 @@ ostream &operator<<(ostream &os, const Client cl){
     return os;
 }
 
-Employee::Employee(string base, string name, int nif, Time birthdate, float income) : Person(base, name, nif){
+Employee::Employee(string base, string name, int nif, Time birthdate, float income, bool former) : Person(base, name, nif){
     this->birthdate = birthdate;
     this->income = income;
+    this->former = former;
 }
 
 Time Employee::getBirthdate() const{
@@ -82,6 +83,10 @@ float Employee::getIncome() const{
     return income;
 }
 
+bool Employee::getFormer() const{
+    return former;
+}
+
 void Employee::setBirthdate(Time birthdate){
     this->birthdate = birthdate;
 }
@@ -90,7 +95,11 @@ void Employee::setIncome(float income){
     this->income = income;
 }
 
-Admin::Admin(string base, string name, int nif, Time birthdate, float income, string task): Employee(base, name, nif, birthdate, income){
+void Employee::setFormer(bool f) {
+    this->former = f;
+}
+
+Admin::Admin(string base, string name, int nif, Time birthdate, float income, string task, bool former): Employee(base, name, nif, birthdate, income, former){
     this->task = task;
 }
 
@@ -102,7 +111,7 @@ void Admin::setTask(string task){
     this->task = task;
 }
 
-Deliverer::Deliverer(string base, string name, int nif, Time birthdate, float income, Vehicle vehicle, vector<Delivery> background) : Employee(base, name, nif, birthdate, income){
+Deliverer::Deliverer(string base, string name, int nif, Time birthdate, float income, Vehicle vehicle, vector<Delivery> background, bool former) : Employee(base, name, nif, birthdate, income, former){
     this->vehicle = vehicle;
     this->background = background;
     float salary = 0;
@@ -132,7 +141,12 @@ ostream &operator<<(ostream &os, const Admin *a) {
     os << "Base: "<< a->getBase() << endl
        << "Name: " << a->getName() << endl
        << "NIF: " << a->getNif() << endl
-       << "Birthdate: " << a->getBirthdate() << endl
+       << "Working: ";
+
+    if(!(a->getFormer())) os << "yes" << endl;
+    else os << "no" << endl;
+
+    os << "Birthdate: " << a->getBirthdate() << endl
        << "Income: " << a->getIncome() << endl
        << "Task: " << a->getTask() << endl;
     return os;
@@ -141,7 +155,12 @@ ostream &operator<<(ostream &os, const Deliverer *d){
     os << "Base: " << d->getBase() << endl
       << "Name: " << d->getName() << endl
       <<"NIF: " << d->getNif() << endl
-      <<"Birthdate: " << d->getBirthdate() << endl
+            << "Working: ";
+
+    if(!(d->getFormer())) os << "yes" << endl;
+    else os << "no" << endl;
+
+    os  <<"Birthdate: " << d->getBirthdate() << endl
       <<"Income: " << d->getIncome() << endl
       <<"Vehicle: " << d->getVehicle() << endl;
     return os;

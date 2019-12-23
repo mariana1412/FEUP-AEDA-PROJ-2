@@ -108,7 +108,7 @@ int EmployeesManagement(){
     system("cls");
     cout << "----------------------------------------------------" << endl;
     cout << "---------------- EMPLOYEE MANAGEMENT ----------------" << endl << endl;
-    cout << "1. Create Employee " << endl;
+    cout << "1. Hire Employee " << endl;
     cout << "2. Modify Employee" << endl;
     cout << "3. Remove Employee " << endl;
     cout << "4. Return to the main menu " << endl;

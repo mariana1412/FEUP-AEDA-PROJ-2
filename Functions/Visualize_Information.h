@@ -30,7 +30,7 @@ int visualize_blacklist(const Base &Porto, const Base &Lisboa, const Base &Faro)
  * @param Faro - base de Faro
  * @return Retorna valor inteiro para retorno de Menu
  */
-int visualize_employees(const Base &Porto, const Base &Lisboa, const Base &Faro);
+int visualize_employees(Base Porto, Base Lisboa, Base Faro);
 /**
  * @brief Permite visualizar todos os restaurantes de uma base escolhida na função
  * @param Porto - base do Porto

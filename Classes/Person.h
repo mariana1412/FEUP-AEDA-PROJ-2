@@ -8,9 +8,9 @@
 #include "Order.h"
 //ATENCAO FALTA ACABAR DOCUMENTACAO DO BOOL OPERATOR
 using namespace std;
-/**
- * Pessoa
- */
+    /**
+     * Pessoa
+     */
 class Person{
 private:
     string name;/**< nome da pessoa*/
@@ -18,35 +18,35 @@ private:
     string base;/**<base a que a pessoa pertence*/
 public:
     /**
-* @brief Construtor por default da classe Person
-*/
+    * @brief Construtor por default da classe Person
+    */
     Person(){};
     /**
-* @brief Construtor da classe Person
+    * @brief Construtor da classe Person
      * @param base - base a que a pessoa pertence
      * @param name - nome da pessoa
      * @param nif- NIF da pessoa
 */
     Person(string base, string name, int nif);
     /**
-* @brief Permite obter a base da pessoa
+    * @brief Permite obter a base da pessoa
      * @return Retorna a base da pessoa
-*/
+    */
     string getBase() const;
     /**
-* @brief Permite obter o nome da pessoa
- * @return Retorna o nome da pessoa
-*/
+    * @brief Permite obter o nome da pessoa
+    * @return Retorna o nome da pessoa
+    */
     string getName() const;
     /**
-* @brief Permite obter o NIF da pessoa
- * @return Retorna o NIF da pessoa
-*/
+    * @brief Permite obter o NIF da pessoa
+    * @return Retorna o NIF da pessoa
+    */
     int getNif() const;
     /**
-* @brief Permite definir o nome da pessoa
- * @param name - nome da pessoa
-*/
+    * @brief Permite definir o nome da pessoa
+    * @param name - nome da pessoa
+    */
     void setName(string name);
     /**
 * @brief Permite definir o NIF da pessoa
@@ -130,6 +130,7 @@ class Employee: public Person{
 private:
     Time birthdate;/**< data de nascimento do funcionário*/
     float income;/**< salário do funcionário*/
+    bool former;/**< true se for um antigo funcionário; falso se for um funcionário atual*/
 public:
     /**
 * @brief Construtor por default da classe Employee
@@ -140,34 +141,49 @@ public:
 */
     virtual ~Employee(){};
     /**
-* @brief Construtor da classe Employee
+    * @brief Construtor da classe Employee
      * @param base - base do funcionário
      * @param name - nome do funcionário
      * @param nif - NIF do funcionário
      * @param birthdate - data de nascimento do funcionário
      * @param income - salário do funcionário
+     * @param former - funcionário antigo ou não
 */
-    Employee(string base, string name, int nif, Time birthdate, float income);
+    Employee(string base, string name, int nif, Time birthdate, float income, bool former);
     /**
-* @brief Permite obter a data de nascimento do funcionário
+    * @brief Permite obter a data de nascimento do funcionário
      * @return Retorna a data de nascimento do funcionário
-*/
+    */
     Time getBirthdate() const;
     /**
-* @brief Permite obter o salário do funcionário
- * @return Retorna o salário do funcionário
-*/
+    * @brief Permite obter o salário do funcionário
+     * @return Retorna o salário do funcionário
+    */
     float getIncome() const;
+
     /**
-* @brief Permite definir a data de nascimento do funcionário
- * @param birthdate - data de nascimento do funcionário
-*/
+     * @brief Permite saber se o funcionário é antigo ou atual
+     * @return retorna true se o funcionário for antigo; falso caso contrário
+     */
+    bool getFormer() const;
+
+    /**
+    * @brief Permite definir a data de nascimento do funcionário
+     * @param birthdate - data de nascimento do funcionário
+    */
     void setBirthdate(Time birthdate);
     /**
-* @brief Permite definir o salário do funcionário
-* @param income - salário do funcionário
-*/
+    * @brief Permite definir o salário do funcionário
+    * @param income - salário do funcionário
+    */
     void setIncome(float income);
+
+    /**
+     * @brief Permite definir se o funcionário é antigo ou atual
+     * @param f - funcionário antigo ou atual
+     */
+    void setFormer(bool f);
+
 };
 
 /**
@@ -178,39 +194,40 @@ private:
     string task;/**< função do administrador*/
 public:
     /**
-* @brief Construtor por default da classe Admin
-*/
+    * @brief Construtor por default da classe Admin
+    */
     Admin(){};
     /**
-* @brief Construtor da classe Admin
+    * @brief Construtor da classe Admin
      * @param base - base do administrador
      * @param name - nome do administrador
      * @param nif - NIF do administrador
      * @param birthdate - data de nascimento do administrador
      * @param income - salário do administrador
      * @param task - função do administrador
-*/
-    Admin(string base, string name, int nif, Time birthdate, float income, string task);
+     * @param former - funcionário antigo ou atual
+    */
+    Admin(string base, string name, int nif, Time birthdate, float income, string task, bool former);
     /**
-* @brief Permite obter a função do administrador
-     * @return Retorna a função do administrador
-*/
+    * @brief Permite obter a função do administrador
+    * @return Retorna a função do administrador
+    */
     string getTask() const;
     /**
-* @brief Permite definir a função do administrador
- * @param task - função do administrador
-*/
+    * @brief Permite definir a função do administrador
+    * @param task - função do administrador
+    */
     void setTask(string task);
     /**
-* @brief Permite mostrar no ecrã o administrador de forma formatada
-* @param os - ostream para onde é enviada a mensagem formatada
-* @param a - administrador que pretendemos mostrar no ecrã
-*/
+    * @brief Permite mostrar no ecrã o administrador de forma formatada
+    * @param os - ostream para onde é enviada a mensagem formatada
+    * @param a - administrador que pretendemos mostrar no ecrã
+    */
     friend ostream & operator<<(ostream &os, const Admin *a);
 };
-/**
- * Entregador
- */
+    /**
+     * Entregador
+     */
 class Deliverer: public Employee{
 private:
     Vehicle vehicle;
@@ -229,37 +246,38 @@ public:
      * @param income - salário do entregador
      * @param vehicle - veículo do entregador
      * @param background - historial de entregas do entregador
+     * @param former - funcionário antigo ou atual
 */
-    Deliverer(string base, string name, int nif, Time birthdate, float income, Vehicle vehicle, vector<Delivery> background);
+    Deliverer(string base, string name, int nif, Time birthdate, float income, Vehicle vehicle, vector<Delivery> background, bool former);
     /**
-* @brief Permite obter o veículo do entregador
-     * @return Retorna o veículo do entregador
-*/
+    * @brief Permite obter o veículo do entregador
+    * @return Retorna o veículo do entregador
+    */
     Vehicle getVehicle() const;
     /**
-* @brief Permite obter o historial de entregas do entregador
-  * @return Retorna o historial de entregas do entregador
-*/
+    * @brief Permite obter o historial de entregas do entregador
+    * @return Retorna o historial de entregas do entregador
+    */
     vector<Delivery> getBackground() const;
     /**
-* @brief Permite definir o veículo do entregador
-  * @param vehicle - veículo do entregador
-*/
+    * @brief Permite definir o veículo do entregador
+    * @param vehicle - veículo do entregador
+    */
     void setVehicle(Vehicle vehicle);
     /**
-* @brief Permite definir o historial de entregas do entregador
-* @param background - historial de entregas do entregador
-*/
+    * @brief Permite definir o historial de entregas do entregador
+    * @param background - historial de entregas do entregador
+    */
     void setBackground(vector<Delivery> background);
     /**
-* @brief Permite mostrar no ecrã o entregador de forma formatada
-* @param os - ostream para onde é enviada a mensagem formatada
-* @param d - entregador que pretendemos mostrar no ecrã
-*/
+    * @brief Permite mostrar no ecrã o entregador de forma formatada
+    * @param os - ostream para onde é enviada a mensagem formatada
+    * @param d - entregador que pretendemos mostrar no ecrã
+    */
     friend ostream & operator<<(ostream &os, const Deliverer *d);
 /**
      * @brief Permite adicionar uma encomenda a um deliverer
-    * @param delivery - encomenda a adicionar
+     * @param delivery - encomenda a adicionar
      */
     void addDelivery(Delivery delivery);
 

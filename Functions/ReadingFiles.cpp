@@ -201,6 +201,7 @@ void extract_Deliveries(Base& baseP, Base& baseL, Base& baseF){
 
 void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
     string line, name, nif, income, task;
+    bool former;
     Time birthdate;
     Vehicle vehicle;
     vector<Delivery> deliveries;
@@ -215,16 +216,22 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     getline(employeefile, name);
                     getline(employeefile, nif);
                     getline(employeefile, line);
+                    if (line == "true") former = true;
+                    else former = false;
+                    getline(employeefile, line);
                     birthdate = stringToDate(line);
                     getline(employeefile, income);
                     getline(employeefile, task);
                     getline(employeefile, line);    //separator
-                    Employee* e = new Admin("Porto", name, stoi(nif), birthdate, stof(income), task);
+                    Employee* e = new Admin("Porto", name, stoi(nif), birthdate, stof(income), task, former);
                     baseP.addEmployee(e);
                 }
                 if (line == "Deliverer") {
                     getline(employeefile, name);
                     getline(employeefile, nif);
+                    getline(employeefile, line);
+                    if (line == "true") former = true;
+                    else former = false;
                     getline(employeefile, line);
                     birthdate = stringToDate(line);
                     getline(employeefile, income);
@@ -236,7 +243,7 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     else
                         deliveries = {};
                     getline(employeefile, line);    //separator
-                    Employee* e = new Deliverer("Porto", name, stoi(nif), birthdate, stof(income), vehicle, deliveries);
+                    Employee* e = new Deliverer("Porto", name, stoi(nif), birthdate, stof(income), vehicle, deliveries, former);
                     baseP.addEmployee(e);
                 }
                 continue;
@@ -248,16 +255,22 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     getline(employeefile, name);
                     getline(employeefile, nif);
                     getline(employeefile, line);
+                    if (line == "true") former = true;
+                    else former = false;
+                    getline(employeefile, line);
                     birthdate = stringToDate(line);
                     getline(employeefile, income);
                     getline(employeefile, task);
                     getline(employeefile, line);    //separator
-                    Employee* e = new Admin("Lisboa", name, stoi(nif), birthdate, stof(income), task);
+                    Employee* e = new Admin("Lisboa", name, stoi(nif), birthdate, stof(income), task, former);
                     baseL.addEmployee(e);
                 }
                 if (line == "Deliverer") {
                     getline(employeefile, name);
                     getline(employeefile, nif);
+                    getline(employeefile, line);
+                    if (line == "true") former = true;
+                    else former = false;
                     getline(employeefile, line);
                     birthdate = stringToDate(line);
                     getline(employeefile, income);
@@ -269,7 +282,7 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     else
                         deliveries = {};
                     getline(employeefile, line);    //separator
-                    Employee* e = new Deliverer("Lisboa", name, stoi(nif), birthdate, stof(income), vehicle, deliveries);
+                    Employee* e = new Deliverer("Lisboa", name, stoi(nif), birthdate, stof(income), vehicle, deliveries, former);
                     baseL.addEmployee(e);
                 }
                 continue;
@@ -281,16 +294,22 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     getline(employeefile, name);
                     getline(employeefile, nif);
                     getline(employeefile, line);
+                    if (line == "true") former = true;
+                    else former = false;
+                    getline(employeefile, line);
                     birthdate = stringToDate(line);
                     getline(employeefile, income);
                     getline(employeefile, task);
                     getline(employeefile, line);    //separator
-                    Employee* e = new Admin("Faro", name, stoi(nif), birthdate, stof(income), task);
+                    Employee* e = new Admin("Faro", name, stoi(nif), birthdate, stof(income), task, former);
                     baseF.addEmployee(e);
                 }
                 if (line == "Deliverer") {
                     getline(employeefile, name);
                     getline(employeefile, nif);
+                    getline(employeefile, line);
+                    if (line == "true") former = true;
+                    else former = false;
                     getline(employeefile, line);
                     birthdate = stringToDate(line);
                     getline(employeefile, income);
@@ -302,7 +321,7 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     else
                         deliveries = {};
                     getline(employeefile, line);    //separator
-                    Employee* e = new Deliverer("Faro", name, stoi(nif), birthdate, stof(income), vehicle, deliveries);
+                    Employee* e = new Deliverer("Faro", name, stoi(nif), birthdate, stof(income), vehicle, deliveries, former);
                     baseF.addEmployee(e);
                 }
                 continue;

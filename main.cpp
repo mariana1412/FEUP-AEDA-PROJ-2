@@ -146,7 +146,7 @@ int main() {
                     else {
                         choice = EmployeesManagement();
                         if (choice == 1) {
-                            aux = create_employee(Porto, Lisboa, Faro);
+                            aux = hire_employee(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -396,7 +396,7 @@ int main() {
                 do {
                         choice = EmployeesManagement();
                         if (choice == 1) {
-                            aux = create_employee(Porto, Lisboa, Faro);
+                            aux = hire_employee(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }

@@ -2,6 +2,7 @@ Porto
 Deliverer
 Antonio Freitas
 124456789
+false
 11/11/1970
 43
 Range Rover, SUV, 19/12/2015
@@ -11,6 +12,7 @@ Porto
 Admin
 Joao Barros
 123445566
+true
 12/06/1998
 3000
 Secretario
@@ -19,6 +21,7 @@ Porto
 Deliverer
 Luis Pereira
 984736212
+false
 20/10/2016
 39
 Yamaha, Motorcycle, 20/10/2016
@@ -28,6 +31,7 @@ Porto
 Deliverer
 Henrique Alves
 563287412
+false
 18/10/2019
 0
 Mercedes, Car, 18/10/2019
@@ -37,6 +41,7 @@ Lisboa
 Deliverer
 Antonio Truta
 123456788
+false
 11/09/1970
 20
 Range Rover Evoque, Suv, 19/12/2016
@@ -46,6 +51,7 @@ Lisboa
 Admin
 Fernando Rocha
 185746387
+false
 30/07/1999
 2000
 Gestor
@@ -54,6 +60,7 @@ Lisboa
 Deliverer
 Hugo Pinto
 874829100
+false
 20/07/2018
 26
 Honda, Motorcycle, 20/07/2019
@@ -63,6 +70,7 @@ Lisboa
 Admin
 Maria Cerqueira
 965478123
+false
 08/07/1993
 1200
 Rp
@@ -71,6 +79,7 @@ Faro
 Admin
 Fernando Almeida
 922654321
+false
 12/10/1997
 3000
 Contabilista
@@ -79,6 +88,7 @@ Faro
 Deliverer
 Diogo Pereira
 987654321
+false
 12/8/1999
 11
 Honda, Car, 20/11/2018
@@ -88,6 +98,7 @@ Faro
 Deliverer
 Pedro Silva
 997546325
+false
 17/3/2009
 15
 Suzuki, Motorcycle, 17/03/2009
@@ -97,6 +108,7 @@ Faro
 Deliverer
 Joaquim Alberto
 145214521
+false
 18/10/2017
 13
 Ford, Car, 18/10/2017
@@ -106,6 +118,7 @@ Faro
 Deliverer
 Eduardo Costa
 111000222
+false
 18/10/2018
 15
 Seat, Van, 18/10/2018
@@ -115,6 +128,7 @@ Faro
 Admin
 Beatriz Santos
 777854632
+false
 20/08/1996
 3200
 Marketing
@@ -123,6 +137,7 @@ Faro
 Admin
 Alexandra Costa
 200300200
+false
 17/05/1994
 780
 Secretaria

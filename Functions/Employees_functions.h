@@ -17,14 +17,14 @@ using namespace std;
  */
 
 /**
- * @brief Função que cria um novo funcionário
+ * @brief Função que contrata um novo ou antigo funcionário
  * @param Porto - toda a informação da base do Porto
  * @param Lisboa - toda a informação da base de Lisboa
  * @param Faro - toda a informação da base de Faro
  * @return valor inteiro para retorno do Menu
  */
 
-int create_employee(Base &Porto, Base &Lisboa, Base &Faro);
+int hire_employee(Base &Porto, Base &Lisboa, Base &Faro);
 /**
  * @brief Função que modifica um funcionário existente
  * @param Porto - toda a informação da base do Porto
