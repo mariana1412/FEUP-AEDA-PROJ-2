@@ -387,8 +387,6 @@ int Base::chooseEmployee(bool former, bool newE, bool admin, bool deliverer, str
 
 }
 
-
-
 void Base::updateBases() {
     for (vector<Client>::iterator it = clients.begin(); it != clients.end(); it++){
         for (vector<Client>::const_iterator it1 = blacklist.begin(); it1 != blacklist.end(); it1++){
@@ -406,10 +404,12 @@ void Base::updateBases() {
         profit = 0;
     }
     profit = 0;
-    for (vector<Employee*>::iterator it = getEmployeesHash().begin(); it != getEmployeesHash().end(); it++) {
+    vector<Employee*> employees =getEmployeesHash();
+    for (vector<Employee*>::iterator it = employees.begin(); it != employees.end(); it++) {
         Deliverer *nd = dynamic_cast<Deliverer *>(*it);
         if (nd != nullptr){
-            for (vector<Delivery>::const_iterator it1 = nd->getBackground().begin(); it1 != nd->getBackground().end(); it1++){
+            vector<Delivery> deliveries = nd->getBackground();
+            for (vector<Delivery>::const_iterator it1 = deliveries.begin(); it1 != deliveries.end(); it1++){
                 profit += it1->getTax();
             }
             (*it)->setIncome(profit);

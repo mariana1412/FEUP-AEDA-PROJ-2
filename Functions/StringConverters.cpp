@@ -70,7 +70,6 @@ Time stringToDate(string str){
 Vehicle stringToVehicle(string str){
     string delimiter = ",", delimiter1=" ";
     vector<string> data;
-    vector<string> data_clean;
     Vehicle result;
     size_t pos = 0;
     string token;
@@ -87,17 +86,18 @@ Vehicle stringToVehicle(string str){
     }
     data.push_back(str);
 
-    for (auto & i : data) {
-        remove_all_whitespaces(i);
-        trim(i);
-        data_clean.push_back(i);
+    for (auto it = data.begin(); it != data.end(); it++) {
+        trim((*it));
+        if (it->empty()){
+            data.erase(it);
+        }
     }
-    result.setBrand(data_clean.at(0));
-    result.setType(data_clean.at(1));
-    result.setDate(stringToDate(data_clean.at(2)));
-    //result.setNDel(stoi(data_clean.at(3)));
-    //result.setNHour(stoi(data_clean.at(4)));
-    //result.setNMin(stoi(data_clean.at(5)));
+    result.setBrand(data.at(0));
+    result.setType(data.at(1));
+    result.setDate(stringToDate(data.at(2)));
+    result.setNDel(stoi(data.at(3)));
+    result.setNHour(stoi(data.at(4)));
+    result.setNMin(stoi(data.at(5)));
     return result;
 }
 

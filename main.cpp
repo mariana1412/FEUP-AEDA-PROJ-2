@@ -889,7 +889,7 @@ int main() {
     write_Employees(Porto, Lisboa, Faro);
     write_Tecs(Porto,Lisboa,Faro);
     write_Bases(boss_name,boss_nif,Porto, Lisboa, Faro);
-    Sleep(10000);
+    //Sleep(10000);
     return 0;
 }
 

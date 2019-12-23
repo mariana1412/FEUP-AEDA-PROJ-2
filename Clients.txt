@@ -48,9 +48,9 @@ false
 ::::::::
 Porto
 Fernando Viseu
-298684789
+298684780
 Rua de Sistelo 102, Gondomar
-true
+false
 ::::::::
 Lisboa
 Ines Pinto Silva
@@ -175,5 +175,5 @@ true
 Faro
 Fernando Pereira
 630230230
-Rua Manuel Sá Pereira, Sao Bras De Alportel
+Rua Manuel Sï¿½ Pereira, Sao Bras De Alportel
 false

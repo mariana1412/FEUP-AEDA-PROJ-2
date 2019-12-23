@@ -324,7 +324,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile <<setw(2) << setfill('0') << nd->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<", "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<<  endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<<  endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
@@ -373,7 +373,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile <<setw(2) << setfill('0') << nd->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " << setw(2) << setfill('0') <<nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<", "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<< endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " << setw(2) << setfill('0') <<nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<< endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
@@ -421,7 +421,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile << nd->getBirthdate().getDay() << "/" << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<", "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<< endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<<nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<< endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
