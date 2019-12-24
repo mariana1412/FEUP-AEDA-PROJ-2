@@ -231,8 +231,18 @@ int hire_employee(Base &Porto, Base &Lisboa, Base &Faro){
                     cout << "Invalid character. Please insert a valid input: ";
                     getline(cin, date);
                 }
+
+                string plate;
+                cout << "License Plate: ";
+                getline(cin, plate);
+                while (cin.fail() && cin.eof()) {
+                    cin.clear();
+                    cout << "Invalid character. Please insert a valid input: ";
+                    getline(cin, type);
+                }
+
                 Time v_bdate = verification_date(date);
-                Vehicle v(brand, type, v_bdate,0,0,0);
+                Vehicle v(brand, type, v_bdate,plate,0,0,0,0,0);
                 g = new Deliverer(b, name, stoi(nif), v_bdate, 0, v, background, false);
                 system("cls");
                 cout << g;
@@ -467,7 +477,15 @@ int modify_employee(Base &Porto, Base &Lisboa, Base &Faro){
                     getline(cin, date);
                 }
                 Time v_bdate = verification_date(date);
-                Vehicle ve(brand, type, v_bdate,0,0,0);
+                string plate;
+                cout << "License Plate: ";
+                getline(cin, plate);
+                while(cin.fail() && cin.eof()){
+                    cin.clear();
+                    cout << "Invalid character. Please insert a valid input: ";
+                    getline(cin, type);
+                }
+                Vehicle ve(brand, type, v_bdate,plate,0,0,0,0,0);
 
                 cout << endl << "-----------------------------------------------" << endl;
                 if(confirm_modifications("modify","deliverer")){

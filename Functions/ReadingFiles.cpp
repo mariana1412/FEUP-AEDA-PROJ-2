@@ -238,10 +238,13 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     getline(employeefile, line);
                     vehicle = stringToVehicle(line);
                     getline(employeefile, line);
-                    if (line != "0")
+                    if (line != "0") {
                         deliveries = stringToDeliveryVectorSearch(line, baseP);
+                        vehicle.setTotalDel(deliveries.size());
+                    }
                     else
                         deliveries = {};
+                    baseP.addVehicle(vehicle);
                     getline(employeefile, line);    //separator
                     Employee* e = new Deliverer("Porto", name, stoi(nif), birthdate, stof(income), vehicle, deliveries, former);
                     baseP.addEmployee(e);
@@ -277,10 +280,13 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     getline(employeefile, line);
                     vehicle = stringToVehicle(line);
                     getline(employeefile, line);
-                    if (line != "0")
+                    if (line != "0") {
                         deliveries = stringToDeliveryVectorSearch(line, baseL);
+                        vehicle.setTotalDel(deliveries.size());
+                    }
                     else
                         deliveries = {};
+                    baseL.addVehicle(vehicle);
                     getline(employeefile, line);    //separator
                     Employee* e = new Deliverer("Lisboa", name, stoi(nif), birthdate, stof(income), vehicle, deliveries, former);
                     baseL.addEmployee(e);
@@ -316,10 +322,13 @@ void extract_Employees(Base& baseP, Base& baseL, Base& baseF) {
                     getline(employeefile, line);
                     vehicle = stringToVehicle(line);
                     getline(employeefile, line);
-                    if (line != "0")
+                    if (line != "0") {
                         deliveries = stringToDeliveryVectorSearch(line, baseF);
+                        vehicle.setTotalDel(deliveries.size());
+                    }
                     else
                         deliveries = {};
+                    baseF.addVehicle(vehicle);
                     getline(employeefile, line);    //separator
                     Employee* e = new Deliverer("Faro", name, stoi(nif), birthdate, stof(income), vehicle, deliveries, former);
                     baseF.addEmployee(e);

@@ -95,9 +95,12 @@ Vehicle stringToVehicle(string str){
     result.setBrand(data.at(0));
     result.setType(data.at(1));
     result.setDate(stringToDate(data.at(2)));
-    result.setNDel(stoi(data.at(3)));
-    result.setNHour(stoi(data.at(4)));
-    result.setNMin(stoi(data.at(5)));
+    result.setLicPlate(data.at(3));
+    result.setTotalKm(stoi(data.at(4)));
+    result.setNDel(stoi(data.at(5)));
+    result.setNHour(stoi(data.at(6)));
+    result.setNMin(stoi(data.at(7)));
+    result.setTotalDel(0);
     return result;
 }
 

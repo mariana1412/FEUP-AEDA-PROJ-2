@@ -16,6 +16,9 @@ private:
     string brand;/**< marca do veículo*/
     string type;/**< tipo de veículo*/
     Time date;/**<data de aquisição do veículo*/
+    string lic_plate; /**<matrícula do veículo*/
+    int total_del; /**<número total de entregas efetuadas*/
+    int total_km; /**<número total de kms percorridos*/
     int n_del; /**<numero de entregas desde a ultima manutençao*/
     int n_hour, n_min; /**<numero de horas e minutos até terminar a manutençao */
 public:
@@ -32,7 +35,7 @@ public:
      * @param n_hour - numero de horas até terminar a manutençao
      * @param n_min - numero de minutos até terminar a manutençao
  */
-    Vehicle(string brand, string type, Time date,int n_del,int n_hour, int n_min);
+    Vehicle(string brand, string type, Time date, string lic_plate, int total_del, int total_km, int n_del,int n_hour, int n_min);
     /**
 * @brief Permite obter a marca do veículo
      * @return Retorna a marca do veículo
@@ -48,6 +51,24 @@ public:
  * @return Retorna a data de aquisição do veículo
 */
     Time getDate() const;
+    /**
+* @brief Permite obter a matrícula do veículo
+* @return Retorna a matrícula do veículo
+*/
+    string getLicPlate() const;
+
+    /**
+* @brief Permite obter o número total de entregas do veículo
+* @return Retorna o número total de entregas do veículo
+*/
+    int getTotalDel() const;
+
+    /**
+* @brief Permite obter o número de kms percorridos pelo veículo
+* @return Retorna a número de kms percorridos pelo veículo
+*/
+    int getTotalKm() const;
+
     /**
 * @brief Permite obter o numero de entregas desde a ultima manutençao
  * @return Retorna o numero de entregas desde a ultima manutençao
@@ -79,6 +100,25 @@ public:
  * @param date - data de aquisição do veículo
 */
     void setDate(Time date);
+
+    /**
+* @brief Permite definir a matrícula do veículo
+ * @param plate - matrícula do veículo
+*/
+    void setLicPlate(string plate);
+
+    /**
+* @brief Permite definir o número total de entregas do veículo
+ * @param del - número total de entregas do veículo
+*/
+    void setTotalDel(int del);
+
+    /**
+* @brief Permite definir o número de kms percorridos pelo veículo
+ * @param km - número de kms percorridos pelo veículo
+*/
+    void setTotalKm(int km);
+
     /**
 * @brief Permite definir o numero de entregas desde a ultima manutençao
 * @param ndel - numero de entregas desde a ultima manutençao
@@ -105,6 +145,18 @@ public:
 * @param v - veiculo que pretendemos mostrar no ecrã
  */
     friend ostream& operator<<(ostream& os, const Vehicle& v);
+/**
+* @brief Permite comparar veículos (saber qual é o menor/maior)
+* @param v1 - Veículo que é usado na comparação
+* @return Retorna um booleano para o resultado da comparação
+ */
+    bool operator<(const Vehicle &v1) const;
+/**
+* @brief Permite comparar veículos (saber se são iguais)
+* @param v1 - Veículo que é usado na comparação
+* @return Retorna um booleano para o resultado da comparação
+ */
+    bool operator==(const Vehicle &v1) const;
 
 };
 

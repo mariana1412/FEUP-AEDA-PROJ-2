@@ -10,6 +10,7 @@
 #include <unordered_set>
 #include "Location.h"
 #include "Person.h"
+#include "bst.h"
 
 using namespace std;
 
@@ -63,14 +64,14 @@ private:
     vector<Client> blacklist;/**Lista negra da organização*/
     vector<Restaurant> restaurants;/**Conjunto de fornecedores da base*/
     vector<Delivery> deliveries;/**Encomendas feitas a esta base*/
+    BST<Vehicle> vehicles; /**Veículos pertencentes à base*/
     TecPriorityQueue tecnicos; /**Tecnicos especializados em manutenção de veiculos*/
     HashTableEmployees employeesHash; /**Registo de todos os funcionários (antigos ou atuais)*/
-
 public:
     /**
 	 * @brief Construtor por default da classe Base
 	 */
-    Base(){};
+    Base();
     /**
 	 * @brief Construtor da classe Base
 	 * @param location - Localização exata da base
@@ -114,6 +115,12 @@ public:
     * @return Retorna um vetor com as encomendas da base
     */
     vector<Delivery> getDeliveries() const;
+
+    /**
+    * @brief Permite obter os veiculos da base
+    * @return Retorna uma BST com os veículos da base
+    */
+    BST<Vehicle> getVehicles() const;
 
     /**
      * @brief Permite obter os funcionários armazenados na tabela de dispersão
@@ -208,6 +215,11 @@ public:
     * @param delivery - encomenda que pretendemos adicionar à base
     */
     void addDelivery(Delivery delivery);
+    /**
+    * @brief Permite adicionar uma veículo à base
+    * @param vehicle - veículo que pretendemos adicionar à base
+    */
+    void addVehicle(Vehicle vehicle);
 
     /**
     * @brief Permite distribuir uma encomenda pelo deliverer com menos encomendas

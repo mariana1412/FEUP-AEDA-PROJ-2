@@ -2,10 +2,13 @@
 
 Vehicle::Vehicle(){}
 
-Vehicle::Vehicle(string brand, string type, Time date, int n_del,int n_hour, int n_min){
+Vehicle::Vehicle(string brand, string type, Time date, string lic_plate, int total_del, int total_km, int n_del,int n_hour, int n_min){
     this->brand = brand;
     this->type = type;
     this->date = date;
+    this->lic_plate = lic_plate;
+    this->total_del = total_del;
+    this->total_km = total_km;
     this->n_hour =n_hour;
     this->n_min = n_min;
 }
@@ -20,6 +23,17 @@ string Vehicle::getType() const{
 
 Time Vehicle::getDate() const{
     return date;
+}
+int Vehicle::getTotalDel() const {
+    return total_del;
+}
+
+int Vehicle::getTotalKm() const {
+    return total_km;
+}
+
+string Vehicle::getLicPlate() const {
+    return lic_plate;
 }
 int Vehicle::getNDel() const {
     return n_del;
@@ -42,7 +56,17 @@ void Vehicle::setType(string type){
 void Vehicle::setDate(Time date){
     this->date = date;
 }
+void Vehicle::setLicPlate(string plate) {
+    this->lic_plate = plate;
+}
 
+void Vehicle::setTotalDel(int del) {
+    this->total_del = del;
+}
+
+void Vehicle::setTotalKm(int km) {
+    this->total_km = km;
+}
 void Vehicle::setNDel(int ndel) {
     this->n_del = ndel;
 }
@@ -55,9 +79,22 @@ void Vehicle::setNMin(int min) {
 void Vehicle::addDelivery(){
     n_del++;
 }
+
 ostream& operator<<(ostream& os, const Vehicle& v){
     os << v.getBrand() << ", " << v.getType() << ", " << v.getDate()<<"\t"<<v.getNHour()<<"\t"<<v.getNMin();
     return os;
 }
+
+bool Vehicle::operator<(const Vehicle &v1) const {
+    if (this->total_del == v1.total_del){
+        return this->total_km < v1.total_km;
+    } else
+        return this->total_del < v1.total_del;
+}
+
+bool Vehicle::operator==(const Vehicle &v1) const {
+    return (this->lic_plate == v1.lic_plate);
+}
+
 
 

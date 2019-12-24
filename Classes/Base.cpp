@@ -1,6 +1,8 @@
 #include "Base.h"
+Base::Base(): vehicles(Vehicle("","",Time(0,0,0,0,0),"",0,0,0,0,0)){
+}
 
-Base::Base(Location location, string manager, int manager_nif, vector<Client>blacklist){
+Base::Base(Location location, string manager, int manager_nif, vector<Client>blacklist): vehicles(Vehicle("","",Time(0,0,0,0,0),"",0,0,0,0,0)){
         this->location = location;
         this->manager=manager;
         this->manager_nif =manager_nif;
@@ -31,7 +33,9 @@ vector<Delivery> Base::getDeliveries() const {
 vector<Restaurant> Base::getRestaurants()const{
     return restaurants;
 }
-
+BST<Vehicle> Base::getVehicles() const {
+    return vehicles;
+}
 vector<Employee *> Base::getEmployeesHash() const {
     vector<Employee *> ptrs;
     HashTableEmployees::const_iterator it1 = this->employeesHash.begin();
@@ -117,6 +121,10 @@ void Base::addRestaurant(Restaurant restaurant) {
 
 void Base::addDelivery(Delivery delivery) {
     deliveries.push_back(delivery);
+}
+
+void Base::addVehicle(Vehicle vehicle) {
+    vehicles.insert(vehicle);
 }
 
 void Base::addEmployee(Employee *employee) {
@@ -448,5 +456,9 @@ void Base::updateTecs(int m, int h) {
     }
     setTecs(final);
 }
+
+
+
+
 
 
