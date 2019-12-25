@@ -31,14 +31,14 @@ Aqua
 Avenida Central, Gondomar
 German
 Rouladen, German, 9.5 / Eintopf, German, 8 / Brezel, German, 4
-13.5
+35
 ::::::::
 Porto
 El Sombrero
 Avenida Dos Pardais, Gondomar
 Mexican
 Churro Chips, Mexican, 3 / Chicken Enchiladas, Mexican, 8 / Chicken Taquitos, Mexican, 6
-17
+36
 ::::::::
 Lisboa
 Italian

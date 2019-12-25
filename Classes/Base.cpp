@@ -139,7 +139,8 @@ void Base::addDeliveryToDeliverer(Delivery delivery, Time order_time) {
     Deliverer* low_deliverer = new Deliverer;
     low_deliverer->setBackground({});
     bool low = false;
-    for (vector<Employee*>::const_iterator it =  getEmployeesHash().begin(); it != getEmployeesHash().end(); it++){
+    vector<Employee*> employees = getEmployeesHash();
+    for (vector<Employee*>::const_iterator it =  employees.begin(); it != employees.end(); it++){
         Deliverer* nd = dynamic_cast<Deliverer*>(*it);
         if (nd != nullptr){
             if ((!low || low_deliverer->getBackground().size() > nd->getBackground().size()) && (nd->getVehicle().getNHour()==0) &&(nd->getVehicle().getNMin()==0)) {
