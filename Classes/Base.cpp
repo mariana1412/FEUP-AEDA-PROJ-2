@@ -110,6 +110,13 @@ void Base::setBlacklist(vector<Client> blacklist){
 void Base::setRestaurants(vector<Restaurant> restaurants){
     this->restaurants = restaurants;
 }
+void Base::setVehicles(vector<Vehicle> v){
+    vehicles.makeEmpty();
+    vector<Vehicle>:: iterator it= v.begin();
+    for (it; it!= v.end(); it++){
+        vehicles.insert(*it);
+    }
+}
 
 void Base::addClient(Client client) {
     clients.push_back(client);
@@ -149,13 +156,14 @@ void Base::addDeliveryToDeliverer(Delivery delivery, Time order_time) {
             }
         }
     }
-    low_deliverer->addDelivery(delivery);
-    low_deliverer->getVehicle().addDelivery();
+    low_deliverer->addDelivery(delivery);//adiciona uma entrega ao entregador
+    low_deliverer->getVehicle().addDelivery();//adicionar uma entrega ao veiculo
     if(low_deliverer->getVehicle().getNDel() ==5){
         sendToMaintenance(*low_deliverer);
     }
     pair<int,int> aux = subtractTimes(order_time, delivery.getDeliver_time());
     updateTecs(aux.first,aux.second);
+    updateVehicles(aux.first,aux.second);
 }
 void Base::addClientToBlacklist(Client client) {
     blacklist.push_back(client);
@@ -362,6 +370,11 @@ void Base::printTecs(vector<Tec> aux){
         cout <<*it<<endl;
     }
 }
+void Base::clearTecs() {
+    while(!(tecnicos.empty())){
+        tecnicos.pop();
+    }
+}
 
 
 int Base::chooseEmployee(bool former, bool newE, bool admin, bool deliverer, string action){
@@ -428,31 +441,67 @@ void Base::updateBases() {
     }
 }
 
-void Base::clearTecs() {
-    while(!(tecnicos.empty())){
-        tecnicos.pop();
-    }
-}
+
 
 void Base::sendToMaintenance(Deliverer &del){
-    /*
-     * - escolher um tecnico d topo da fila--- n de horas=4, nde minutos =0
-     * - atualizar o veiculo n de horas =4, n de minutos=0
-     */
+/*
+ * - escolher um tecnico d topo da fila--- n de horas=4, n de minutos =0
+ * - atualizar o veiculo n de horas =4, n de minutos=0
+ */
+    //escolha do tecnico e sua atualização
+    Tec t = tecnicos.top();
+    removeTec(t);
+    pair<int,int> aux =updateMntTime_a(t.getMinutesToAvailable(),t.getHoursToAvailable(),0,4);
+    t.updateTime(aux.first,aux.second);
+    addTec(t);
+    //atualizaçao do veiculo
+    Vehicle v= del.getVehicle();
+    vehicles.remove(v);
+    pair<int,int> a =updateMntTime_a(v.getNMin(),v.getNHour(),0,4);
+    v.updateTime(a.first,a.second);
+    vehicles.insert(v);
 
 }
 
+void Base::updateVehicles(int m ,int h){//funçao que decrementa o n de horas e minutos ate acabar a manutençao
+/*funcao verifica se com esta passagem de tempo algum veiculo acabou manutençao, caso sim
+* - n de entregas do veiculo = 0
+* - n de horas e minutos do veiculo = 0
+ * */
+    BSTItrIn<Vehicle> it(vehicles);
+    vector<Vehicle> final;
+    bool ended=false;
 
+    while(!it.isAtEnd()){
+        Vehicle v= it.retrieve();
+        pair <int, int> a = updateMntTime_d(v.getNMin(),v.getNHour(),m, h,ended);
+        v.updateTime(a.first,a.second);
+        if(ended){
+            v.resetNDel();
+        }
+        final.push_back(v);
+        it.advance();
+    }
+    setVehicles(final);
+}
 
-void Base::updateTecs(int m, int h) {
+void Base::updateTecs(int m, int h) {//funçao que decrementa o n de horas e minutos ate estar disponivel o tecnico
+/*funcao verifica se com esta passagem de tempo algum tecnico acabou a manutençao, caso sim:
+* - n horas e minutos do tecnico = 0
+* - n de manutencoes do tecnico ++
+ * */
+
     vector<Tec> aux= getTecs();
     vector<Tec> final;
     vector<Tec> ::iterator it=aux.begin();
+    bool ended= false;
     for(it; it!=aux.end(); it++){
         Tec t= *it;
-        pair <int, int> a = updateMntTime((*it).getMinutesToAvailable(),(*it).getHoursToAvailable(),m, h);
-        t.setHoursToAvailable(a.first);
-        t.setMinutesToAvailable(a.second);
+        pair <int, int> a = updateMntTime_d((*it).getMinutesToAvailable(),(*it).getHoursToAvailable(),m, h,ended);
+        t.updateTime(a.first,a.second);
+        if(ended){
+            t.addMaintenance();
+        }
         final.push_back(t);
     }
     setTecs(final);

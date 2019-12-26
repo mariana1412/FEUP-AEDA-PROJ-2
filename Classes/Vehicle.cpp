@@ -80,6 +80,14 @@ void Vehicle::addDelivery(){
     n_del++;
 }
 
+void Vehicle:: updateTime(int h ,int m){
+    setNHour(h);
+    setNMin(m);
+}
+void Vehicle::resetNDel(){
+    n_del =0;
+}
+
 ostream& operator<<(ostream& os, const Vehicle& v){
     os << v.getBrand() << ", " << v.getType() << ", " << v.getDate()<<"\t"<<v.getNHour()<<"\t"<<v.getNMin();
     return os;

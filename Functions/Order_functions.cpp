@@ -746,20 +746,11 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
 
     if (base == "Porto"){
         Porto.addDelivery(delivery);
-        Porto.addDeliveryToDeliverer(delivery,order_time);//estafuncao ja deve adicionar uma entrega ao veiculo
-        //Porto.updatetecs() //funçao que decrementa o n de horas e minutpos ate estar disponivel o tecnico
-        //Porto.updateVe() //funçao que decrementa o n de horas e minutos ate acabar a manutençao
-        //Porto.checkAndChangeVehicles
-        /*funcao que verifica se com esta passagem algum veiculo acabou manutençao, caso sim
-         * - n horas e minutos do tecnico =0
-         * - n de manutencoes do tecnico ++
-         * - n de entregas do veiculo =0
-         * - n de horas e minutos do veiculo =0*/
+        Porto.addDeliveryToDeliverer(delivery,order_time);
     }
     else if (base == "Lisboa") {
         Lisboa.addDelivery(delivery);
         Lisboa.addDeliveryToDeliverer(delivery,order_time);
-        //Lisboa.updateTecs()
     }
     else if (base == "Faro") {
         Faro.addDelivery(delivery);

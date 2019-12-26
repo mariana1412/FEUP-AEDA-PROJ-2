@@ -585,7 +585,7 @@ int visualize_deliveries(const Base &Porto, const Base &Lisboa, const Base &Faro
     return option;
 }
 bool SortById ( Tec tec1, Tec tec2){
-    return tec1.getId()>tec2.getId();
+    return tec1.getId()<tec2.getId();
 }
 
 int visualize_tecs(Base Porto,Base Lisboa,Base Faro){

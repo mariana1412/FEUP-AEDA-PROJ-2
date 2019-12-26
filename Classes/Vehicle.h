@@ -140,6 +140,16 @@ public:
 
     void addDelivery();
 /**
+ * @brief Permite atualizar os minutos e horas que faltam para terminar a manutençao do veiculo
+ * @param m - minutos com os quais vai ser atualizado
+ * @param h - horas com as quais vai ser atualizado
+ */
+    void updateTime(int h ,int m);
+/**
+ * @brief Permite fazer reset (tornar 0) numero de entregas desde a ultima manutençao
+ */
+   void resetNDel();
+/**
 * @brief Permite mostrar no ecrã o veiculo de forma formatada
 * @param os - ostream para onde é enviada a mensagem formatada
 * @param v - veiculo que pretendemos mostrar no ecrã

@@ -217,6 +217,15 @@ int Tec::getMinutesToAvailable() const {
 int Tec::getNumberOfMaintenances() const {
     return number_of_maintenances;
 }
+void Tec::updateTime(int h ,int m){
+    setHoursToAvailable(h);
+    setMinutesToAvailable(m);
+}
+
+
+void Tec::addMaintenance(){
+    number_of_maintenances++;
+}
 
 bool Tec::operator<(const Tec & tec1) const{
     if(this->hours_to_available < tec1.getHoursToAvailable()){

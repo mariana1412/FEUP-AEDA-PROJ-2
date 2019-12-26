@@ -367,11 +367,16 @@ public:
   * @return Retorna o numero de manutençoes efetuadas pelo tecnico
   */
     int getNumberOfMaintenances() const;
-    /**
-*    @brief Permite saber se um tempo é depois do outro
-* @param date - um outro tempo para comparar ao tempo em questão
-*   @return Retorna verdadeiro se  for depois, caso contrário retorna falso
-*/
+/**
+ * @brief Permite atualizar os minutos e horas que faltam para terminar a manutençao do veiculo
+ * @param m - minutos com os quais vai ser atualizado
+ * @param h - horas com as quais vai ser atualizado
+ */
+    void updateTime(int h ,int m);
+/**
+ * @brief Adiciona um ao numero de manutenções efetuadas pelo tecnico
+ */
+    void addMaintenance();
     /**
      * @brief Operador < para comparar Técnicos
      * @param tec1 - um outro tecnico para comparar com o tecnico em questao

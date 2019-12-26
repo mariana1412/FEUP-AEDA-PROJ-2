@@ -191,6 +191,11 @@ public:
     */
     void setRestaurants(vector<Restaurant> restaurants);
     /**
+     * @brief Permite definir os veiculos da base
+     * @param vehicles - vetor de veiculos da base
+     */
+     void setVehicles(vector<Vehicle> vehicles);
+    /**
     * @brief Permite adicionar um cliente a base
     * @param client - cliente que pretendemos adicionar à base
     */
@@ -309,17 +314,22 @@ public:
      */
     void clearTecs();
 /**
- *
- * @param del
+ *@brief Se um veiculo atingir 5 entregas após a ultima manutenção, é enviado para a manutenençao sendo feitas as atualizaçoes necessarias
+ * @param Entregador a que pertence o veiculo
  */
     void sendToMaintenance(Deliverer &del);
-    void auxupdateTecs();
-
+/**
+ * @brief Funçao que decrementa o n de horas e minutos ate estar disponivel o tecnico e verifica se ja terminou a manutenção
+ * @param m - numero de minutos que passaram
+ * @param h - numero de horas que passaram
+ */
     void updateTecs(int m , int h);
-    void updateVehicles();
+    /**
+     * @brief Funçao que decrementa o n de horas e minutos ate terminar a manutençao do veiculo e verifica se ja terminou a manutenção
+     * @param m - numero de minutos que passaram
+     * @param h - numero de horas que passaram
+     */
+    void updateVehicles(int m ,int h);
 };
-
-
-
 
 #endif //UGH_EATS_BASE_H

@@ -236,16 +236,52 @@ pair<int,int> subtractTimes(Time t1, Time t2){//assumimos que no máximo a encom
     cout<<"Something went wrong, it's not possible to receive the order more than one month after you order"<<endl;
     return make_pair (NULL, NULL);
 }
-pair<int,int>  updateMntTime (int m1,int h1,int m2, int h2 ){
+pair<int,int>  updateMntTime_d (int m1,int h1,int m2, int h2, bool &ended ){//decrementa o tempo
     int minutes=0;
     int hours =h1;
 
+    if(m1 ==0 && h1 == 0){
+        return make_pair(m1,h1);
+    }
     minutes = m1-m2;
-    if(minutes >0){ // se esta atualizaçao fez passar mais uma hora apenas com os minutos
+    if(minutes <0){ // se esta atualizaçao fez passar mais uma hora apenas com os minutos
         minutes = 60-abs(minutes);
         hours--;
     }
+    else if( minutes ==60){
+        minutes =0;
+    }
     hours = hours - h2;
+    if(minutes<0){
+        minutes =0;
+        if(hours<0){
+            hours=0;
+            ended = true;
+        }
+    }
+    return make_pair(hours, minutes);
+}
+pair<int,int>  updateMntTime_a (int m1, int h1,int m2, int h2){//acrescenta ao tempo
+    int minutes=0;
+    int hours =h1;
+
+
+    minutes = m1+m2;
+    if(minutes >60){ // se esta atualizaçao fez passar mais uma hora apenas com os minutos
+        minutes = minutes-60;
+        hours++;
+    }
+    else if(minutes ==60){
+        minutes =0;
+    }
+    hours = hours + h2;
+    if(minutes<0){
+        minutes =0;
+
+    }
+    if(hours<0){
+        hours=0;
+    }
 
     return make_pair(hours, minutes);
 }

@@ -129,14 +129,24 @@ int numberOfDays(int month, int year);
  */
 pair<int,int> subtractTimes(Time t1, Time t2);
 /**
- * @brief Permite fazer a atualizaçao do tempo que passou,um certo numero de horas e um certo numero de minutos
+ * @brief Permite fazer a atualizaçao do tempo que passou, ou seja,decrementa ao tempo um certo numero de horas e um certo numero de minutos
+ * @param m1 - minutos aos quais vai ser feita a atualização
+ * @param h1 - horas às quais vai ser feita a atualizaçao
+ *  * @param m2 - minutos que vao ser usados para atualizar
+ * @param h2 - horas que vao ser usados para atualizar
+ * @param ended - booleano que fica verdadeiro caso esta decrementação tenha levado ao termino da manutenção, falso caso contrario
+ * @return Retorna um par composto pelo numero de horas e numero de minutos resultantes desta atualizaçao
+ */
+pair<int,int>  updateMntTime_d (int m1, int h1,int m2, int h2, bool &ended );
+/**
+ * @brief Permite fazer a atualizaçao do tempo para haver manutençao, ou seja ,acrescenta ao tempo um certo numero de horas e um certo numero de minutos
  * @param m1 - minutos aos quais vai ser feita a atualização
  * @param h1 - horas às quais vai ser feita a atualizaçao
  *  * @param m2 - minutos que vao ser usados para atualizar
  * @param h2 - horas que vao ser usados para atualizar
  * @return Retorna um par composto pelo numero de horas e numero de minutos resultantes desta atualizaçao
  */
-pair<int,int>  updateMntTime (int m1, int h1,int m2, int h2 );
+pair<int,int>  updateMntTime_a (int m1, int h1,int m2, int h2 );
 
 
 #endif //UGH_EATS_TIME_H
