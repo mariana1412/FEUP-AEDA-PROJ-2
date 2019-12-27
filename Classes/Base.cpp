@@ -156,9 +156,9 @@ void Base::addDeliveryToDeliverer(Delivery delivery, Time order_time) {
             }
         }
     }
-    low_deliverer->addDelivery(delivery);//adiciona uma entrega ao entregador
-    low_deliverer->getVehicle().addDelivery();//adicionar uma entrega ao veiculo
-    if(low_deliverer->getVehicle().getNDel() ==5){
+    low_deliverer->addDelivery(delivery); //adiciona uma entrega ao entregador
+    low_deliverer->addDeliveryToVehicle(); //adicionar uma entrega ao veiculo
+    if(low_deliverer->getVehicle().getNDel() == 5){
         sendToMaintenance(*low_deliverer);
     }
     pair<int,int> aux = subtractTimes(order_time, delivery.getDeliver_time());

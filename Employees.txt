@@ -1,21 +1,12 @@
 Porto
 Deliverer
-Antonio Freitas
-124456789
+Luis Pereira
+984736212
 false
-11/11/1970
-43
-Range Rover, SUV, 19/12/2015, 31-XQ-99, 70, 3 0 0
-1, 3, 9, 10, 20, 22, 31, 33, 37
-::::::::
-Porto
-Admin
-Joao Barros
-123445566
-true
-12/06/1998
-3000
-Secretario
+20/10/2016
+39
+Yamaha, Motorcycle, 20/10/2016, 96-AB-43, 100, 4 0 0
+13, 14, 15, 18, 19, 21, 32, 34, 39
 ::::::::
 Porto
 Deliverer
@@ -28,33 +19,23 @@ Mercedes, Car, 18/10/2019, 01-US-10, 0, 1 0 0
 43, 44
 ::::::::
 Porto
-Deliverer
-Luis Pereira
-984736212
-false
-20/10/2016
-39
-Yamaha, Motorcycle, 20/10/2016, 96-AB-43, 100, 4 0 0
-13, 14, 15, 18, 19, 21, 32, 34, 39
-::::::::
-Lisboa
 Admin
-Fernando Rocha
-185746387
-false
-30/07/1999
-2000
-Gestor
+Joao Barros
+123445566
+true
+12/06/1998
+3000
+Secretario
 ::::::::
-Lisboa
+Porto
 Deliverer
-Hugo Pinto
-874829100
+Antonio Freitas
+124456789
 false
-20/07/2018
-26
-Honda, Motorcycle, 20/07/2019, 72-PO-18, 54, 5 2 33
-16, 17, 28, 29, 30, 42
+11/11/1970
+43
+Range Rover, SUV, 19/12/2015, 31-XQ-99, 70, 3 0 0
+1, 3, 9, 10, 20, 22, 31, 33, 37
 ::::::::
 Lisboa
 Admin
@@ -67,6 +48,16 @@ Rp
 ::::::::
 Lisboa
 Deliverer
+Hugo Pinto
+874829100
+false
+20/07/2018
+26
+Honda, Motorcycle, 20/07/2019, 72-PO-18, 54, 5 2 33
+16, 17, 28, 29, 30, 42
+::::::::
+Lisboa
+Deliverer
 Antonio Truta
 123456788
 false
@@ -74,6 +65,45 @@ false
 20
 Range Rover Evoque, Suv, 19/12/2016, 12-XA-59, 50, 0 0 0
 2, 4, 7, 8, 12, 38
+::::::::
+Lisboa
+Admin
+Fernando Rocha
+185746387
+false
+30/07/1999
+2000
+Gestor
+::::::::
+Faro
+Deliverer
+Eduardo Costa
+111000222
+false
+18/10/2018
+15
+Seat, Van, 18/10/2018, 90-PL-12, 23, 4 0 0
+23, 24, 41
+::::::::
+Faro
+Deliverer
+Diogo Pereira
+987654321
+false
+12/8/1999
+11
+Honda, Car, 20/11/2018, 92-TA-01, 32, 5 3 55
+5, 6, 11
+::::::::
+Faro
+Deliverer
+Joaquim Alberto
+145214521
+false
+18/10/2017
+13
+Ford, Car, 18/10/2017, 67-PT-21, 40, 1 0 0
+26, 35, 40
 ::::::::
 Faro
 Admin
@@ -111,33 +141,3 @@ false
 15
 Suzuki, Motorcycle, 17/03/2009, 54-PB-19, 25, 2 0 0
 25, 27, 36
-::::::::
-Faro
-Deliverer
-Joaquim Alberto
-145214521
-false
-18/10/2017
-13
-Ford, Car, 18/10/2017, 67-PT-21, 40, 1 0 0
-26, 35, 40
-::::::::
-Faro
-Deliverer
-Diogo Pereira
-987654321
-false
-12/8/1999
-11
-Honda, Car, 20/11/2018, 92-TA-01, 32, 5 3 55
-5, 6, 11
-::::::::
-Faro
-Deliverer
-Eduardo Costa
-111000222
-false
-18/10/2018
-15
-Seat, Van, 18/10/2018, 90-PL-12, 23, 4 0 0
-23, 24, 41

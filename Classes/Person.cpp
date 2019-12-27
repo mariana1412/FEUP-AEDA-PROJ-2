@@ -236,6 +236,11 @@ bool Tec::operator<(const Tec & tec1) const{
     }
 }
 
+void Deliverer::addDeliveryToVehicle(){
+    vehicle.addDelivery();
+}
+
+
 bool Tec::operator==(const Tec &tec1) const {//verificasse tudo para nao haver casos errados
     if (id == tec1.getId()){
         if(hours_to_available == tec1.getHoursToAvailable()){

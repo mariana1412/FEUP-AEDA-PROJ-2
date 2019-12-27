@@ -280,6 +280,11 @@ public:
      */
     void addDelivery(Delivery delivery);
 
+    /**
+     * @brief Permite adicionar uma encomenda a um veiculo
+     */
+    void addDeliveryToVehicle();
+
 };
 /**
  * Tecnico
