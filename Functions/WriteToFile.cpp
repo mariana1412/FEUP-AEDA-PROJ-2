@@ -488,7 +488,7 @@ void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
             tecfile << it->getHoursToAvailable() <<" "<<it->getMinutesToAvailable()<< endl;
             tecfile << it->getNumberOfMaintenances() << endl;
         }
-            if (count != (tecs_faro.size()))
+            if (count != (tecs_faro.size())-1)
                 tecfile << endl << "::::::::" << endl;
         }
 

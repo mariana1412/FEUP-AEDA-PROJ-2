@@ -233,3 +233,30 @@ Time verification_time(string &aux) {
 
     return date;
 }
+
+
+void verification_plate(string &aux){
+    bool isValid = false;
+    string plate;
+
+    while (!isValid || aux == "") {
+        if (aux != "") {
+            remove_all_whitespaces(aux);
+            int del1 = aux.find_first_of('-'), del2 = aux.find_last_of('-');
+            if(aux.size() != 8 || count(aux.begin(), aux.end(), '-') != 2 || del1 != 2 && del2 != 5 || !(isNumber(aux.substr(0, 2)) && isLetter(aux[3]) && isLetter(aux[4]) && isNumber(aux.substr(6, 4)))) {
+                isValid = false;
+            }
+            else {
+                isValid = true;
+            }
+        }
+        if (!isValid) {
+            cout << "Invalid license plate (format: nn-ll-nn). Please insert a valid one: ";
+            getline(cin, aux);
+            if (cin.fail() && cin.eof()) {
+                cin.clear();
+                continue;
+            }
+        }
+    }
+}

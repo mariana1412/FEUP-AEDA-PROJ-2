@@ -256,7 +256,7 @@ ostream &operator<<(ostream &os, const Tec &tecnico){
        <<"ID: "<<tecnico.getId() <<endl
        << "Number of hours to be available: "<<tecnico.getHoursToAvailable()<<endl
        << "Number of minutes to be available: "<<tecnico.getMinutesToAvailable()<<endl
-       << "Number of maintenances: "<< tecnico.getNumberOfMaintenances()<<endl;
+       << "Number of maintenances: "<< tecnico.getNumberOfMaintenances();
     return os;
 }
 

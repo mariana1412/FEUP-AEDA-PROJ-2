@@ -70,6 +70,12 @@ void verification_float(string &aux);
  * @return data válida
  */
 Time verification_time(string &aux);
+/**
+ * @brief Função que verifica se uma string é uma matricula válida, no formato nn-ll-nn
+ * @param aux - string
+ */
+
+void verification_plate(string &aux);
 
 #endif //PROJETO_VERIFICATIONS_INPUTS_H
 

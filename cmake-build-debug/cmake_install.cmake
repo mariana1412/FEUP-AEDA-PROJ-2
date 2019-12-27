@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/maria/OneDrive/Ambiente de Trabalho/FEUP/2ano 1sem/AEDA/UghEats2
+# Install script for directory: C:/Users/ritap/OneDrive/Ambiente de Trabalho/Faculdade/2 Ano/1 Semestre/Algoritmos e Estruturas de Dados/Trabalhos/Trabalho 2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/maria/OneDrive/Ambiente de Trabalho/FEUP/2ano 1sem/AEDA/UghEats2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/ritap/OneDrive/Ambiente de Trabalho/Faculdade/2 Ano/1 Semestre/Algoritmos e Estruturas de Dados/Trabalhos/Trabalho 2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

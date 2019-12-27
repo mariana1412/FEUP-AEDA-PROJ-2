@@ -367,7 +367,7 @@ vector<int> Base::printEmployees(bool former, bool newE, bool admin, bool delive
 void Base::printTecs(vector<Tec> aux){
     vector<Tec>::iterator it=aux.begin();
     for(it; it!= aux.end();it++){
-        cout <<*it<<endl;
+        cout <<*it<<endl<<endl;
     }
 }
 void Base::clearTecs() {
