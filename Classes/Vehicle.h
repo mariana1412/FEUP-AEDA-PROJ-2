@@ -20,25 +20,24 @@ private:
     int total_del; /**<número total de entregas efetuadas*/
     int total_km; /**<número total de kms percorridos*/
     int n_del; /**<numero de entregas desde a ultima manutençao*/
-    int n_hour, n_min; /**<numero de horas e minutos até terminar a manutençao */
+    int n_min; /**<numero de minutos até terminar a manutençao */
 public:
     /**
  * @brief Construtor por default da classe Veículo
  */
     Vehicle();
     /**
- * @brief Construtor  da classe Veículo
+     * @brief Construtor  da classe Veículo
      * @param brand - marca do veículo
      * @param type - tipo do veículo
      * @param date - data de aquisição do veículo
      * @param n_del - numero de entregas desde a ultima manutençao
-     * @param n_hour - numero de horas até terminar a manutençao
      * @param n_min - numero de minutos até terminar a manutençao
  */
-    Vehicle(string brand, string type, Time date, string lic_plate, int total_del, int total_km, int n_del,int n_hour, int n_min);
+    Vehicle(string brand, string type, Time date, string lic_plate, int total_del, int total_km, int n_del, int n_min);
     /**
-* @brief Permite obter a marca do veículo
-     * @return Retorna a marca do veículo
+    * @brief Permite obter a marca do veículo
+    * @return Retorna a marca do veículo
 */
     string getBrand() const;
     /**
@@ -74,15 +73,11 @@ public:
  * @return Retorna o numero de entregas desde a ultima manutençao
 */
     int getNDel() const;
+
     /**
-* @brief Permite obter o numero de horas até terminar a manutençao
-* @return Retorna o numero de horas até terminar a manutençao
-*/
-    int getNHour()const;
-    /**
-* @brief Permite obter o numero de minutos até terminar a manutençao
-* @return Retorna o numero de minutos até terminar a manutençao
-*/
+    * @brief Permite obter o numero de minutos até terminar a manutençao
+    * @return Retorna o numero de minutos até terminar a manutençao
+    */
     int getNMin() const;
     /**
 * @brief Permite definir a marca do veículo
@@ -124,31 +119,23 @@ public:
 * @param ndel - numero de entregas desde a ultima manutençao
 */
     void setNDel(int ndel);
+
     /**
-* @brief Permite definir o numero de horas até terminar a manutençao
-* @param hour - numero de horas até terminar a manutençao
-*/
-    void setNHour(int hour);
-    /**
-* @brief Permite definir o numero de minutos até terminar a manutençao
-* @param min - numero de minutos até terminar a manutençao
-*/
+    * @brief Permite definir o numero de minutos até terminar a manutençao
+    * @param min - numero de minutos até terminar a manutençao
+    */
     void setNMin(int min);
 /**
  * @brief Adiciona 1 ao numero de entrgas do veiculo desde a ultima manutençao
  */
 
     void addDelivery();
-/**
- * @brief Permite atualizar os minutos e horas que faltam para terminar a manutençao do veiculo
- * @param m - minutos com os quais vai ser atualizado
- * @param h - horas com as quais vai ser atualizado
- */
-    void updateTime(int h ,int m);
+
 /**
  * @brief Permite fazer reset (tornar 0) numero de entregas desde a ultima manutençao
  */
    void resetNDel();
+
 /**
 * @brief Permite mostrar no ecrã o veiculo de forma formatada
 * @param os - ostream para onde é enviada a mensagem formatada
@@ -171,7 +158,7 @@ public:
     /**
      * @brief Permite mostrar no ecrã de forma "formatada" as características do veículo
      */
-    void PrintVehicle();
+    void PrintVehicle() const;
 };
 
 

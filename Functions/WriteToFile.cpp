@@ -324,7 +324,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile <<setw(2) << setfill('0') << nd->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", " << nd->getVehicle().getLicPlate() << ", " << nd->getVehicle().getTotalKm() << ", " << nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<<  endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", " << nd->getVehicle().getLicPlate() << ", " << nd->getVehicle().getTotalKm() << ", " << nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNMin() << endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
@@ -373,7 +373,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile <<setw(2) << setfill('0') << nd->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " << setw(2) << setfill('0') <<nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<< nd->getVehicle().getLicPlate() << ", " << nd->getVehicle().getTotalKm() << ", " <<nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<< endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " << setw(2) << setfill('0') <<nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<< nd->getVehicle().getLicPlate() << ", " << nd->getVehicle().getTotalKm() << ", " <<nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNMin()<< endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
@@ -421,7 +421,7 @@ void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
                 else employeefile << "false" << endl;
                 employeefile << nd->getBirthdate().getDay() << "/" << nd->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << nd->getBirthdate().getYear() << endl;
                 employeefile << nd->getIncome() << endl;
-                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<< nd->getVehicle().getLicPlate() << ", " << nd->getVehicle().getTotalKm() << ", " <<nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNHour()<<" "<<nd->getVehicle().getNMin()<< endl;
+                employeefile << nd->getVehicle().getBrand() << ", " << nd->getVehicle().getType() << ", " <<setw(2) << setfill('0') << nd->getVehicle().getDate().getDay() << "/" <<setw(2) << setfill('0') << nd->getVehicle().getDate().getMonth() << "/" << setw(4) << setfill('0') << nd->getVehicle().getDate().getYear() <<", "<< nd->getVehicle().getLicPlate() << ", " << nd->getVehicle().getTotalKm() << ", " <<nd->getVehicle().getNDel()<<" "<<nd->getVehicle().getNMin() << endl;
                 if (nd->getBackground().size() == 0)
                     employeefile << "0";
                 else {
@@ -458,8 +458,8 @@ void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
                 tecfile << endl << "::::::::" << endl;
             tecfile << "Porto" << endl;
             tecfile << it->getId() << endl;
-            tecfile << it->getHoursToAvailable() <<" "<<it->getMinutesToAvailable()<< endl;
-            tecfile << it->getNumberOfMaintenances()<<endl;
+            tecfile << it->getTimeToAvailable() << endl;
+            tecfile << it->getNumberOfMaintenances();
         }
 
         if (tecs_porto.size() != 0) {
@@ -473,8 +473,8 @@ void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
                 tecfile << endl << "::::::::" << endl;
             tecfile << "Lisboa" << endl;
             tecfile << it->getId() << endl;
-            tecfile << it->getHoursToAvailable() <<" "<<it->getMinutesToAvailable()<< endl;
-            tecfile << it->getNumberOfMaintenances()<<endl;
+            tecfile << it->getTimeToAvailable() << endl;
+            tecfile << it->getNumberOfMaintenances();
         }
         if (tecs_lisboa.size() != 0) {
             if (tecs_faro.size() != 0)
@@ -485,13 +485,12 @@ void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
             count++;
             tecfile << "Faro" << endl;
             tecfile << it->getId() << endl;
-            tecfile << it->getHoursToAvailable() <<" "<<it->getMinutesToAvailable()<< endl;
-            tecfile << it->getNumberOfMaintenances() << endl;
-        }
-            if (count != (tecs_faro.size())-1)
+            tecfile << it->getTimeToAvailable() << endl;
+            tecfile << it->getNumberOfMaintenances();
+            if (count != tecs_faro.size())
                 tecfile << endl << "::::::::" << endl;
         }
-
+    }
     else
         cerr << "File could not be opened";
     tecfile.close();

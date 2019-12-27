@@ -294,8 +294,7 @@ private:
     string base; /**<base a que o tecnico pertence*/
     static int id_g;/**id global para saber o proximo tecnico<*/
     int id; /**< numero identificador do tecnico*/
-    int hours_to_available;/**< numero de horas ate o tecnico estar disponivel*/
-    int minutes_to_available; /**<numero de minutos ate o tecnico estar disponivel*/
+    int time_to_available;/**< numero de minutos ate o tecnico estar disponivel*/
     int number_of_maintenances;/**< numero de manutençoes efetuadas pelo tecnico*/
 public:
 
@@ -306,22 +305,20 @@ public:
     /**
 * @brief Construtor da classe Tec
 * @param base - base a que o tecnico pertence
-* @param h - numero de horas ate o tecnico estar disponive
-     * @param m - numero de minutos ate o tecnico estar disponivel
+* @param m - numero de minutos ate o tecnico estar disponivel
 * @param n - numero de manutençoes efetuadas pelo tecnico
 */
 
-    Tec(string base,int h,int m, int n);
+    Tec(string base,int m, int n);
     /**
 * @brief Construtor da classe Tec
  * @param base - base a que o tecnico pertence
  * @param id- numero identificador do tecnico
- * @param h - numero de horas ate o tecnico estar disponivel
  * @param m - numero de minutos ate o tecnico estar disponivel
  * @param n - numero de manutençoes efetuadas pelo tecnico
 */
 
-    Tec(string base, int id,int h,int m, int n);
+    Tec(string base, int id,int m, int n);
     /**
 * @brief Permite definir a base da pessoa
 * @param base - base da pessoa
@@ -333,15 +330,10 @@ public:
     */
     void setId(int i);
     /**
-     * @brief Permite definir o numero de horas ate o tecnico estar disponivel
-     * @param h - numero de horas ate o tecnico estar dispnonivel
+     * @brief Permite definir o numero de minutos ate o tecnico estar disponivel
+     * @param m - numero de minutos ate o tecnico estar dispnonivel
      */
-    void setHoursToAvailable(int h);
-    /**
- * @brief Permite definir o numero de horas ate o tecnico estar disponivel
- * @param m - numero de minutos ate o tecnico estar dispnonivel
- */
-    void setMinutesToAvailable(int m);
+    void setTimeToAvailable(int m);
     /**
   * @brief Permite definir o numero de manutençoes efetuadas pelo tecnico
   * @param n - numero de manutençoes efetuadas pelo tecnico
@@ -358,26 +350,16 @@ public:
    */
     int getId() const;
     /**
-     * @brief Permite obter o numero de horas ate o tecnico estar disponivel
-     * @return Retorna o numero de horas ate o tecnico estar disponivel
-     */
-    int getHoursToAvailable () const;
-    /**
-  * @brief Permite obter o numero de horas ate o tecnico estar disponivel
+  * @brief Permite obter o numero de minutos ate o tecnico estar disponivel
   * @return Retorna o numero de minutos ate o tecnico estar disponivel
   */
-    int getMinutesToAvailable () const;
+    int getTimeToAvailable() const;
     /**
   * @brief Permite obter  o numero de manutençoes efetuadas pelo tecnico
   * @return Retorna o numero de manutençoes efetuadas pelo tecnico
   */
     int getNumberOfMaintenances() const;
-/**
- * @brief Permite atualizar os minutos e horas que faltam para terminar a manutençao do veiculo
- * @param m - minutos com os quais vai ser atualizado
- * @param h - horas com as quais vai ser atualizado
- */
-    void updateTime(int h ,int m);
+
 /**
  * @brief Adiciona um ao numero de manutenções efetuadas pelo tecnico
  */

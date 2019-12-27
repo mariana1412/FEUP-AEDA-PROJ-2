@@ -1,8 +1,8 @@
 #include "Base.h"
-Base::Base(): vehicles(Vehicle("","",Time(0,0,0,0,0),"",0,0,0,0,0)){
+Base::Base(): vehicles(Vehicle("","",Time(0,0,0,0,0),"",0,0,0,0)){
 }
 
-Base::Base(Location location, string manager, int manager_nif, vector<Client>blacklist): vehicles(Vehicle("","",Time(0,0,0,0,0),"",0,0,0,0,0)){
+Base::Base(Location location, string manager, int manager_nif, vector<Client>blacklist): vehicles(Vehicle("","",Time(0,0,0,0,0),"",0,0,0,0)){
         this->location = location;
         this->manager=manager;
         this->manager_nif =manager_nif;
@@ -38,10 +38,8 @@ BST<Vehicle> Base::getVehicles() const {
 }
 vector<Employee *> Base::getEmployeesHash() const {
     vector<Employee *> ptrs;
-    HashTableEmployees::const_iterator it1 = this->employeesHash.begin();
-    HashTableEmployees::const_iterator it2 = this->employeesHash.end();
-    for(; it1 != it2; it1++) {
-        ptrs.push_back(*it1);
+    for(HashTableEmployees::const_iterator it = employeesHash.begin(); it != employeesHash.end(); it++) {
+        ptrs.push_back(*it);
     }
     return ptrs;
 }
@@ -150,20 +148,25 @@ void Base::addDeliveryToDeliverer(Delivery delivery, Time order_time) {
     for (vector<Employee*>::const_iterator it =  employees.begin(); it != employees.end(); it++){
         Deliverer* nd = dynamic_cast<Deliverer*>(*it);
         if (nd != nullptr){
-            if ((!low || low_deliverer->getBackground().size() > nd->getBackground().size()) && (nd->getVehicle().getNHour()==0) &&(nd->getVehicle().getNMin()==0)) {
+            if ((!low || (low_deliverer->getBackground().size() > nd->getBackground().size())) &&(nd->getVehicle().getNMin()==0)) {
                 low_deliverer = nd;
                 low = true;
             }
         }
     }
     low_deliverer->addDelivery(delivery); //adiciona uma entrega ao entregador
+
     low_deliverer->addDeliveryToVehicle(); //adicionar uma entrega ao veiculo
+    Vehicle v= low_deliverer->getVehicle();
+    vehicles.remove(v);
+    vehicles.insert(v);
+    int aux = subtractTimes(delivery.getDeliver_time(),order_time);
+    updateTecs(aux);
+    updateVehicles(aux);
     if(low_deliverer->getVehicle().getNDel() == 5){
-        sendToMaintenance(*low_deliverer);
+        sendToMaintenance(low_deliverer);
     }
-    pair<int,int> aux = subtractTimes(order_time, delivery.getDeliver_time());
-    updateTecs(aux.first,aux.second);
-    updateVehicles(aux.first,aux.second);
+
 }
 void Base::addClientToBlacklist(Client client) {
     blacklist.push_back(client);
@@ -208,9 +211,9 @@ void Base::removeEmployee(int index) {
 
 
 void Base::removeTec( Tec tecnico ){
-    vector<Tec>::iterator it= getTecs().begin();
+    vector<Tec> tecs = getTecs();
     vector<Tec> aux;
-    for(it; it!=getTecs().end();it++){
+    for(vector<Tec>::iterator it = tecs.begin(); it!= tecs.end(); it++){
         if(!((*it) == tecnico)){
             aux.push_back(*it);
         }
@@ -443,68 +446,89 @@ void Base::updateBases() {
 
 
 
-void Base::sendToMaintenance(Deliverer &del){
-/*
- * - escolher um tecnico d topo da fila--- n de horas=4, n de minutos =0
- * - atualizar o veiculo n de horas =4, n de minutos=0
- */
+void Base::sendToMaintenance(Deliverer* del){
     //escolha do tecnico e sua atualização
     Tec t = tecnicos.top();
-    removeTec(t);
-    pair<int,int> aux =updateMntTime_a(t.getMinutesToAvailable(),t.getHoursToAvailable(),0,4);
-    t.updateTime(aux.first,aux.second);
+    if(t.getTimeToAvailable() == 0){
+        removeTec(t);
+    }
+    else{
+        //CASO EM QUE NÃO HÁ TÉCNICOS DISPONIVEIS (COLOCAR O VEICULO A 5 0, E VERIFICAR ATÉ HAVEREM TECNICOS)
+    }
+    t.setTimeToAvailable(240); //4 horas
     addTec(t);
     //atualizaçao do veiculo
-    Vehicle v= del.getVehicle();
+    Vehicle v= del->getVehicle();
     vehicles.remove(v);
-    pair<int,int> a =updateMntTime_a(v.getNMin(),v.getNHour(),0,4);
-    v.updateTime(a.first,a.second);
+    v.setNMin(240);
     vehicles.insert(v);
-
 }
 
-void Base::updateVehicles(int m ,int h){//funçao que decrementa o n de horas e minutos ate acabar a manutençao
-/*funcao verifica se com esta passagem de tempo algum veiculo acabou manutençao, caso sim
-* - n de entregas do veiculo = 0
-* - n de horas e minutos do veiculo = 0
- * */
+void Base::updateVehicles(int m){
     BSTItrIn<Vehicle> it(vehicles);
-    vector<Vehicle> final;
-    bool ended=false;
-
+    vector<Vehicle> aux;
+    Vehicle v;
     while(!it.isAtEnd()){
-        Vehicle v= it.retrieve();
-        pair <int, int> a = updateMntTime_d(v.getNMin(),v.getNHour(),m, h,ended);
-        v.updateTime(a.first,a.second);
-        if(ended){
-            v.resetNDel();
+        if (it.retrieve().getNDel() == 5) {
+            v = it.retrieve();
+            if (v.getNMin()-m <= 0){
+                v.setNMin(0);
+                v.setNDel(0);
+            }
+            else {
+                v.setNMin(v.getNMin() - m);
+            }
+            aux.push_back(v);
         }
-        final.push_back(v);
         it.advance();
     }
-    setVehicles(final);
+
+    for (Vehicle x: aux){
+        vehicles.remove(x);
+        vehicles.insert(x);
+    }
+
 }
 
-void Base::updateTecs(int m, int h) {//funçao que decrementa o n de horas e minutos ate estar disponivel o tecnico
-/*funcao verifica se com esta passagem de tempo algum tecnico acabou a manutençao, caso sim:
-* - n horas e minutos do tecnico = 0
-* - n de manutencoes do tecnico ++
- * */
-
-    vector<Tec> aux= getTecs();
-    vector<Tec> final;
-    vector<Tec> ::iterator it=aux.begin();
-    bool ended= false;
-    for(it; it!=aux.end(); it++){
-        Tec t= *it;
-        pair <int, int> a = updateMntTime_d((*it).getMinutesToAvailable(),(*it).getHoursToAvailable(),m, h,ended);
-        t.updateTime(a.first,a.second);
-        if(ended){
-            t.addMaintenance();
+void Base::updateTecs(int m) {
+    TecPriorityQueue aux = tecnicos;
+    vector<Tec> result;
+    Tec tec;
+    while (!aux.empty()){
+        if (aux.top().getTimeToAvailable() > 0){
+            tec = aux.top();
+            if (tec.getTimeToAvailable() - m <= 0){
+                tec.setTimeToAvailable(0);
+                tec.addMaintenance();
+            } else{
+                tec.setTimeToAvailable(tec.getTimeToAvailable() - m);
+            }
+            result.push_back(tec);
+            aux.pop();
+            continue;
         }
-        final.push_back(t);
+        result.push_back(aux.top());
+        aux.pop();
     }
-    setTecs(final);
+    for (Tec x: result){
+        aux.push(x);
+    }
+    tecnicos = aux;
+}
+
+void Base::hashUpdate() {
+    BSTItrIn<Vehicle> it(vehicles);
+    while(!it.isAtEnd()){
+        for (HashTableEmployees::const_iterator it1 = employeesHash.begin(); it1 != employeesHash.end(); it1++){
+            Employee* e = *it1;
+            Deliverer* nd = dynamic_cast<Deliverer*>(e);
+            if (nd != nullptr){
+                if (nd->getVehicle().getLicPlate() == it.retrieve().getLicPlate())
+                    nd->setVehicle(it.retrieve());
+            }
+        }
+        it.advance();
+    }
 }
 
 

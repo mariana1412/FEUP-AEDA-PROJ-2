@@ -718,3 +718,227 @@ int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
     menu_int_options(option, 1, 2);
     return option;
 }
+
+void print_vehicles(const Base &base, int option){
+    int counter = 1;
+    BST<Vehicle> vehicles = base.getVehicles();
+    if (option == 1){
+        BSTItrIn<Vehicle> it(vehicles);
+        while (!it.isAtEnd()){
+            cout << counter << ". ";
+            counter++;
+            it.retrieve().PrintVehicle();
+            it.advance();
+            cout << endl;
+        }
+    }
+    if (option == 2){
+        BSTItrPre<Vehicle> it(vehicles);
+        while (!it.isAtEnd()){
+            cout << counter << ". ";
+            counter++;
+            it.retrieve().PrintVehicle();
+            it.advance();
+            cout << endl;
+        }
+    }
+    if (option == 3){
+        BSTItrPost<Vehicle> it(vehicles);
+        while (!it.isAtEnd()){
+            cout << counter << ". ";
+            counter++;
+            it.retrieve().PrintVehicle();
+            it.advance();
+            cout << endl;
+        }
+    }
+    if (option == 4){
+        BSTItrLevel<Vehicle> it(vehicles);
+        while (!it.isAtEnd()){
+            cout << counter << ". ";
+            counter++;
+            it.retrieve().PrintVehicle();
+            it.advance();
+            cout << endl;
+        }
+    }
+    return;
+}
+
+
+
+int visualize_vehicles(const Base &Porto, const Base &Lisboa, const Base &Faro){
+
+    system("cls");
+    string b;
+    int number;
+
+    cout << endl << "---------------- VISUALIZE VEHICLES ---------------- "<< endl << endl;
+
+    cout << "Base: ";
+    getline(cin, b);
+    while(cin.fail() && cin.eof()){
+        cin.clear();
+        cout <<  "Invalid base. Please insert a valid input: ";
+        getline(cin, b);
+    }
+
+    verification_base(b);
+
+    if (b == "Porto"){
+
+        system("cls");
+        cout << endl << "---------------- VISUALIZE VEHICLES ---------------- "<< endl << endl;
+
+        if(Porto.getVehicles().isEmpty()) {
+            cout << endl << "We do not have informations to show! " << endl;
+            int option;
+            cout << endl << endl << "----------------------------------------------------- " << endl;
+            cout << endl << "1. Return to Main Menu. " << endl;
+            cout << "2. Return to Visualize Information. " << endl;
+            menu_int_options(option, 1, 2);
+            return option;
+        }
+
+        cout << "Do you wish to visualize the BST: " << endl;
+        cout << "1. In Order" << endl;
+        cout << "2. In Pre-Order" << endl;
+        cout << "3. In Pos-Order" << endl;
+        cout << "4. Per Level" << endl;
+        cout << "0. Return to Main Menu" << endl;
+        menu_int_options(number, 0, 4);
+
+        if(number == 0) return 1;
+
+        else if (number == 1) {
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN ORDER ---------------- "<< endl << endl;
+            print_vehicles(Porto, number);
+        }
+
+        else if (number == 2){
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN PRE-ORDER ---------------- "<< endl << endl;
+            print_vehicles(Porto, number);
+        }
+
+        else if (number == 3){
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN POS-ORDER ---------------- "<< endl << endl;
+            print_vehicles(Porto, number);
+        }
+
+        else if (number == 4) {
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES PER LEVEL ---------------- "<< endl << endl;
+            print_vehicles(Porto, number);
+        }
+
+    }
+    else if (b == "Lisboa"){
+        system("cls");
+        cout << endl << "---------------- VISUALIZE VEHICLES ---------------- "<< endl << endl;
+
+        if(Lisboa.getVehicles().isEmpty()) {
+            cout << endl << "We do not have informations to show! " << endl;
+            int option;
+            cout << endl << endl << "----------------------------------------------------- " << endl;
+            cout << endl << "1. Return to Main Menu. " << endl;
+            cout << "2. Return to Visualize Information. " << endl;
+            menu_int_options(option, 1, 2);
+            return option;
+        }
+
+        cout << "Do you wish to visualize the BST: " << endl;
+        cout << "1. In Order" << endl;
+        cout << "2. In Pre-Order" << endl;
+        cout << "3. In Pos-Order" << endl;
+        cout << "4. Per Level" << endl;
+        cout << "0. Return to Main Menu" << endl;
+        menu_int_options(number, 0, 4);
+
+        if(number == 0) return 1;
+
+        else if (number == 1) {
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN ORDER ---------------- "<< endl << endl;
+            print_vehicles(Lisboa, number);
+        }
+
+        else if (number == 2){
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN PRE-ORDER ---------------- "<< endl << endl;
+            print_vehicles(Lisboa, number);
+        }
+
+        else if (number == 3){
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN POS-ORDER ---------------- "<< endl << endl;
+            print_vehicles(Lisboa, number);
+        }
+
+        else if (number == 4) {
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES PER LEVEL ---------------- "<< endl << endl;
+            print_vehicles(Lisboa, number);
+        }
+    }
+    else if (b == "Faro"){
+        system("cls");
+        cout << endl << "---------------- VISUALIZE VEHICLES ---------------- "<< endl << endl;
+
+        if(Faro.getVehicles().isEmpty()) {
+            cout << endl << "We do not have informations to show! " << endl;
+            int option;
+            cout << endl << endl << "----------------------------------------------------- " << endl;
+            cout << endl << "1. Return to Main Menu. " << endl;
+            cout << "2. Return to Visualize Information. " << endl;
+            menu_int_options(option, 1, 2);
+            return option;
+        }
+
+        cout << "Do you wish to visualize the BST: " << endl;
+        cout << "1. In Order" << endl;
+        cout << "2. In Pre-Order" << endl;
+        cout << "3. In Pos-Order" << endl;
+        cout << "4. Per Level" << endl;
+        cout << "0. Return to Main Menu" << endl;
+        menu_int_options(number, 0, 4);
+
+        if(number == 0) return 1;
+
+        else if (number == 1) {
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN ORDER ---------------- "<< endl << endl;
+            print_vehicles(Faro, number);
+        }
+
+        else if (number == 2){
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN PRE-ORDER ---------------- "<< endl << endl;
+            print_vehicles(Faro, number);
+        }
+
+        else if (number == 3){
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES IN POS-ORDER ---------------- "<< endl << endl;
+            print_vehicles(Faro, number);
+        }
+
+        else if (number == 4) {
+            system("cls");
+            cout << endl << "---------------- VISUALIZE VEHICLES PER LEVEL ---------------- "<< endl << endl;
+            print_vehicles(Faro, number);
+        }
+    }
+
+
+
+
+    int option;
+    cout << endl << endl << "----------------------------------------------------- " << endl;
+    cout << endl << "1. Return to Main Menu. " << endl;
+    cout << "2. Return to Visualize Information. " << endl;
+    menu_int_options(option, 1, 2);
+    return option;
+}

@@ -2,14 +2,14 @@
 
 Vehicle::Vehicle(){}
 
-Vehicle::Vehicle(string brand, string type, Time date, string lic_plate, int total_del, int total_km, int n_del,int n_hour, int n_min){
+Vehicle::Vehicle(string brand, string type, Time date, string lic_plate, int total_del, int total_km, int n_del, int n_min){
     this->brand = brand;
     this->type = type;
     this->date = date;
     this->lic_plate = lic_plate;
     this->total_del = total_del;
+    this->n_del = n_del;
     this->total_km = total_km;
-    this->n_hour =n_hour;
     this->n_min = n_min;
 }
 
@@ -38,9 +38,7 @@ string Vehicle::getLicPlate() const {
 int Vehicle::getNDel() const {
     return n_del;
 }
-int Vehicle::getNHour() const {
-    return n_hour;
-}
+
 int Vehicle::getNMin() const {
     return n_min;
 }
@@ -70,9 +68,7 @@ void Vehicle::setTotalKm(int km) {
 void Vehicle::setNDel(int ndel) {
     this->n_del = ndel;
 }
-void Vehicle::setNHour(int hour) {
-    this->n_hour=hour;
-}
+
 void Vehicle::setNMin(int min) {
     this->n_min=min;
 }
@@ -80,10 +76,6 @@ void Vehicle::addDelivery(){
     n_del++;
 }
 
-void Vehicle:: updateTime(int h ,int m){
-    setNHour(h);
-    setNMin(m);
-}
 void Vehicle::resetNDel(){
     n_del =0;
 }
@@ -95,13 +87,23 @@ ostream& operator<<(ostream& os, const Vehicle& v){
     return os;
 }
 
-void Vehicle::PrintVehicle(){
+void Vehicle::PrintVehicle() const{
+    int hours = n_min / 60;
+    int min = n_min % 60;
+    cout << lic_plate << endl;
     cout << "Brand: " << brand << endl;
     cout << "Type: " << type << endl;
     cout << "Date: " << date << endl;
-    cout << "License Plate: " << lic_plate << endl;
     cout << "Total Deliveries: " << total_del << endl;
     cout << "Total Kilometres: " << total_km << endl;
+    if (n_del == 5){
+        cout << "Vehicle is in maintenance" << endl;
+        cout << "Time left until maintenance ends: " << hours << ":" << min << endl;
+    } else{
+        cout << "Vehicle is operational" << endl;
+        cout << "Number of deliveries until maintenance: " << 5-n_del << endl;
+    }
+
 }
 
 bool Vehicle::operator<(const Vehicle &v1) const {

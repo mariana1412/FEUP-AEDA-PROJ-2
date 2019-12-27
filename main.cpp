@@ -345,12 +345,21 @@ int main() {
                                 menu = 5;
                             }
                         }
+                        else if(choice == 7){
+                            aux = visualize_vehicles(Porto,Lisboa,Faro);
+                            if(aux==1){
+                                break;
+                            }
+                            else if(aux==2){
+                                menu = 5;
+                            }
+                        }
                         else if (choice == 0) {
                             menu = 0;
                             break;
                         }
                     }
-                } while (choice != 7);
+                } while (choice != 8);
             }
             else if (menu == 6) {
                 changeManager(Porto, Lisboa, Faro);
@@ -601,13 +610,22 @@ int main() {
                                 menu = 5;
                             }
                         }
+                        else if(choice == 7){
+                            aux = visualize_vehicles(Porto,Lisboa,Faro);
+                            if(aux==1){
+                                break;
+                            }
+                            else if(aux==2){
+                                menu = 5;
+                            }
+                        }
                         else if (choice == 0) {
                             menu = 0;
                             break;
                         }
 
                     }
-                } while (choice != 7);
+                } while (choice != 8);
             }
         } while (menu != 0);
     }
@@ -814,13 +832,22 @@ int main() {
                                 menu = 5;
                             }
                         }
+                        else if(choice == 7){
+                            aux = visualize_vehicles(Porto,Lisboa,Faro);
+                            if(aux==1){
+                                break;
+                            }
+                            else if(aux==2){
+                                menu = 5;
+                            }
+                        }
                         else if (choice == 0) {
                             menu = 0;
                             break;
                         }
 
                     }
-                } while (choice != 7);
+                } while (choice != 8);
             }
         } while (menu != 0);
     }
@@ -881,8 +908,11 @@ int main() {
     system("cls");
     cout << endl << "Thank you! We hope you've enjoyed your experience with Ugh Eats!" << endl;
     Porto.updateBases();
+    Porto.hashUpdate();
     Lisboa.updateBases();
+    Lisboa.hashUpdate();
     Faro.updateBases();
+    Faro.hashUpdate();
     write_Clients(Porto, Lisboa, Faro);
     write_Restaurants(Porto, Lisboa, Faro);
     write_Deliveries(Porto, Lisboa, Faro);

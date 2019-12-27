@@ -317,19 +317,22 @@ public:
  *@brief Se um veiculo atingir 5 entregas após a ultima manutenção, é enviado para a manutenençao sendo feitas as atualizaçoes necessarias
  * @param Entregador a que pertence o veiculo
  */
-    void sendToMaintenance(Deliverer &del);
+    void sendToMaintenance(Deliverer* del);
 /**
  * @brief Funçao que decrementa o n de horas e minutos ate estar disponivel o tecnico e verifica se ja terminou a manutenção
  * @param m - numero de minutos que passaram
  * @param h - numero de horas que passaram
  */
-    void updateTecs(int m , int h);
+    void updateTecs(int m);
     /**
-     * @brief Funçao que decrementa o n de horas e minutos ate terminar a manutençao do veiculo e verifica se ja terminou a manutenção
+     * @brief Funçao que decrementa o tempo ate terminar a manutençao do veiculo e verifica se ja terminou a manutenção
      * @param m - numero de minutos que passaram
-     * @param h - numero de horas que passaram
      */
-    void updateVehicles(int m ,int h);
+    void updateVehicles(int m);
+    /**
+     * @brief Funçao que atualiza a hash table dos employees para os valores corretos
+     */
+    void hashUpdate();
 };
 
 #endif //UGH_EATS_BASE_H

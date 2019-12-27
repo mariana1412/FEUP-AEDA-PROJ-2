@@ -171,18 +171,16 @@ void Deliverer::addDelivery(Delivery delivery) {
     background.push_back(delivery);
 }
 
-Tec::Tec(string base, int h,int m, int n) {
+Tec::Tec(string base, int m, int n) {
     this->base = base;
-    this-> hours_to_available =h;
-    this->minutes_to_available = m;
+    this->time_to_available = m;
     this -> number_of_maintenances =n;
     id_g++;
 }
-Tec::Tec(string base, int i,int h,int m, int n) {
+Tec::Tec(string base, int i,int m, int n) {
     this->id =i;
     this->base = base;
-    this-> hours_to_available =h;
-    this->minutes_to_available = m;
+    this->time_to_available = m;
     this -> number_of_maintenances =n;
     id_g ++;
 }
@@ -192,11 +190,8 @@ void Tec::setBase(string base){
 void Tec::setId(int i) {
     this-> id = i;
 }
-void Tec::setHoursToAvailable(int h) {
-    this-> hours_to_available= h;
-}
-void Tec::setMinutesToAvailable(int m) {
-    this->minutes_to_available = m;
+void Tec::setTimeToAvailable(int m) {
+    this->time_to_available = m;
 }
 void Tec::setNumberOfMaintenances(int n) {
     this->number_of_maintenances = n;
@@ -208,32 +203,20 @@ int Tec::getId() const {
     return id;
 }
 
-int Tec::getHoursToAvailable() const {
-    return hours_to_available;
+int Tec::getTimeToAvailable() const{
+    return time_to_available;
 }
-int Tec::getMinutesToAvailable() const {
-    return minutes_to_available;
-}
+
 int Tec::getNumberOfMaintenances() const {
     return number_of_maintenances;
 }
-void Tec::updateTime(int h ,int m){
-    setHoursToAvailable(h);
-    setMinutesToAvailable(m);
-}
-
 
 void Tec::addMaintenance(){
     number_of_maintenances++;
 }
 
 bool Tec::operator<(const Tec & tec1) const{
-    if(this->hours_to_available < tec1.getHoursToAvailable()){
-        return true;
-    }
-    else{
-        return(this->number_of_maintenances > tec1.getNumberOfMaintenances());
-    }
+    return(this->time_to_available > tec1.time_to_available);
 }
 
 void Deliverer::addDeliveryToVehicle(){
@@ -242,20 +225,15 @@ void Deliverer::addDeliveryToVehicle(){
 
 
 bool Tec::operator==(const Tec &tec1) const {//verificasse tudo para nao haver casos errados
-    if (id == tec1.getId()){
-        if(hours_to_available == tec1.getHoursToAvailable()){
-            if(number_of_maintenances == tec1.getNumberOfMaintenances()){
-                return true;
-            }
-        }
-    }
-    return false;
+    return this->id == tec1.id;
 }
 ostream &operator<<(ostream &os, const Tec &tecnico){
+    int hours = tecnico.getTimeToAvailable() / 60;
+    int min = tecnico.getTimeToAvailable() % 60;
     os <<"Base: "<<tecnico.getBase() <<endl
        <<"ID: "<<tecnico.getId() <<endl
-       << "Number of hours to be available: "<<tecnico.getHoursToAvailable()<<endl
-       << "Number of minutes to be available: "<<tecnico.getMinutesToAvailable()<<endl
+       << "Number of hours to be available: "<< hours <<endl
+       << "Number of minutes to be available: "<< min <<endl
        << "Number of maintenances: "<< tecnico.getNumberOfMaintenances();
     return os;
 }

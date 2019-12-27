@@ -635,7 +635,7 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     for (vector<Employee*>::const_iterator it =  employees.begin(); it != employees.end(); it++){
         Deliverer* nd = dynamic_cast<Deliverer*>(*it);
         if (nd != nullptr){
-            if ((!low || low_deliverer->getBackground().size() > nd->getBackground().size()) && (nd->getVehicle().getNHour()==0) &&(nd->getVehicle().getNMin()==0)) {
+            if ((!low || low_deliverer->getBackground().size() > nd->getBackground().size()) &&(nd->getVehicle().getNMin()==0)) {
                 low_deliverer = nd;
                 low = true;
             }

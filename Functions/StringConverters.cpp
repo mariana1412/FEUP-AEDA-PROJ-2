@@ -98,8 +98,7 @@ Vehicle stringToVehicle(string str){
     result.setLicPlate(data.at(3));
     result.setTotalKm(stoi(data.at(4)));
     result.setNDel(stoi(data.at(5)));
-    result.setNHour(stoi(data.at(6)));
-    result.setNMin(stoi(data.at(7)));
+    result.setNMin(stoi(data.at(6)));
     result.setTotalDel(0);
     return result;
 }
@@ -277,23 +276,4 @@ bool stringToAdminSearch(string str, const Base& b){
         }
     }
     return false;
-}
-
-pair<int,int> stringToAvail(string str){
-    string delimiter = " ";
-    vector<string> data;
-    vector<int> data_clean;
-    size_t pos = 0;
-    string token;
-    while ((pos = str.find(delimiter)) != std::string::npos) {
-        token = str.substr(0, pos);
-        data.push_back(token);
-        str.erase(0, pos + delimiter.length());
-    }
-    data.push_back(str);
-    for (auto & i : data) {
-        trim(i);
-        data_clean.push_back(stoi(i));
-    }
-    return make_pair(data_clean.at(0),data_clean.at(1));
 }

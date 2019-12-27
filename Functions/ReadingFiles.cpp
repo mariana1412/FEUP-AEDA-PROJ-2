@@ -395,10 +395,9 @@ void extract_Bases(Base& baseP, Base& baseL, Base& baseF,string &boss, int &boss
     basefile.close();
 }
 
-
 void extract_Tecs(Base& baseP, Base& baseL, Base& baseF){
     string line, i, n_maintenances;
-    int h_avail, m_avail;
+    int m_avail;
     ifstream tecfile;
     tecfile.open("../Tecs.txt");
     if (tecfile.is_open()) {
@@ -408,36 +407,30 @@ void extract_Tecs(Base& baseP, Base& baseL, Base& baseF){
             if (line == "Porto"){
                 getline(tecfile, i);
                 getline(tecfile, line);
-                pair<int, int> aux = stringToAvail(line);
-                h_avail =aux.first;
-                m_avail = aux.second;
+                m_avail = stoi(line);
                 getline(tecfile, n_maintenances);
                 getline(tecfile, line);//separator
-               baseP.addTec(Tec("Porto",stoi(i),h_avail,m_avail,stoi(n_maintenances)));
+                baseP.addTec(Tec("Porto",stoi(i),m_avail,stoi(n_maintenances)));
                 continue;
             }
 
             if (line == "Lisboa"){
                 getline(tecfile, i);
                 getline(tecfile, line);
-                pair<int, int> aux = stringToAvail(line);
-                h_avail =aux.first;
-                m_avail = aux.second;
+                m_avail = stoi(line);
                 getline(tecfile, n_maintenances);
                 getline(tecfile, line);//separator
-                baseL.addTec(Tec("Lisboa",stoi(i),h_avail,m_avail,stoi(n_maintenances)));
+                baseL.addTec(Tec("Lisboa",stoi(i),m_avail,stoi(n_maintenances)));
                 continue;
             }
 
             if (line == "Faro"){
                 getline(tecfile, i);
                 getline(tecfile, line);
-                pair<int, int> aux = stringToAvail(line);
-                h_avail =aux.first;
-                m_avail = aux.second;
+                m_avail = stoi(line);
                 getline(tecfile, n_maintenances);
                 getline(tecfile, line);//separator
-                baseF.addTec(Tec("Faro",stoi(i),h_avail,m_avail,stoi(n_maintenances)));
+                baseF.addTec(Tec("Faro",stoi(i),m_avail,stoi(n_maintenances)));
                 continue;
             }
         }

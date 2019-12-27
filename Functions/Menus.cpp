@@ -160,15 +160,16 @@ int VisualizeInformation(){
     cout << "-------------------------------------------------------"<<endl;
     cout << "---------------- VISUALIZE INFORMATION ----------------" << endl<<endl;
     cout << "1. View all clients " << endl;
-    cout << "2. View clients in the blacklist" << endl;
+    cout << "2. View clients in the blacklist " << endl;
     cout << "3. View all employees" << endl;
     cout << "4. View all restaurants " << endl;
     cout << "5. View all deliveries " << endl;
-    cout << "6. View all tecs " <<endl;
-    cout << "7. Return to the main menu"<<endl;
+    cout << "6. View all tecs " << endl;
+    cout << "7. View all vehicles" << endl;
+    cout << "8. Return to the main menu"<<endl;
     cout << "0. Exit" << endl;
     cout << "-------------------------------------------------------"<<endl;
-    menu_int_options(option,0,6);
+    menu_int_options(option,0,8);
     cin.ignore(1000,'\n');
     return option;
 }
