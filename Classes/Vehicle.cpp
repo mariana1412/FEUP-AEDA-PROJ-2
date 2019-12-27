@@ -89,8 +89,19 @@ void Vehicle::resetNDel(){
 }
 
 ostream& operator<<(ostream& os, const Vehicle& v){
-    os << v.getBrand() << ", " << v.getType() << ", " << v.getDate()<<"\t"<<v.getNHour()<<"\t"<<v.getNMin();
+
+    os << v.getBrand() << ", " << v.getType() << ", " << v.getDate()<<", " << v.getLicPlate() << ", " << v.getTotalDel() << " deliveries, " << v.getTotalKm() << " km";
+
     return os;
+}
+
+void Vehicle::PrintVehicle(){
+    cout << "Brand: " << brand << endl;
+    cout << "Type: " << type << endl;
+    cout << "Date: " << date << endl;
+    cout << "License Plate: " << lic_plate << endl;
+    cout << "Total Deliveries: " << total_del << endl;
+    cout << "Total Kilometres: " << total_km << endl;
 }
 
 bool Vehicle::operator<(const Vehicle &v1) const {

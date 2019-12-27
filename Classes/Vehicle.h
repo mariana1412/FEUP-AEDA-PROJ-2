@@ -168,6 +168,10 @@ public:
  */
     bool operator==(const Vehicle &v1) const;
 
+    /**
+     * @brief Permite mostrar no ecrã de forma "formatada" as características do veículo
+     */
+    void PrintVehicle();
 };
 
 
