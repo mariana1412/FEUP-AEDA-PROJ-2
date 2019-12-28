@@ -161,9 +161,11 @@ void Base::addDeliveryToDeliverer(Delivery delivery, Time order_time) {
     Vehicle v= low_deliverer->getVehicle();
     vehicles.remove(v);
     vehicles.insert(v);
-    int aux = subtractTimes(delivery.getDeliver_time(),order_time);
-    updateTecs(aux);
-    updateVehicles(aux);
+    if (delivery.getDeliver_time().getDay() != 0) { //Verificar se a order foi bem sucedida para atualizar o tempo
+        int aux = subtractTimes(delivery.getDeliver_time(), order_time);
+        updateTecs(aux);
+        updateVehicles(aux);
+    }
 
     if(low_deliverer->getVehicle().getNDel() == 5){
         sendToMaintenance(low_deliverer->getVehicle());

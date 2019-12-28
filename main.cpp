@@ -908,11 +908,8 @@ int main() {
     system("cls");
     cout << endl << "Thank you! We hope you've enjoyed your experience with Ugh Eats!" << endl;
     Porto.updateBases();
-    Porto.hashUpdate();
     Lisboa.updateBases();
-    Lisboa.hashUpdate();
     Faro.updateBases();
-    Faro.hashUpdate();
     write_Clients(Porto, Lisboa, Faro);
     write_Restaurants(Porto, Lisboa, Faro);
     write_Deliveries(Porto, Lisboa, Faro);

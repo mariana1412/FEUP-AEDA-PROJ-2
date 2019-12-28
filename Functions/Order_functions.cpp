@@ -747,14 +747,17 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     if (base == "Porto"){
         Porto.addDelivery(delivery);
         Porto.addDeliveryToDeliverer(delivery,order_time);
+        Porto.hashUpdate();
     }
     else if (base == "Lisboa") {
         Lisboa.addDelivery(delivery);
         Lisboa.addDeliveryToDeliverer(delivery,order_time);
+        Lisboa.hashUpdate();
     }
     else if (base == "Faro") {
         Faro.addDelivery(delivery);
         Faro.addDeliveryToDeliverer(delivery,order_time);
+        Lisboa.hashUpdate();
     }
 
     return 1;
