@@ -52,6 +52,12 @@ Fernando Viseu
 Rua de Sistelo 102, Gondomar
 false
 ::::::::
+Porto
+Judite Matos
+193330211
+Avenida 25 De Abril, Matosinhos
+false
+::::::::
 Lisboa
 Ines Pinto Silva
 251230654

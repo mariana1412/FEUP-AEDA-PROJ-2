@@ -216,7 +216,7 @@ void Tec::addMaintenance(){
 }
 
 bool Tec::operator<(const Tec & tec1) const{
-    return(this->time_to_available > tec1.time_to_available);
+    return((this->time_to_available > tec1.time_to_available) && (number_of_maintenances >1));
 }
 
 void Deliverer::addDeliveryToVehicle(){

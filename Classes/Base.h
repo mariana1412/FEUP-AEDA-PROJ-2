@@ -315,9 +315,10 @@ public:
     void clearTecs();
 /**
  *@brief Se um veiculo atingir 5 entregas após a ultima manutenção, é enviado para a manutenençao sendo feitas as atualizaçoes necessarias
- * @param Entregador a que pertence o veiculo
+ * @param ve - veiculo que atingiu as 5 entregas desde a ultima manutenção
  */
-    void sendToMaintenance(Deliverer* del);
+    void sendToMaintenance(Vehicle ve);
+
 /**
  * @brief Funçao que decrementa o n de horas e minutos ate estar disponivel o tecnico e verifica se ja terminou a manutenção
  * @param m - numero de minutos que passaram

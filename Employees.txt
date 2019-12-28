@@ -1,22 +1,32 @@
 Porto
 Deliverer
+Henrique Alves
+563287412
+false
+18/10/2019
+21
+Mercedes, Car, 18/10/2019, 01-US-10, 0, 3 0
+43, 44, 50, 51, 52
+::::::::
+Porto
+Deliverer
 Luis Pereira
 984736212
 false
 20/10/2016
 44
-Yamaha, Motorcycle, 20/10/2016, 96-AB-43, 100, 0 0
+Yamaha, Motorcycle, 20/10/2016, 96-AB-43, 100, 5 141
 13, 14, 15, 18, 19, 21, 32, 34, 39, 48
 ::::::::
 Porto
 Deliverer
-Henrique Alves
-563287412
+Antonio Freitas
+124456789
 false
-18/10/2019
-15
-Mercedes, Car, 18/10/2019, 01-US-10, 0, 1 0
-43, 44, 50
+11/11/1970
+53
+Range Rover, SUV, 19/12/2015, 31-XQ-99, 70, 0 0
+1, 3, 9, 10, 20, 22, 31, 33, 37, 47, 49
 ::::::::
 Porto
 Admin
@@ -27,25 +37,6 @@ true
 3000
 Secretario
 ::::::::
-Porto
-Deliverer
-Antonio Freitas
-124456789
-false
-11/11/1970
-53
-Range Rover, SUV, 19/12/2015, 31-XQ-99, 70, 5 180
-1, 3, 9, 10, 20, 22, 31, 33, 37, 47, 49
-::::::::
-Lisboa
-Admin
-Maria Cerqueira
-965478123
-false
-08/07/1993
-1200
-Rp
-::::::::
 Lisboa
 Deliverer
 Hugo Pinto
@@ -55,6 +46,15 @@ false
 26
 Honda, Motorcycle, 20/07/2019, 72-PO-18, 54, 1 0
 16, 17, 28, 29, 30, 42
+::::::::
+Lisboa
+Admin
+Fernando Rocha
+185746387
+false
+30/07/1999
+2000
+Gestor
 ::::::::
 Lisboa
 Deliverer
@@ -68,12 +68,12 @@ Range Rover Evoque, Suv, 19/12/2016, 12-XA-59, 50, 1 0
 ::::::::
 Lisboa
 Admin
-Fernando Rocha
-185746387
+Maria Cerqueira
+965478123
 false
-30/07/1999
-2000
-Gestor
+08/07/1993
+1200
+Rp
 ::::::::
 Faro
 Admin

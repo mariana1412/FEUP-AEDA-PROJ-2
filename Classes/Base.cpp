@@ -157,14 +157,16 @@ void Base::addDeliveryToDeliverer(Delivery delivery, Time order_time) {
     low_deliverer->addDelivery(delivery); //adiciona uma entrega ao entregador
 
     low_deliverer->addDeliveryToVehicle(); //adicionar uma entrega ao veiculo
+
     Vehicle v= low_deliverer->getVehicle();
     vehicles.remove(v);
     vehicles.insert(v);
     int aux = subtractTimes(delivery.getDeliver_time(),order_time);
     updateTecs(aux);
     updateVehicles(aux);
+
     if(low_deliverer->getVehicle().getNDel() == 5){
-        sendToMaintenance(low_deliverer);
+        sendToMaintenance(low_deliverer->getVehicle());
     }
 
 }
@@ -445,23 +447,17 @@ void Base::updateBases() {
 }
 
 
-
-void Base::sendToMaintenance(Deliverer* del){
+void Base::sendToMaintenance(Vehicle ve){
     //escolha do tecnico e sua atualização
     Tec t = tecnicos.top();
-    if(t.getTimeToAvailable() == 0){
-        removeTec(t);
-    }
-    else{
-        //CASO EM QUE NÃO HÁ TÉCNICOS DISPONIVEIS (COLOCAR O VEICULO A 5 0, E VERIFICAR ATÉ HAVEREM TECNICOS)
-    }
-    t.setTimeToAvailable(240); //4 horas
+    removeTec(t);
+    int h = t.getTimeToAvailable();
+    t.setTimeToAvailable(h +240); // +4 horas
     addTec(t);
     //atualizaçao do veiculo
-    Vehicle v= del->getVehicle();
-    vehicles.remove(v);
-    v.setNMin(240);
-    vehicles.insert(v);
+    vehicles.remove(ve);
+    ve.setNMin(240);
+    vehicles.insert(ve);
 }
 
 void Base::updateVehicles(int m){
