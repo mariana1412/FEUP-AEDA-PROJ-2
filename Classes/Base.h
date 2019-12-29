@@ -309,7 +309,7 @@ public:
      * @return Retorna o índice do funcionário escolhido na tabela de dispersão
      */
     int chooseEmployee(bool former, bool newE, bool admin, bool deliverer, string action);
-    /*
+    /**
      * @brief Limpa a fila de prioridade dos tecnicos
      */
     void clearTecs();
@@ -334,6 +334,12 @@ public:
      * @brief Funçao que atualiza a hash table dos employees para os valores corretos
      */
     void hashUpdate();
+    /**
+     * @brief Funçao que atualiza o número de kms percorridos de um veiculo, adicionando a o número de kms da viagem
+     * @param distance - número de kms da viagem de entrega
+     * @param del - deliverer a quem o veículo pertence
+     */
+     void addDistance(int distance, Deliverer* del);
 };
 
 #endif //UGH_EATS_BASE_H

@@ -608,10 +608,16 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
         products.push_back(restaurant.getProducts().at(i));
     }
     float tax;
-    if (cliente.getCounty() != restaurant.getCounty())
+    int distance;
+    srand(time(NULL));
+    if (cliente.getCounty() != restaurant.getCounty()) {
         tax = 5;
-    else
+        distance = rand()%(15-7 + 1) + 7;
+    }
+    else {
         tax = 3;
+        distance = rand()%(7-1 + 1) + 1;
+    }
     string answer;
     Delivery delivery(restaurant, order_time, products, nif, tax);
     int a,c,choice;
@@ -635,6 +641,9 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     for (vector<Employee*>::const_iterator it =  employees.begin(); it != employees.end(); it++){
         Deliverer* nd = dynamic_cast<Deliverer*>(*it);
         if (nd != nullptr){
+            if (nd->getFormer()){
+                continue;
+            }
             if ((!low || low_deliverer->getBackground().size() > nd->getBackground().size()) &&(nd->getVehicle().getNMin()==0)) {
                 low_deliverer = nd;
                 low = true;
@@ -664,7 +673,7 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     cout << "Delivery Tax: " << delivery.getTax() << "$ - From " << restaurant.getCounty() << " to " << cliente.getCounty() << endl;
     cout << "Total product price: " << delivery.getPrice() << "$" << endl;
     cout << "Total order price: " << delivery.getFinalPrice() << "$" << endl << endl;
-    cout << "Deliverer " << deliverer.getName() << " will arrive shortly in a " << deliverer.getVehicle().getBrand() << " " << deliverer.getVehicle().getType() << " with your order" << endl << endl;
+    cout << "Deliverer " << deliverer.getName() << " is " << distance << " km away, and will arrive shortly in a " << deliverer.getVehicle().getBrand() << " " << deliverer.getVehicle().getType() << " with your order" << endl << endl;
     cout << "Press ENTER to proceed to the Delivery Form" << endl;
     cin.ignore();
 
@@ -743,21 +752,44 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
         cout << "We have saved your order's data. We apologize for any inconvenience! "<<endl;
         Sleep(1500);
     }
-
+    int time;
+    Time deliver_time = delivery.getDeliver_time();
+    time = subtractTimes(deliver_time,order_time);
     if (base == "Porto"){
         Porto.addDelivery(delivery);
         Porto.addDeliveryToDeliverer(delivery,order_time);
+        Porto.addDistance(distance, low_deliverer);
+        Lisboa.updateTecs(time);
+        Lisboa.updateVehicles(time);
+        Faro.updateTecs(time);
+        Faro.updateVehicles(time);
         Porto.hashUpdate();
+        Lisboa.hashUpdate();
+        Faro.hashUpdate();
     }
     else if (base == "Lisboa") {
         Lisboa.addDelivery(delivery);
         Lisboa.addDeliveryToDeliverer(delivery,order_time);
+        Lisboa.addDistance(distance, low_deliverer);
+        Porto.updateTecs(time);
+        Porto.updateVehicles(time);
+        Faro.updateTecs(time);
+        Faro.updateVehicles(time);
+        Porto.hashUpdate();
         Lisboa.hashUpdate();
+        Faro.hashUpdate();
     }
     else if (base == "Faro") {
         Faro.addDelivery(delivery);
         Faro.addDeliveryToDeliverer(delivery,order_time);
+        Faro.addDistance(distance, low_deliverer);
+        Lisboa.updateTecs(time);
+        Lisboa.updateVehicles(time);
+        Porto.updateTecs(time);
+        Porto.updateVehicles(time);
+        Porto.hashUpdate();
         Lisboa.hashUpdate();
+        Faro.hashUpdate();
     }
 
     return 1;

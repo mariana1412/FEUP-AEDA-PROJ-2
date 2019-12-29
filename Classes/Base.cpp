@@ -148,6 +148,9 @@ void Base::addDeliveryToDeliverer(Delivery delivery, Time order_time) {
     for (vector<Employee*>::const_iterator it =  employees.begin(); it != employees.end(); it++){
         Deliverer* nd = dynamic_cast<Deliverer*>(*it);
         if (nd != nullptr){
+            if (nd->getFormer()){
+                continue;
+            }
             if ((!low || (low_deliverer->getBackground().size() > nd->getBackground().size())) &&(nd->getVehicle().getNMin()==0)) {
                 low_deliverer = nd;
                 low = true;
@@ -527,6 +530,23 @@ void Base::hashUpdate() {
         }
         it.advance();
     }
+}
+
+void Base::addDistance(int distance, Deliverer* del) {
+    vector<Employee*> employees = getEmployeesHash();
+    Vehicle vehicle;
+    for (vector<Employee*>::const_iterator it =  employees.begin(); it != employees.end(); it++){
+        Deliverer* nd = dynamic_cast<Deliverer*>(*it);
+        if (nd != nullptr){
+            if (nd->getNif() == del->getNif()){
+                vehicle = nd->getVehicle();
+                vehicle.setTotalKm(vehicle.getTotalKm() + distance);
+                nd->setVehicle(vehicle);
+            }
+        }
+    }
+    vehicles.remove(vehicle);
+    vehicles.insert(vehicle);
 }
 
 

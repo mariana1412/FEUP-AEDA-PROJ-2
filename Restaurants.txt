@@ -17,7 +17,7 @@ British Gentleman
 Avenida Da Classe, Porto
 British
 Fish And Chips, British, 8 / English Breakfast, British, 5 / Yorkshire Pudding, British, 7 / Scotch Egg, British, 6
-201
+220
 ::::::::
 Porto
 La Mesa
@@ -87,7 +87,7 @@ Mexican
 Rua da Alegria 22, Faro
 Mexicana
 Tacos, Mexicana, 4.2 / Nachos, Mexicana, 5.25
-54.6
+69.3
 ::::::::
 Faro
 Alentejano

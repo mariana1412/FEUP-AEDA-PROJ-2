@@ -372,6 +372,17 @@ Nothing to show
 28/12/2019, 19:43
 5
 ::::::::
+Porto
+59
+178223456
+British Gentleman
+29/12/2019, 20:17
+Fish And Chips, English Breakfast, Scotch Egg
+Success
+Nothing to show
+29/12/2019, 20:47
+5
+::::::::
 Lisboa
 2
 251230654
@@ -634,4 +645,15 @@ Tacos, Nachos
 Insuccess
 Wrong address
 00/00/0000, 00:00
+5
+::::::::
+Faro
+60
+630230230
+Mexican
+29/12/2019, 20:18
+Nachos, Nachos, Tacos
+Success
+Nothing to show
+29/12/2019, 20:49
 5
