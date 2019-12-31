@@ -436,7 +436,7 @@ void Base::updateBases() {
         profit = 0;
     }
     profit = 0;
-    vector<Employee*> employees =getEmployeesHash();
+    vector<Employee*> employees = getEmployeesHash();
     for (vector<Employee*>::iterator it = employees.begin(); it != employees.end(); it++) {
         Deliverer *nd = dynamic_cast<Deliverer *>(*it);
         if (nd != nullptr){

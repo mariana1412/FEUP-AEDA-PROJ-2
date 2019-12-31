@@ -2,6 +2,7 @@ Porto
 1
 280541987
 Japanese
+false
 25/10/2019, 15:38
 Temaki
 Success
@@ -13,6 +14,7 @@ Porto
 3
 298684789
 Japanese
+false
 26/10/2019, 15:38
 Temaki
 Success
@@ -24,6 +26,7 @@ Porto
 9
 280541987
 Pay The P Rice
+false
 14/11/2019, 19:46
 Arroz De Marisco, Arroz De Cabidela
 Success
@@ -35,6 +38,7 @@ Porto
 10
 280541987
 Japanese
+false
 14/11/2019, 19:50
 Temaki
 Success
@@ -46,6 +50,7 @@ Porto
 13
 287564236
 British Gentleman
+false
 15/11/2019, 20:23
 Fish And Chips, Yorkshire Pudding, English Breakfast
 Success
@@ -57,6 +62,7 @@ Porto
 14
 287564236
 Japanese
+false
 15/11/2019, 20:25
 Temaki, Temaki
 Success
@@ -68,6 +74,7 @@ Porto
 15
 287564236
 British Gentleman
+false
 15/11/2019, 23:20
 Fish And Chips, English Breakfast, Yorkshire Pudding, Scotch Egg
 Success
@@ -79,6 +86,7 @@ Porto
 18
 280541987
 Japanese
+false
 15/11/2019, 23:37
 Temaki, Temaki
 Success
@@ -90,6 +98,7 @@ Porto
 19
 280541987
 Pay The P Rice
+false
 15/11/2019, 23:39
 Arroz De Tomate, Arroz De Cabidela
 Success
@@ -101,6 +110,7 @@ Porto
 20
 122387698
 British Gentleman
+false
 15/11/2019, 23:45
 Fish And Chips, Yorkshire Pudding, Scotch Egg, English Breakfast, Fish And Chips
 Insuccess
@@ -112,6 +122,7 @@ Porto
 21
 178293456
 British Gentleman
+false
 16/11/2019, 14:11
 English Breakfast, Yorkshire Pudding
 Success
@@ -123,6 +134,7 @@ Porto
 22
 123234345
 Japanese
+false
 16/11/2019, 17:58
 Temaki, Temaki, Temaki
 Success
@@ -134,6 +146,7 @@ Porto
 31
 123234345
 Aqua
+false
 16/11/2019, 20:29
 Rouladen, Brezel
 Success
@@ -145,6 +158,7 @@ Porto
 32
 123234345
 El Sombrero
+false
 16/11/2019, 20:31
 Churro Chips, Chicken Enchiladas, Chicken Taquitos
 Success
@@ -156,6 +170,7 @@ Porto
 33
 122387698
 British Gentleman
+false
 16/11/2019, 20:32
 Fish And Chips, Yorkshire Pudding, Scotch Egg, English Breakfast, Scotch Egg
 Insuccess
@@ -167,6 +182,7 @@ Porto
 34
 122387698
 La Mesa
+false
 16/11/2019, 20:32
 Tortilla, Paella
 Success
@@ -178,6 +194,7 @@ Porto
 37
 123234345
 Pay The P Rice
+false
 16/11/2019, 20:37
 Arroz De Tomate, Arroz De Tomate
 Insuccess
@@ -189,6 +206,7 @@ Porto
 39
 178293456
 Japanese
+false
 16/11/2019, 20:40
 Temaki, Kung Pao
 Success
@@ -200,6 +218,7 @@ Porto
 43
 287564236
 El Sombrero
+false
 25/12/2019, 01:47
 Chicken Enchiladas, Churro Chips, Chicken Enchiladas
 Success
@@ -211,6 +230,7 @@ Porto
 44
 287564236
 Aqua
+false
 25/12/2019, 01:48
 Rouladen, Brezel, Eintopf
 Success
@@ -222,6 +242,7 @@ Porto
 45
 122387698
 Aqua
+false
 27/12/2019, 22:41
 Rouladen
 Success
@@ -233,6 +254,7 @@ Porto
 46
 122387698
 British Gentleman
+false
 27/12/2019, 22:43
 Fish And Chips
 Success
@@ -244,6 +266,7 @@ Porto
 47
 122387698
 British Gentleman
+false
 27/12/2019, 22:55
 Fish And Chips, English Breakfast, Scotch Egg
 Success
@@ -255,6 +278,7 @@ Porto
 48
 122387698
 British Gentleman
+false
 27/12/2019, 23:18
 Fish And Chips
 Success
@@ -266,6 +290,7 @@ Porto
 49
 122387698
 British Gentleman
+false
 27/12/2019, 23:52
 Fish And Chips
 Success
@@ -277,6 +302,7 @@ Porto
 50
 122387698
 Aqua
+false
 27/12/2019, 23:53
 Eintopf, Eintopf, Rouladen
 Success
@@ -288,6 +314,7 @@ Porto
 51
 193330211
 Japanese
+false
 28/12/2019, 15:50
 Dumplings
 Success
@@ -299,6 +326,7 @@ Porto
 52
 193330211
 Japanese
+false
 28/12/2019, 15:56
 Temaki
 Success
@@ -310,6 +338,7 @@ Porto
 53
 122387698
 British Gentleman
+false
 28/12/2019, 19:14
 Fish And Chips
 Insuccess
@@ -321,6 +350,7 @@ Porto
 54
 178223456
 El Sombrero
+false
 28/12/2019, 19:17
 Churro Chips, Churro Chips, Chicken Taquitos
 Success
@@ -332,6 +362,7 @@ Porto
 55
 178223456
 British Gentleman
+false
 28/12/2019, 19:18
 Fish And Chips, English Breakfast
 Success
@@ -343,6 +374,7 @@ Porto
 56
 178223456
 British Gentleman
+false
 28/12/2019, 19:20
 Fish And Chips, English Breakfast
 Success
@@ -354,6 +386,7 @@ Porto
 57
 178223456
 La Mesa
+false
 28/12/2019, 19:20
 Croquettes, Torrijas
 Success
@@ -365,6 +398,7 @@ Porto
 58
 178293456
 La Mesa
+false
 28/12/2019, 19:23
 Paella, Croquettes, Tortilla
 Success
@@ -376,6 +410,7 @@ Porto
 59
 178223456
 British Gentleman
+false
 29/12/2019, 20:17
 Fish And Chips, English Breakfast, Scotch Egg
 Success
@@ -383,10 +418,59 @@ Nothing to show
 29/12/2019, 20:47
 5
 ::::::::
+Porto
+61
+122387698
+Pay The P Rice
+false
+30/12/2019, 23:26
+Arroz De Marisco, Arroz De Cabidela, Arroz De Tomate, Arroz De Marisco, Arroz De Cabidela
+Success
+Nothing to show
+30/12/2019, 23:40
+5
+::::::::
+Porto
+62
+287564236
+Japanese
+false
+30/12/2019, 23:33
+Temaki, Kung Pao, Kung Pao, Temaki, Temaki
+Success
+Nothing to show
+30/12/2019, 23:40
+3
+::::::::
+Porto
+63
+287564236
+Japanese
+false
+30/12/2019, 23:35
+Temaki, Kung Pao, Temaki, Dumplings
+Success
+Nothing to show
+30/12/2019, 23:59
+3
+::::::::
+Porto
+64
+122387698
+Pay The P Rice
+true
+30/12/2019, 23:47
+Arroz De Marisco, Arroz De Cabidela, Arroz De Marisco
+Success
+Nothing to show
+30/12/2019, 23:52
+5
+::::::::
 Lisboa
 2
 251230654
 Italian
+false
 06/11/2019, 17:06
 Pizza, Lasanha
 Insuccess
@@ -398,6 +482,7 @@ Lisboa
 4
 251230654
 Frenchalian
+false
 14/11/2019, 19:09
 Baguette, Lasanha
 Success
@@ -409,6 +494,7 @@ Lisboa
 7
 193320586
 Frenchalian
+false
 14/11/2019, 19:35
 Lasanha, Baguette
 Success
@@ -420,6 +506,7 @@ Lisboa
 8
 193320586
 Italian
+false
 14/11/2019, 19:39
 Lasanha, Lasanha
 Success
@@ -431,6 +518,7 @@ Lisboa
 12
 193320586
 Frenchalian
+false
 14/11/2019, 19:52
 Lasanha, Baguette, Lasanha
 Success
@@ -442,6 +530,7 @@ Lisboa
 16
 251230654
 Italian
+false
 15/11/2019, 23:24
 Pizza, Pizza
 Insuccess
@@ -453,6 +542,7 @@ Lisboa
 17
 876234098
 Greek God
+false
 15/11/2019, 23:32
 Greek Salad, Gyros, Pasteli
 Success
@@ -464,6 +554,7 @@ Lisboa
 28
 114455667
 Art Of The Grill
+false
 16/11/2019, 20:25
 Barbecue Ribs, Hot Dog Xl, Hamburguer, Hamburguer
 Success
@@ -475,6 +566,7 @@ Lisboa
 29
 987425910
 Spa Francorchamps Dining
+false
 16/11/2019, 20:27
 Carbonade Flamande, Martino Sandwich, Wafel, Frites, Frites
 Insuccess
@@ -486,6 +578,7 @@ Lisboa
 30
 444123321
 Bon Appetit
+false
 16/11/2019, 20:28
 Beef Fondue, Ratatouille
 Success
@@ -497,6 +590,7 @@ Lisboa
 38
 114455667
 Bon Appetit
+false
 16/11/2019, 20:39
 Beef Fondue, Ratatouille
 Success
@@ -508,6 +602,7 @@ Lisboa
 42
 987425910
 Greek God
+false
 16/11/2019, 20:46
 Baklava, Gyros, Greek Salad
 Success
@@ -519,6 +614,7 @@ Faro
 5
 987654321
 Mexican
+false
 14/11/2019, 19:23
 Tacos, Nachos, Tacos
 Success
@@ -530,6 +626,7 @@ Faro
 6
 987654321
 Mexican
+false
 14/11/2019, 19:25
 Tacos, Nachos
 Insuccess
@@ -541,6 +638,7 @@ Faro
 11
 987654321
 Alentejano
+false
 14/11/2019, 19:51
 Alentejana, Pao De Alho
 Success
@@ -552,6 +650,7 @@ Faro
 23
 777412589
 Mexican
+false
 16/11/2019, 18:05
 Tacos, Tacos, Tacos
 Success
@@ -563,6 +662,7 @@ Faro
 24
 999658231
 Grelhador Da Tia Dulce
+false
 16/11/2019, 19:32
 Feijoada, Brigadeiro, Romeu E Julieta, Farofa
 Success
@@ -574,6 +674,7 @@ Faro
 25
 999658231
 Mexican
+false
 16/11/2019, 19:43
 Nachos, Tacos
 Insuccess
@@ -585,6 +686,7 @@ Faro
 26
 123344556
 Grelhador Da Tia Dulce
+false
 16/11/2019, 20:20
 Rodizio, Feijoada, Romeu E Julieta, Farofa
 Success
@@ -596,6 +698,7 @@ Faro
 27
 777412589
 Taj Mahal
+false
 16/11/2019, 20:23
 Tandoori Chicken, Tikka Masala, Rogan Josh, Murg Makhani
 Success
@@ -607,6 +710,7 @@ Faro
 35
 123344556
 Taj Mahal
+false
 16/11/2019, 20:33
 Rogan Josh, Murg Makhani, Tikka Masala
 Success
@@ -618,6 +722,7 @@ Faro
 36
 123344556
 Taj Mahal
+false
 16/11/2019, 20:36
 Tandoori Chicken, Murg Makhani
 Success
@@ -629,6 +734,7 @@ Faro
 40
 123344556
 Taj Mahal
+false
 16/11/2019, 20:41
 Tandoori Chicken, Murg Makhani
 Insuccess
@@ -640,6 +746,7 @@ Faro
 41
 123344556
 Mexican
+false
 16/11/2019, 20:44
 Tacos, Nachos
 Insuccess
@@ -651,6 +758,7 @@ Faro
 60
 630230230
 Mexican
+false
 29/12/2019, 20:18
 Nachos, Nachos, Tacos
 Success

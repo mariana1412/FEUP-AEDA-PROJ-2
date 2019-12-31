@@ -1,185 +1,223 @@
 Porto
 Diogo Henrique Almeida
 298684789
+12/06/2000
 Rua dos Bragas 32, Maia
 true
 ::::::::
 Porto
 Ana Rita Matos
 287564236
+23/01/1980
 Avenida dos Aliados 21, Matosinhos
 false
 ::::::::
 Porto
 Rui Teixeira
 122387698
+30/12/1992
 Rua Manuel Das Cruzes, Vila Nova De Gaia
 false
 ::::::::
 Porto
 Rita Antunes
 178293456
+04/08/1999
 Avenida Do Fogo, Maia
 true
 ::::::::
 Porto
 Artur Carvalho
 178223456
+20/11/1970
 Avenida De Manuel Pinto de Azevedo, Gondomar
 false
 ::::::::
 Porto
 Maria Dolores
 123234345
+11/11/1973
 Rua Dom Afonso Henriques, Gondomar
 true
 ::::::::
 Porto
 Mariana Almeida Truta
 280541987
+14/12/2000
 Rua da Alegria 65, Porto
 true
 ::::::::
 Porto
 Catarina Loureiro
 222684789
+08/01/1987
 Rua Lombarda 77, Maia
 false
 ::::::::
 Porto
 Fernando Viseu
 298684780
+26/08/1978
 Rua de Sistelo 102, Gondomar
 false
 ::::::::
 Porto
 Judite Matos
 193330211
+31/12/1950
 Avenida 25 De Abril, Matosinhos
 false
 ::::::::
 Lisboa
 Ines Pinto Silva
 251230654
+15/11/1996
 Travessa da Caldeira 85, Lisboa
 false
 ::::::::
 Lisboa
 Andre Daniel Gomes
 210874562
+03/03/1976
 Rua 25 de Abril 96, Lisboa
 true
 ::::::::
 Lisboa
 Ana Rita Matos
 193320586
+25/04/1969
 Avenida da Felicidade 56, Lisboa
 false
 ::::::::
 Lisboa
 Miguel Oliveira
 876234098
+24/05/1991
 Rua Das Motas 9, Amadora
 false
 ::::::::
 Lisboa
 Magda Pinto
 444123321
+16/02/1998
 Avenida Da Liberdade, Oeiras
 false
 ::::::::
 Lisboa
 Rute Teixeira
 987425910
+01/12/1964
 Travessa Da Cidade, Loures
 false
 ::::::::
 Lisboa
 Francisca Vieira
 198742591
+18/09/1998
 Rua Manuel Amorim, Oeira
 false
 ::::::::
 Lisboa
 Pedro Antonio
 114455667
+05/12/1999
 Rua Futebol Clube Do Porto, Odivelas
 true
 ::::::::
 Lisboa
 Vania Teixeira
 338684789
+22/11/1988
 Avenida da Sardinha 47, Odivelas
 true
 ::::::::
 Lisboa
 Marina Silva
 852896654
+26/01/1971
 Rua Silva Porto, Oeiras
 false
 ::::::::
 Lisboa
 Maria Adelaide Araujo
 654456654
+07/06/1968
 Travessa Da Cachada, Amadora
 false
 ::::::::
 Lisboa
 Pedros Sachez
 298684779
+07/02/1993
 Rua Bouca da Cavadinha 20, Amadora
 false
 ::::::::
 Faro
 Marcio Pedrosa
 298664789
+08/05/1984
 Rua Jaime Amorim 14, Loule
 true
 ::::::::
 Faro
 Lara Machado Medicis
 265541987
+19/02/1994
 Avenida da Praia 6, Faro
 false
 ::::::::
 Faro
 Diogo Henrique Almeida
 287600789
+17/06/1995
 Rua de Estudante 78, Faro
 true
 ::::::::
 Faro
 Ana Luisa Matos
 287561236
+24/08/1988
 Rua de Carreira Cova 21, Faro
 true
 ::::::::
 Faro
 Pedro Queiros
 987654321
+11/09/1977
 Rua do Sol 32, Faro
 false
 ::::::::
 Faro
 Judite Silva
 777412589
+28/12/1992
 Avenida Do Pinhal, Loule
 false
 ::::::::
 Faro
 Ana Marques
 999658231
+21/09/2001
 Travessa De Montenegro, Olhao
 false
 ::::::::
 Faro
 Jose Pinto
 123344556
+01/05/1995
 Rua De Paralelo 23, Sao Bras De Alportel
 true
 ::::::::
 Faro
 Fernando Pereira
 630230230
-Rua Manuel S� Pereira, Sao Bras De Alportel
+07/07/1997
+Rua Manuel Sa Pereira, Sao Bras De Alportel
+false
+::::::::
+Faro
+Luis Teixeira
+121234345
+05/01/1994
+Largo Alexandrina Negrao, Sao Bras De Alportel
 false

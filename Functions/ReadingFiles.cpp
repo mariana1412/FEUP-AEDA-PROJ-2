@@ -3,6 +3,7 @@
 
 void extract_Clients(Base& baseP, Base& baseL, Base& baseF){
     string line, name, nif;
+    Time birthdate;
     ifstream clientfile;
     clientfile.open("../Clients.txt");
     if (clientfile.is_open()) {
@@ -13,12 +14,14 @@ void extract_Clients(Base& baseP, Base& baseL, Base& baseF){
                 getline(clientfile, name);
                 getline(clientfile, nif);
                 getline(clientfile, line);
+                birthdate = stringToDate(line);
+                getline(clientfile, line);
                 Location location = stringToLocation(line);
                 getline(clientfile, line);
                 if (line == "true")
                     black = true;
                 getline(clientfile, line); //separator
-                baseP.addClient(Client("Porto", name, stoi(nif), location.getAddress(), black, location.getCounty()));
+                baseP.addClient(Client("Porto", name, stoi(nif), location.getAddress(), black, location.getCounty(), birthdate));
                 continue;
             }
 
@@ -26,12 +29,14 @@ void extract_Clients(Base& baseP, Base& baseL, Base& baseF){
                 getline(clientfile, name);
                 getline(clientfile, nif);
                 getline(clientfile, line);
+                birthdate = stringToDate(line);
+                getline(clientfile, line);
                 Location location = stringToLocation(line);
                 getline(clientfile, line);
                 if (line == "true")
                     black = true;
                 getline(clientfile, line); //separator
-                baseL.addClient(Client("Lisboa", name, stoi(nif), location.getAddress(), black, location.getCounty()));
+                baseL.addClient(Client("Lisboa", name, stoi(nif), location.getAddress(), black, location.getCounty(), birthdate));
                 continue;
             }
 
@@ -39,12 +44,14 @@ void extract_Clients(Base& baseP, Base& baseL, Base& baseF){
                 getline(clientfile, name);
                 getline(clientfile, nif);
                 getline(clientfile, line);
+                birthdate = stringToDate(line);
+                getline(clientfile, line);
                 Location location = stringToLocation(line);
                 getline(clientfile, line);
                 if (line == "true")
                     black = true;
                 getline(clientfile, line); //separator
-                baseF.addClient(Client("Faro", name, stoi(nif), location.getAddress(), black, location.getCounty()));
+                baseF.addClient(Client("Faro", name, stoi(nif), location.getAddress(), black, location.getCounty(), birthdate));
                 continue;
             }
         }
@@ -114,7 +121,7 @@ void extract_Restaurants(Base& baseP, Base& baseL, Base& baseF){
 
 void extract_Deliveries(Base& baseP, Base& baseL, Base& baseF){
     string line, reason, id, tax, success,nif;
-    bool made = false;
+    bool made = false, discount;
     Restaurant restaurant;
     Time date;
     Time hour;
@@ -130,6 +137,9 @@ void extract_Deliveries(Base& baseP, Base& baseL, Base& baseF){
                 getline(deliveryfile, line);
                 restaurant = baseP.searchRestaurant(line);
                 getline(deliveryfile, line);
+                if(line == "true") discount = true;
+                else discount = false;
+                getline(deliveryfile, line);
                 date = stringToTime(line);
                 getline(deliveryfile, line);
                 products = stringToProductVectorSearch(line, restaurant);
@@ -143,7 +153,7 @@ void extract_Deliveries(Base& baseP, Base& baseL, Base& baseF){
                 hour = stringToTime(line);
                 getline(deliveryfile, tax);
                 getline(deliveryfile, line); //separator
-                baseP.addDelivery(Delivery(restaurant, date, products, stoi(nif),stoi(id), made, reason, hour, stof(tax)));
+                baseP.addDelivery(Delivery(restaurant, date, products, stoi(nif),stoi(id), made, reason, hour, stof(tax), discount));
                 continue;
             }
 
@@ -153,6 +163,9 @@ void extract_Deliveries(Base& baseP, Base& baseL, Base& baseF){
                 getline(deliveryfile, line);
                 restaurant = baseL.searchRestaurant(line);
                 getline(deliveryfile, line);
+                if(line == "true") discount = true;
+                else discount = false;
+                getline(deliveryfile, line);
                 date = stringToTime(line);
                 getline(deliveryfile, line);
                 products = stringToProductVectorSearch(line, restaurant);
@@ -166,7 +179,7 @@ void extract_Deliveries(Base& baseP, Base& baseL, Base& baseF){
                 hour = stringToTime(line);
                 getline(deliveryfile, tax);
                 getline(deliveryfile, line); //separator
-                baseL.addDelivery(Delivery(restaurant, date, products, stoi(nif),stoi(id), made, reason, hour, stof(tax)));
+                baseL.addDelivery(Delivery(restaurant, date, products, stoi(nif),stoi(id), made, reason, hour, stof(tax), discount));
                 continue;
             }
 
@@ -176,6 +189,9 @@ void extract_Deliveries(Base& baseP, Base& baseL, Base& baseF){
                 getline(deliveryfile, line);
                 restaurant = baseF.searchRestaurant(line);
                 getline(deliveryfile, line);
+                if(line == "true") discount = true;
+                else discount = false;
+                getline(deliveryfile, line);
                 date = stringToTime(line);
                 getline(deliveryfile, line);
                 products = stringToProductVectorSearch(line, restaurant);
@@ -189,7 +205,7 @@ void extract_Deliveries(Base& baseP, Base& baseL, Base& baseF){
                 hour = stringToTime(line);
                 getline(deliveryfile, tax);
                 getline(deliveryfile, line); //separator
-                baseF.addDelivery(Delivery(restaurant, date, products, stoi(nif),stoi(id), made, reason, hour, stof(tax)));
+                baseF.addDelivery(Delivery(restaurant, date, products, stoi(nif),stoi(id), made, reason, hour, stof(tax), discount));
                 continue;
             }
         }

@@ -452,14 +452,27 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     }
 
     int nif = stoi(aux);
+    bool birthday = false;
+    time_t now = time(0);
+    tm* gmtm = gmtime(&now);
+
+    if(((*gmtm).tm_mday == cliente.getBirthdate().getDay()) && ((*gmtm).tm_mon+1 == cliente.getBirthdate().getMonth())){
+        birthday = true;
+    }
+
     vector<int> indprod;
     Restaurant restaurant;
     string auxiliar;
 
     do{
         system("cls");
-        cout << "Welcome, " << cliente.getName() << "!" << endl << endl;
+        cout << "Welcome, " << cliente.getName() << "!";
 
+        if(birthday){
+            cout << " Happy Birthday, let's celebrate with 10% off your order!";
+        }
+
+        cout << endl << endl;
         cout << "Which search method do you want?" << endl;
         cout << "1. Restaurant" << endl;
         cout << "2. Area" << endl;
@@ -470,7 +483,6 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
 
         menu_int_options(option, 0, 5);
         cin.ignore(1000, '\n');
-
 
 
         if(option == 0){
@@ -600,8 +612,9 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
         Sleep(900);
         return 1;
     }
-    time_t now = time(0);
-    tm* gmtm = gmtime(&now);
+
+    now = time(0);
+    gmtm = gmtime(&now);
     Time order_time((*gmtm).tm_hour,(*gmtm).tm_min,(*gmtm).tm_mday,(*gmtm).tm_mon+1,(*gmtm).tm_year+1900);
     vector<Product> products;
     for (int i: indprod){
@@ -619,7 +632,7 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
         distance = rand()%(7-1 + 1) + 1;
     }
     string answer;
-    Delivery delivery(restaurant, order_time, products, nif, tax);
+    Delivery delivery(restaurant, order_time, products, nif, tax, birthday);
     int a,c,choice;
     vector<string> reasons = {"It did not arrived.", "It was not what I ordered.", "I was not at home at the time of delivery", "Wrong address", "Other"};
     bool success;
@@ -652,7 +665,7 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     }
     Deliverer deliverer = *low_deliverer;
 
-    //deliverer.getVehicle().getNDel()
+    double price = 0;
 
     system("cls");
     int go = 1;
@@ -665,16 +678,25 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     vector<Product> productsl = delivery.getProducts();
     for (size_t i = 0; i < productsl.size(); i++){
         cout << i+1 << ": " << productsl.at(i).getName() << " - " << productsl.at(i).getPrice() << "$" << endl;
+        price += productsl.at(i).getPrice();
     }
     cout << endl << "==============================" << endl;
     cout << "Billing details" << endl;
     cout << "==============================" << endl;
     cout << "Client NIF: " << delivery.getNif() << endl;
     cout << "Delivery Tax: " << delivery.getTax() << "$ - From " << restaurant.getCounty() << " to " << cliente.getCounty() << endl;
-    cout << "Total product price: " << delivery.getPrice() << "$" << endl;
+
+    if(birthday){
+        cout << "Total product price before discount: " << price << "$" << endl;
+        cout << "Total product price after discount: " << delivery.getPrice() << "$" << endl;
+    }
+    else {
+        cout << "Total product price: " << delivery.getPrice() << "$" << endl;
+    }
+
     cout << "Total order price: " << delivery.getFinalPrice() << "$" << endl << endl;
-    cout << "Deliverer " << deliverer.getName() << " is " << distance << " km away, and will arrive shortly in a " << deliverer.getVehicle().getBrand() << " " << deliverer.getVehicle().getType() << " with your order" << endl << endl;
-    cout << "Press ENTER to proceed to the Delivery Form" << endl;
+    cout << "Deliverer " << deliverer.getName() << " is " << distance << " km away, and will arrive shortly in a " << deliverer.getVehicle().getBrand() << " " << deliverer.getVehicle().getType() << " with your order." << endl << endl;
+    cout << "Press ENTER to proceed to the Delivery Form.";
     cin.ignore();
 
     system("cls");
@@ -703,7 +725,7 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     }
 
     if(success){
-        cout << "At what time did you get your order? (in the format 'dd/mm/yyyy, hh:mm') ";
+        cout << endl << "At what time did you get your order? (in the format 'dd/mm/yyyy, hh:mm') ";
         getline(cin,s);
         while (cin.fail() && cin.eof()) {
             cin.clear();
@@ -726,7 +748,7 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
         delivery.setDeliver_time(delivery_time);
     }
 
-    cout << "Did you pay your delivery? (Choose an integer option)";
+    cout << endl << "Did you pay your delivery? (Choose an integer option)";
     cout<< " 1.Yes \t 2.No"<<endl;
     menu_int_options(c,1,2);
     cin.ignore(1000, '\n');
@@ -744,12 +766,18 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
     }
     if(a==1){
         system("cls");
-        cout << "We have saved your order's data. Hope you're satisfied!"<<endl;
+        if(birthday){
+            cout << "We have saved your order's data. Hope you're satisfied! Enjoy your birthday!";
+        }
+        else {
+            cout << "We have saved your order's data. Hope you're satisfied!";
+        }
+
         Sleep(1500);
     }
     else if (a==2){
         system("cls");
-        cout << "We have saved your order's data. We apologize for any inconvenience! "<<endl;
+        cout << "We have saved your order's data. We apologize for any inconvenience! ";
         Sleep(1500);
     }
     int time;

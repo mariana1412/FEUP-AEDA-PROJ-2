@@ -14,6 +14,7 @@ class Person{
 private:
     string name;/**< nome da pessoa*/
     int nif;/**<NIF da pessoa*/
+    Time birthdate;/**< data de nascimento da pessoa*/
     string base;/**<base a que a pessoa pertence*/
 public:
     /**
@@ -25,12 +26,21 @@ public:
      * @param base - base a que a pessoa pertence
      * @param name - nome da pessoa
      * @param nif- NIF da pessoa
+     * @param birthdate - data de aniversário da pessoa
 */
-    Person(string base, string name, int nif);
+    Person(string base, string name, int nif, Time birthdate);
+
+    /**
+    * @brief Permite obter a data de nascimento da pessoa
+     * @return Retorna a data de nascimento da pessoa
+    */
+    Time getBirthdate() const;
+
     /**
     * @brief Permite obter a base da pessoa
      * @return Retorna a base da pessoa
     */
+
     string getBase() const;
     /**
     * @brief Permite obter o nome da pessoa
@@ -42,6 +52,11 @@ public:
     * @return Retorna o NIF da pessoa
     */
     int getNif() const;
+    /**
+    * @brief Permite definir a data de nascimento do funcionário
+    * @param birthdate - data de nascimento do funcionário
+    */
+    void setBirthdate(Time birthdate);
     /**
     * @brief Permite definir o nome da pessoa
     * @param name - nome da pessoa
@@ -81,8 +96,9 @@ public:
      * @param address - morada do cliente
      * @param black - verdadeiro se o cliente pertencer à blacklist da empresa, falso caso contrário
      * @param county - concelho do cliente
+     * @param birthdate - data de aniversário do cliente
 */
-    Client(string base, string name, int nif, string address, bool black, string county);
+    Client(string base, string name, int nif, string address, bool black, string county, Time birthdate);
     /**
 * @brief Permite obter se pertence ou não à blacklist da empresa
      * @return Retorna verdadeiro se pertencer à blacklist da empresa, falso caso contrário
@@ -127,7 +143,6 @@ public:
 
 class Employee: public Person{
 private:
-    Time birthdate;/**< data de nascimento do funcionário*/
     float income;/**< salário do funcionário*/
     bool former;/**< true se for um antigo funcionário; falso se for um funcionário atual*/
 public:
@@ -149,11 +164,7 @@ public:
      * @param former - funcionário antigo ou não
 */
     Employee(string base, string name, int nif, Time birthdate, float income, bool former);
-    /**
-    * @brief Permite obter a data de nascimento do funcionário
-     * @return Retorna a data de nascimento do funcionário
-    */
-    Time getBirthdate() const;
+
     /**
     * @brief Permite obter o salário do funcionário
      * @return Retorna o salário do funcionário
@@ -166,11 +177,6 @@ public:
      */
     bool getFormer() const;
 
-    /**
-    * @brief Permite definir a data de nascimento do funcionário
-     * @param birthdate - data de nascimento do funcionário
-    */
-    void setBirthdate(Time birthdate);
     /**
     * @brief Permite definir o salário do funcionário
     * @param income - salário do funcionário

@@ -2,7 +2,8 @@
 
 int Delivery::id_global = 1;
 
-Order::Order(Restaurant restaurant, Time time , vector<Product>products, int nif){
+
+Order::Order(Restaurant restaurant, Time time , vector<Product>products, int nif, bool discount){
     this->time = time;
     this->restaurant = restaurant;
     this->products = products;
@@ -11,6 +12,10 @@ Order::Order(Restaurant restaurant, Time time , vector<Product>products, int nif
     for (vector<Product>::const_iterator it = products.begin(); it != products.end(); it++){
         this->price += it->getPrice();
     }
+    if(discount) {
+        this->price *= 0.9;
+    }
+    this->discount = discount;
 }
 
 Restaurant Order::getRestaurant() const{
@@ -28,6 +33,11 @@ vector<Product> Order::getProducts()const{
 int Order::getNif()const{
     return nif;
 }
+
+bool Order::getDiscount() const {
+    return discount;
+}
+
 void Order::setRestaurant(Restaurant restaurant){
     this->restaurant = restaurant;
 }
@@ -44,7 +54,7 @@ void Order::setNif(int nif) {
 }
 
 
-Delivery::Delivery(Restaurant restaurant, Time time , vector<Product> products, int nif, int id, bool success, string reason_insuccess, Time deliver_time, float tax): Order(restaurant, time , products, nif){
+Delivery::Delivery(Restaurant restaurant, Time time , vector<Product> products, int nif, int id, bool success, string reason_insuccess, Time deliver_time, float tax, bool discount): Order(restaurant, time , products, nif, discount){
     this->id = id;
     this->success = success;
     this->reason_insuccess = reason_insuccess;
@@ -117,7 +127,7 @@ ostream & operator<<(ostream &os, const Delivery &d){
     return os;
 }
 
-Delivery::Delivery(Restaurant restaurant, Time time, vector<Product> products, int nif, float tax): Order(restaurant, time , products, nif){
+Delivery::Delivery(Restaurant restaurant, Time time, vector<Product> products, int nif, float tax, bool discount): Order(restaurant, time , products, nif, discount){
     this->tax = tax;
     this->id = id_global;
     this->final_price = this->price + this->tax;

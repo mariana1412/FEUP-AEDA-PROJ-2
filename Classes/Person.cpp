@@ -1,10 +1,15 @@
 #include "Person.h"
 
 int Tec::id_g= 0;
-Person::Person(string base, string name, int nif){
+Person::Person(string base, string name, int nif, Time birthdate){
     this->base = base;
     this->name = name;
     this->nif = nif;
+    this->birthdate = birthdate;
+}
+
+Time Person::getBirthdate() const{
+    return birthdate;
 }
 
 string Person::getName() const{
@@ -19,6 +24,10 @@ string Person::getBase() const{
     return base;
 }
 
+void Person::setBirthdate(Time birthdate){
+    this->birthdate = birthdate;
+}
+
 void Person::setName(string name){
     this->name = name;
 }
@@ -31,7 +40,7 @@ void Person::setBase(string base){
     this->base = base;
 }
 
-Client::Client(string base, string name, int nif, string address, bool black, string county):Person(base, name, nif){
+Client::Client(string base, string name, int nif, string address, bool black, string county, Time birthdate):Person(base, name, nif, birthdate){
     this->address = address;
     this->black = black;
     this->county = county;
@@ -65,19 +74,15 @@ ostream &operator<<(ostream &os, const Client cl){
     os<<"Base: "<<cl.getBase()<<endl
       << "Name: "<< cl.getName()<<endl
       <<"NIF: "<<cl.getNif()<<endl
+      <<"Birthdate: " << cl.getBirthdate() << endl
       << "Address: "<<cl.getAddress()
       <<", "<< cl.getCounty()<<endl;
     return os;
 }
 
-Employee::Employee(string base, string name, int nif, Time birthdate, float income, bool former) : Person(base, name, nif){
-    this->birthdate = birthdate;
+Employee::Employee(string base, string name, int nif, Time birthdate, float income, bool former) : Person(base, name, nif, birthdate){
     this->income = income;
     this->former = former;
-}
-
-Time Employee::getBirthdate() const{
-    return birthdate;
 }
 
 float Employee::getIncome() const{
@@ -86,10 +91,6 @@ float Employee::getIncome() const{
 
 bool Employee::getFormer() const{
     return former;
-}
-
-void Employee::setBirthdate(Time birthdate){
-    this->birthdate = birthdate;
 }
 
 void Employee::setIncome(float income){

@@ -16,6 +16,7 @@ private:
     Time time;/**< Tempo exato da encomenda*/
     vector<Product> products;/**< Produtos encomendados*/
     int nif; /**< NIF do cliente que faz a encomenda*/
+    bool discount; /**< true se o cliente teve desconto, falso se não*/
 
 protected:
     float price;/**<preço da encomenda*/
@@ -25,14 +26,16 @@ public:
 * @brief Construtor por default da classe Order
 */
     Order(){};
+
     /**
-* @brief Construtor da classe Order
-     * @param restaurant - restaurante a que é feita a encomenda
-     * @param time - tempo exato da encomenda
-     * @param products - produtos encomendados
-     * @param nif - NIF do cliente que encomendou
-*/
-    Order(Restaurant restaurant, Time time , vector<Product>products, int nif);
+    * @brief Construtor da classe Order
+    * @param restaurant - restaurante a que é feita a encomenda
+    * @param time - tempo exato da encomenda
+    * @param products - produtos encomendados
+    * @param nif - NIF do cliente que encomendou
+    * @param discount - se true, o preço da encomenda é calculado com um desconto de 10% por ser o aniversário do cliente
+    */
+    Order(Restaurant restaurant, Time time , vector<Product>products, int nif, bool discount);
     /**
 * @brief Permite obter o restaurante a que é feita a encomenda
      * @return Retorna o restaurante a que é feita a encomenda
@@ -49,10 +52,16 @@ public:
 */
     vector<Product> getProducts()const;
     /**
-* @brief Permite obter o NIF do cliente que faz a encomenda
-* @return Retorna o NIF do cliente que faz a encomenda
-*/
+    * @brief Permite obter o NIF do cliente que faz a encomenda
+    * @return Retorna o NIF do cliente que faz a encomenda
+    */
     int getNif()const;
+    /**
+    * @brief Permite saber se houve desconto  na encomenda
+    * @return Retorna true se houve desconto
+    */
+    bool getDiscount()const;
+
     /**
 * @brief Permite definir o restaurante a que é feita a encomenda
      * @param restaurant - restaurante a que é feita a encomenda
@@ -104,18 +113,20 @@ public:
      * @param reason_insuccess - motivo de insucesso
      * @param deliver_time - tempo exato de entrega
      * @param tax - taxa de entrega
+     * @param discount - se true, o preço da encomenda é calculado com um desconto de 10% por ser o aniversário do cliente
 */
-    Delivery(Restaurant restaurant, Time time , vector<Product> products,int nif, int id, bool success, string reason_insuccess, Time deliver_time, float tax);
+    Delivery(Restaurant restaurant, Time time , vector<Product> products,int nif, int id, bool success, string reason_insuccess, Time deliver_time, float tax, bool discount);
     /**
    * @brief Construtor da classe Delivery
-        * @param restaurant - restaurante a que é feita a encomenda
-        * @param time - tempo exato em que é feita a encomenda
-        * @param products - produtos encomendados
-        * @param nif - NIF do cliente que faz a encomenda
-        * @param tax - taxa de entrega
+    * @param restaurant - restaurante a que é feita a encomenda
+    * @param time - tempo exato em que é feita a encomenda
+    * @param products - produtos encomendados
+    * @param nif - NIF do cliente que faz a encomenda
+    * @param tax - taxa de entrega
+    * @param discount - se true, o preço da encomenda é calculado com um desconto de 10% por ser o aniversário do cliente
    */
 
-    Delivery(Restaurant restaurant, Time time , vector<Product> products,int nif, float tax);
+    Delivery(Restaurant restaurant, Time time , vector<Product> products, int nif, float tax, bool discount);
     /**
 * @brief Permite obter o id da entrega
      * @return Retorna o id da entrega

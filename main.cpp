@@ -29,7 +29,6 @@ int main() {
     string verification;
 
     system("cls");
-
     cout << endl << endl << "Welcome to Ugh Eats! We are going to tranform your lunch/dinner in a unforgetable gastronomical experience!\n"<< endl << endl;
     extract_Clients(Porto, Lisboa, Faro);
     extract_Restaurants(Porto, Lisboa, Faro);

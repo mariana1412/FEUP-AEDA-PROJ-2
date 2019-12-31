@@ -14,6 +14,7 @@ void write_Clients(const Base& baseP,const Base& baseL,const Base& baseF){
             clientfile << "Porto" << endl;
             clientfile << it->getName() << endl;
             clientfile << it->getNif() << endl;
+            clientfile << it->getBirthdate() << endl;
             clientfile << it->getAddress() << ", " << it->getCounty() << endl;
             if (it->getBlack() == true){
                 clientfile << "true" ;
@@ -34,6 +35,7 @@ void write_Clients(const Base& baseP,const Base& baseL,const Base& baseF){
             clientfile << "Lisboa" << endl;
             clientfile << it->getName() << endl;
             clientfile << it->getNif() << endl;
+            clientfile << it->getBirthdate() << endl;
             clientfile << it->getAddress() << ", " << it->getCounty() << endl;
             if (it->getBlack() == true){
                 clientfile << "true" ;
@@ -52,6 +54,7 @@ void write_Clients(const Base& baseP,const Base& baseL,const Base& baseF){
             clientfile << "Faro" << endl;
             clientfile << it->getName() << endl;
             clientfile << it->getNif() << endl;
+            clientfile << it->getBirthdate() << endl;
             clientfile << it->getAddress() << ", " << it->getCounty() << endl;
             if (it->getBlack() == true){
                 clientfile << "true";
@@ -66,6 +69,7 @@ void write_Clients(const Base& baseP,const Base& baseL,const Base& baseF){
         cerr << "File could not be opened";
     clientfile.close();
 }
+
 void write_Restaurants(const Base& baseP,const Base& baseL,const Base& baseF){
     ofstream restaurantfile;
     restaurantfile.open("../Restaurants.txt");
@@ -177,7 +181,6 @@ void write_Restaurants(const Base& baseP,const Base& baseL,const Base& baseF){
     restaurantfile.close();
 }
 
-
 void write_Deliveries(const Base& baseP,const Base& baseL,const Base& baseF){
     ofstream deliveryfile;
     deliveryfile.open("../Orders.txt");
@@ -194,6 +197,8 @@ void write_Deliveries(const Base& baseP,const Base& baseL,const Base& baseF){
             deliveryfile << it->getId() << endl;
             deliveryfile << it->getNif() <<endl;
             deliveryfile << it->getRestaurant().getName()<< endl;
+            if(it->getDiscount()) deliveryfile << "true" << endl;
+            else deliveryfile << "false" << endl;
             deliveryfile << setw(2) << setfill('0') << it->getTime().getDay() << "/" << setw(2) << setfill('0') <<  it->getTime().getMonth() << "/" << it->getTime().getYear() << ", " << setw(2) << setfill('0') << it->getTime().getHour() << ":" << setw(2) << setfill('0') << it->getTime().getMinutes() << endl;
             vector<Product> products = it->getProducts();
             for (vector<Product>::const_iterator it1 = products.begin(); it1 != products.end(); it1++) {
@@ -227,6 +232,8 @@ void write_Deliveries(const Base& baseP,const Base& baseL,const Base& baseF){
             deliveryfile << it->getId() << endl;
             deliveryfile << it->getNif()<<endl;
             deliveryfile << it->getRestaurant().getName()<< endl;
+            if(it->getDiscount()) deliveryfile << "true" << endl;
+            else deliveryfile << "false" << endl;
             deliveryfile << setw(2) << setfill('0') << it->getTime().getDay() << "/" << setw(2) << setfill('0') << it->getTime().getMonth() << "/" << it->getTime().getYear() << ", " << setw(2) << setfill('0') << it->getTime().getHour() << ":" <<setw(2) << setfill('0') << it->getTime().getMinutes() << endl;
             vector<Product> products = it->getProducts();
             for (vector<Product>::const_iterator it1 = products.begin(); it1 != products.end(); it1++) {
@@ -259,6 +266,8 @@ void write_Deliveries(const Base& baseP,const Base& baseL,const Base& baseF){
             deliveryfile << it->getId() << endl;
             deliveryfile << it->getNif()<<endl;
             deliveryfile << it->getRestaurant().getName()<< endl;
+            if(it->getDiscount()) deliveryfile << "true" << endl;
+            else deliveryfile << "false" << endl;
             deliveryfile << setw(2) << setfill('0') << it->getTime().getDay() << "/" << setw(2) << setfill('0') << it->getTime().getMonth() << "/" << it->getTime().getYear() << ", " << setw(2) << setfill('0') << it->getTime().getHour() << ":" << setw(2) << setfill('0') << it->getTime().getMinutes() << endl;
             vector<Product> products = it->getProducts();
             for (vector<Product>::const_iterator it1 = products.begin(); it1 != products.end(); it1++) {
@@ -287,7 +296,6 @@ void write_Deliveries(const Base& baseP,const Base& baseL,const Base& baseF){
         cerr << "File could not be opened";
     deliveryfile.close();
 }
-
 
 void write_Employees(const Base& baseP,const Base& baseL,const Base& baseF){
     ofstream employeefile;
@@ -495,11 +503,6 @@ void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
         cerr << "File could not be opened";
     tecfile.close();
 }
-
-
-
-
-
 
 void write_Bases(string boss, int nif, Base& baseP,const Base& baseL,const Base& baseF){
     ofstream basefile;

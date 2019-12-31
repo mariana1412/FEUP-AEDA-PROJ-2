@@ -76,6 +76,15 @@ int create_client(Base &Porto, Base &Lisboa, Base &Faro, bool is_Client) {
     } while(!is_Valid);
     new_client.setNif(stoi(aux));
 
+    cout << "Birthdate: ";
+    getline(cin, aux);
+    while(cin.fail() && cin.eof()){
+        cin.clear();
+        cout << "Invalid character. Please insert a valid input: ";
+        getline(cin, aux);
+    }
+    new_client.setBirthdate(verification_date(aux));
+
 
     cout << "Address: "; //nao ha verificaçao porque pode ter tanto letras como numeros
     getline(cin, aux);
