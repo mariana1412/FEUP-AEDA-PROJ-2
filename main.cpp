@@ -11,6 +11,7 @@
 #include "Functions/ProfitsCalculation.h"
 #include "Functions/Visualize_Information.h"
 #include "Classes/Company.h"
+#include "Functions/Tecs_functions.h"
 
 const vector<string> nearby_Porto = { "Matosinhos", "Vila Nova De Gaia", "Maia", "Gondomar", "Porto" };
 const vector<string> nearby_Lisboa = { "Oeiras", "Loures", "Amadora", "Odivelas","Lisboa" };
@@ -190,7 +191,7 @@ int main() {
                     else {
                         choice = TecManagement();
                         if (choice == 1) {
-                            //aux = createTec(Porto, Lisboa, Faro);
+                            aux = hire_tec(Porto, Lisboa,Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -503,7 +504,7 @@ int main() {
                     else {
                         choice = TecManagement();
                         if (choice == 1) {
-                            //aux = createTec(Porto, Lisboa, Faro);
+                            aux = hire_tec(Porto, Lisboa,Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -774,7 +775,7 @@ int main() {
                     else {
                         choice = TecManagement();
                         if (choice == 1) {
-                            //aux = createTec(Porto, Lisboa, Faro);
+                            aux = hire_tec(Porto, Lisboa,Faro);
                             if (aux == 1) {
                                 break;
                             }

@@ -193,4 +193,21 @@ public:
         string getNIF() const{return nif;}
 };
 
+
+class TecAlreadyExists{
+private:
+    string nif;/**<nif do cliente que gerou a exceção*/
+public:
+    /**
+* @brief Construtor da classe ClientAlreadyExists
+* @param nif - nif do cliente que lançou a exceção
+* **/
+    TecAlreadyExists(string nif){this->nif=nif;}
+    /**
+* @brief Permite obter a descrição do erro
+* @return Retorna a mensagem de erro
+*/
+    string getNIF() const{return nif;}
+};
+
 #endif //PROJETO_EXCEPTIONS_H

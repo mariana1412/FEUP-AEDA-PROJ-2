@@ -47,7 +47,7 @@ int remove_tec(Base &Porto, Base &Lisboa, Base &Faro);
  * @param b - base a que quer pertencer o técnico
  * @param nif - NIF do técnico em questão
  */
-bool tec_already_exists(string nif, const Base &p, const Base &l, const Base &f);
+void tec_already_exists(string nif, const Base &p, const Base &l, const Base &f);
 
 /**
  * @brief Função que procura um Funcionário, através do seu nif (x), num vetor de funcionários
