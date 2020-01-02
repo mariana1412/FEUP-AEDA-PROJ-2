@@ -585,7 +585,15 @@ int visualize_deliveries(const Base &Porto, const Base &Lisboa, const Base &Faro
     return option;
 }
 bool SortById ( Tec tec1, Tec tec2){
-    return tec1.getId()<tec2.getId();
+    if(tec1.getBirthdate().getYear()== tec2.getBirthdate().getYear()){
+        if(tec1.getBirthdate().getMonth()== tec2.getBirthdate().getMonth()){
+            return tec1.getBirthdate().getDay() <tec2.getBirthdate().getDay();
+        }
+        else{
+            return tec1.getBirthdate().getMonth()<tec2.getBirthdate().getMonth();
+        }
+    }
+    return tec1.getBirthdate().getYear()<tec2.getBirthdate().getYear();
 }
 
 int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
@@ -614,7 +622,7 @@ int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
         size = Porto.getTecs().size();
         if (size != 0) {
             cout << "Do you wish to visualize the tecs: " << endl;
-            cout << "1. Ordered by ID" << endl;
+            cout << "1. Ordered by Age" << endl;
             cout << "2. Ordered by next available" << endl;
             cout << "0. Return to Main Menu" << endl;
             menu_int_options(number, 0, 2);
@@ -625,7 +633,7 @@ int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
 
             if (number == 1) {
                 system("cls");
-                cout << endl << "---------------- VISUALIZE TECS ORDERED BY ID ---------------- " << endl << endl;
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY AGE ---------------- " << endl << endl;
                 vector<Tec> aux = Porto.getTecs();
                 sort(aux.begin(), aux.end(), SortById);
                 Porto.printTecs(aux);
@@ -649,7 +657,7 @@ int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
         size = Lisboa.getTecs().size();
         if (size != 0) {
             cout << "Do you wish to visualize the tecs: " << endl;
-            cout << "1. Ordered by ID" << endl;
+            cout << "1. Ordered by Age" << endl;
             cout << "2. Ordered by next available" << endl;
             cout << "0. Return to Main Menu" << endl;
             menu_int_options(number, 0, 2);
@@ -660,7 +668,7 @@ int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
 
             if (number == 1) {
                 system("cls");
-                cout << endl << "---------------- VISUALIZE TECS ORDERED BY ID ---------------- " << endl << endl;
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY AGE ---------------- " << endl << endl;
                 vector<Tec> aux = Lisboa.getTecs();
                 sort(aux.begin(), aux.end(), SortById);
                 Porto.printTecs(aux);
@@ -683,7 +691,7 @@ int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
         size = Faro.getTecs().size();
         if (size != 0) {
             cout << "Do you wish to visualize the tecs: " << endl;
-            cout << "1. Ordered by ID" << endl;
+            cout << "1. Ordered by Age" << endl;
             cout << "2. Ordered by next available" << endl;
             cout << "0. Return to Main Menu" << endl;
             menu_int_options(number, 0, 2);
@@ -694,7 +702,7 @@ int visualize_tecs(Base Porto,Base Lisboa,Base Faro){
 
             if (number == 1) {
                 system("cls");
-                cout << endl << "---------------- VISUALIZE TECS ORDERED BY ID ---------------- " << endl << endl;
+                cout << endl << "---------------- VISUALIZE TECS ORDERED BY AGE ---------------- " << endl << endl;
                 vector<Tec> aux = Faro.getTecs();
                 sort(aux.begin(), aux.end(), SortById);
                 Faro.printTecs(aux);

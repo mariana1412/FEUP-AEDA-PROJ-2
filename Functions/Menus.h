@@ -70,5 +70,11 @@ int ProfitsCalculation();
  */
 
 int VisualizeInformation();
+/**
+ * @brief Menu de gerir técnicos
+ * @return Retorna valor inteiro para retorno do Menu
+ */
+
+int TecManagement();
 
 #endif //PROJETO_MENUS_H

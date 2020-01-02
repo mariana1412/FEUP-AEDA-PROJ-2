@@ -412,41 +412,53 @@ void extract_Bases(Base& baseP, Base& baseL, Base& baseF,string &boss, int &boss
 }
 
 void extract_Tecs(Base& baseP, Base& baseL, Base& baseF){
-    string line, i, n_maintenances;
+    string line, i, n_maintenances,name,nif;
     int m_avail;
+    Time birthdate;
     ifstream tecfile;
+
     tecfile.open("../Tecs.txt");
+
     if (tecfile.is_open()) {
         while (!tecfile.eof()) {
             line="";
             getline(tecfile, line);
             if (line == "Porto"){
-                getline(tecfile, i);
+                getline(tecfile, name);
+                getline(tecfile, nif);
+                getline(tecfile, line);
+                birthdate = stringToDate(line);
                 getline(tecfile, line);
                 m_avail = stoi(line);
                 getline(tecfile, n_maintenances);
                 getline(tecfile, line);//separator
-                baseP.addTec(Tec("Porto",stoi(i),m_avail,stoi(n_maintenances)));
+                baseP.addTec(Tec("Porto",name, birthdate,stoi(nif),m_avail,stoi(n_maintenances)));
                 continue;
             }
 
             if (line == "Lisboa"){
-                getline(tecfile, i);
+                getline(tecfile, name);
+                getline(tecfile, nif);
+                getline(tecfile, line);
+                birthdate = stringToDate(line);
                 getline(tecfile, line);
                 m_avail = stoi(line);
                 getline(tecfile, n_maintenances);
                 getline(tecfile, line);//separator
-                baseL.addTec(Tec("Lisboa",stoi(i),m_avail,stoi(n_maintenances)));
+                baseL.addTec(Tec("Lisboa",name, birthdate,stoi(nif),m_avail,stoi(n_maintenances)));
                 continue;
             }
 
             if (line == "Faro"){
-                getline(tecfile, i);
+                getline(tecfile, name);
+                getline(tecfile, nif);
+                getline(tecfile, line);
+                birthdate = stringToDate(line);
                 getline(tecfile, line);
                 m_avail = stoi(line);
                 getline(tecfile, n_maintenances);
                 getline(tecfile, line);//separator
-                baseF.addTec(Tec("Faro",stoi(i),m_avail,stoi(n_maintenances)));
+                baseF.addTec(Tec("Faro",name, birthdate,stoi(nif),m_avail,stoi(n_maintenances)));
                 continue;
             }
         }

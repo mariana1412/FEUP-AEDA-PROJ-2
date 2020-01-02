@@ -295,11 +295,8 @@ public:
 /**
  * Tecnico
  */
-class Tec{
+class Tec:public Person{
 private:
-    string base; /**<base a que o tecnico pertence*/
-    static int id_g;/**id global para saber o proximo tecnico<*/
-    int id; /**< numero identificador do tecnico*/
     int time_to_available;/**< numero de minutos ate o tecnico estar disponivel*/
     int number_of_maintenances;/**< numero de manutençoes efetuadas pelo tecnico*/
 public:
@@ -311,30 +308,15 @@ public:
     /**
 * @brief Construtor da classe Tec
 * @param base - base a que o tecnico pertence
+     * @param name -nome do tecnico
+     * @param birthdate - data de aniversario do tecnico
+     * @param nif - NIF do tecnico
 * @param m - numero de minutos ate o tecnico estar disponivel
 * @param n - numero de manutençoes efetuadas pelo tecnico
 */
 
-    Tec(string base,int m, int n);
-    /**
-* @brief Construtor da classe Tec
- * @param base - base a que o tecnico pertence
- * @param id- numero identificador do tecnico
- * @param m - numero de minutos ate o tecnico estar disponivel
- * @param n - numero de manutençoes efetuadas pelo tecnico
-*/
+    Tec(string base,string name,Time birthdate,int nif, int m, int n);
 
-    Tec(string base, int id,int m, int n);
-    /**
-* @brief Permite definir a base da pessoa
-* @param base - base da pessoa
-*/
-    void setBase(string base);
-    /**
-    * @brief Permite definir o numero identificador do tecnico
-    * @param i - numero identificador do tecnico
-    */
-    void setId(int i);
     /**
      * @brief Permite definir o numero de minutos ate o tecnico estar disponivel
      * @param m - numero de minutos ate o tecnico estar dispnonivel
@@ -345,16 +327,7 @@ public:
   * @param n - numero de manutençoes efetuadas pelo tecnico
   */
     void setNumberOfMaintenances(int n);
-    /**
-* @brief Permite obter a base da pessoa
- * @return Retorna a base da pessoa
-*/
-    string getBase() const;
-    /**
-   * @brief Permite obter  o numero identificador do tecnico
-   * @return Retorna  o numero identificador do tecnico
-   */
-    int getId() const;
+
     /**
   * @brief Permite obter o numero de minutos ate o tecnico estar disponivel
   * @return Retorna o numero de minutos ate o tecnico estar disponivel

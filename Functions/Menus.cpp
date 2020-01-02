@@ -6,12 +6,13 @@ int Admin_MainMenu(){//admins can't manage employees, only the boss and the mana
     cout << "--------------------------------------" << endl;
     cout << "---------------- MENU ----------------" << endl << endl;
     cout << "1. Clients Management" << endl;
-    cout << "2. Restaurants Management" << endl;
-    cout << "3. Profits Calculation" << endl;
-    cout << "4. Visualize Information"<<endl;
+    cout << "2. Tecs Management "<<endl;
+    cout << "3. Restaurants Management " << endl;
+    cout << "4. Profits Calculation " << endl;
+    cout << "5. Visualize Information "<<endl;
     cout << "0. Exit" << endl;
     cout << "--------------------------------------" << endl;
-    menu_int_options(option,0,4);
+    menu_int_options(option,0,5);
 
     cin.ignore(1000,'\n');
     return option;
@@ -24,12 +25,13 @@ int Manager_MainMenu(){
     cout << "---------------- MENU ----------------" << endl << endl;
     cout << "1. Clients Management" << endl;
     cout << "2. Employees Management " << endl;
-    cout << "3. Restaurants Management" << endl;
-    cout << "4. Profits Calculation" << endl;
-    cout << "5. Visualize Information"<<endl;
+    cout << "3. Tecs Management "<<endl;
+    cout << "4. Restaurants Management " << endl;
+    cout << "5. Profits Calculation " << endl;
+    cout << "6. Visualize Information "<<endl;
     cout << "0. Exit" << endl;
     cout << "--------------------------------------" << endl;
-    menu_int_options(option,0,5);
+    menu_int_options(option,0,6);
 
     cin.ignore(1000,'\n');
     return option;
@@ -42,13 +44,14 @@ int Boss_MainMenu(){
     cout << "---------------- MENU ----------------" << endl << endl;
     cout << "1. Clients Management" << endl;
     cout << "2. Employees Management " << endl;
-    cout << "3. Restaurants Management " << endl;
-    cout << "4. Profits Calculation " << endl;
-    cout << "5. Visualize Information "<<endl;
-    cout << "6. Change Manager " <<endl;
+    cout << "3. Tecs Management "<<endl;
+    cout << "4. Restaurants Management " << endl;
+    cout << "5. Profits Calculation " << endl;
+    cout << "6. Visualize Information "<<endl;
+    cout << "7. Change Manager " <<endl;
     cout << "0. Exit" << endl;
     cout << "--------------------------------------" << endl;
-    menu_int_options(option,0,6);
+    menu_int_options(option,0,7);
 
     cin.ignore(1000,'\n');
     return option;
@@ -170,6 +173,24 @@ int VisualizeInformation(){
     cout << "0. Exit" << endl;
     cout << "-------------------------------------------------------"<<endl;
     menu_int_options(option,0,8);
+    cin.ignore(1000,'\n');
+    return option;
+}
+
+
+int TecManagement(){
+    int option;
+    system("cls");
+    cout << "----------------------------------------------------" << endl;
+    cout << "---------------- TEC MANAGEMENT ----------------" << endl << endl;
+    cout << "1. Hire Tec " << endl;
+    cout << "2. Modify Tec" << endl;
+    cout << "3. Remove Tec " << endl;
+    cout << "4. Return to the main menu " << endl;
+    cout << "0. Exit" << endl;
+    cout << "--------------------------------------" << endl;
+    menu_int_options(option,0,4);
+
     cin.ignore(1000,'\n');
     return option;
 }

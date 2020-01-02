@@ -1,6 +1,6 @@
 #include "Person.h"
 
-int Tec::id_g= 0;
+
 Person::Person(string base, string name, int nif, Time birthdate){
     this->base = base;
     this->name = name;
@@ -172,36 +172,16 @@ void Deliverer::addDelivery(Delivery delivery) {
     background.push_back(delivery);
 }
 
-Tec::Tec(string base, int m, int n) {
-    this->base = base;
+Tec::Tec(string base,string name,Time birthdate,int nif, int m, int n):Person(base, name,nif, birthdate) {
     this->time_to_available = m;
     this -> number_of_maintenances =n;
-    id_g++;
 }
-Tec::Tec(string base, int i,int m, int n) {
-    this->id =i;
-    this->base = base;
-    this->time_to_available = m;
-    this -> number_of_maintenances =n;
-    id_g ++;
-}
-void Tec::setBase(string base){
-    this->base = base;
-}
-void Tec::setId(int i) {
-    this-> id = i;
-}
+
 void Tec::setTimeToAvailable(int m) {
     this->time_to_available = m;
 }
 void Tec::setNumberOfMaintenances(int n) {
     this->number_of_maintenances = n;
-}
-string Tec::getBase() const{
-    return base;
-}
-int Tec::getId() const {
-    return id;
 }
 
 int Tec::getTimeToAvailable() const{
@@ -225,18 +205,22 @@ void Deliverer::addDeliveryToVehicle(){
 }
 
 
-bool Tec::operator==(const Tec &tec1) const {//verificasse tudo para nao haver casos errados
-    return this->id == tec1.id;
+bool Tec::operator==(const Tec &tec1) const {
+    return this->getNif() == tec1.getNif();
 }
 ostream &operator<<(ostream &os, const Tec &tecnico){
     int hours = tecnico.getTimeToAvailable() / 60;
     int min = tecnico.getTimeToAvailable() % 60;
-    os <<"Base: "<<tecnico.getBase() <<endl
-       <<"ID: "<<tecnico.getId() <<endl
+    os  <<"Base: "<< tecnico.getBase() <<endl
+        << "Name: " << tecnico.getName() << endl
+        <<"NIF: " << tecnico.getNif() << endl
+        <<"Birthdate: " << tecnico.getBirthdate() << endl
        << "Number of hours to be available: "<< hours <<endl
        << "Number of minutes to be available: "<< min <<endl
        << "Number of maintenances: "<< tecnico.getNumberOfMaintenances();
     return os;
+
 }
+
 
 

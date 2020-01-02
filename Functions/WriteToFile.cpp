@@ -465,7 +465,9 @@ void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
             if (it != tecs_porto.begin())
                 tecfile << endl << "::::::::" << endl;
             tecfile << "Porto" << endl;
-            tecfile << it->getId() << endl;
+            tecfile << it->getName()<<endl;
+            tecfile << it->getNif() <<endl;
+            tecfile << setw(2) << setfill('0') <<it->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << it->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << it->getBirthdate().getYear() << endl;
             tecfile << it->getTimeToAvailable() << endl;
             tecfile << it->getNumberOfMaintenances();
         }
@@ -480,7 +482,9 @@ void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
             if (it != tecs_lisboa.begin())
                 tecfile << endl << "::::::::" << endl;
             tecfile << "Lisboa" << endl;
-            tecfile << it->getId() << endl;
+            tecfile << it->getName()<<endl;
+            tecfile << it->getNif() <<endl;
+            tecfile << setw(2) << setfill('0') <<it->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << it->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << it->getBirthdate().getYear() << endl;
             tecfile << it->getTimeToAvailable() << endl;
             tecfile << it->getNumberOfMaintenances();
         }
@@ -492,7 +496,9 @@ void write_Tecs(const Base& baseP,const Base& baseL,const Base& baseF){
         for (vector<Tec>::const_iterator it = tecs_faro.begin() ; it != tecs_faro.end(); it++) {
             count++;
             tecfile << "Faro" << endl;
-            tecfile << it->getId() << endl;
+            tecfile << it->getName()<<endl;
+            tecfile << it->getNif() <<endl;
+            tecfile << setw(2) << setfill('0') <<it->getBirthdate().getDay() << "/" <<setw(2) << setfill('0') << it->getBirthdate().getMonth() << "/" << setw(4) << setfill('0') << it->getBirthdate().getYear() << endl;
             tecfile << it->getTimeToAvailable() << endl;
             tecfile << it->getNumberOfMaintenances();
             if (count != tecs_faro.size())

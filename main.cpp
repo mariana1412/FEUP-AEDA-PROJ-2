@@ -179,7 +179,7 @@ int main() {
                     }
                 } while (choice != 4);
             }
-            else if (menu == 3) {
+            else if (menu == 3){
                 int choice, aux;
                 do {
                     if (is_client) {
@@ -188,9 +188,9 @@ int main() {
                         break;
                     }
                     else {
-                        choice = RestaurantsManagement();
+                        choice = TecManagement();
                         if (choice == 1) {
-                            aux = create_restaurant(Porto, Lisboa, Faro);
+                            //aux = createTec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -199,7 +199,7 @@ int main() {
                             }
                         }
                         else if (choice == 2) {
-                            aux = modify_restaurant(Porto, Lisboa, Faro);
+                            //aux = modify_tec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -209,7 +209,7 @@ int main() {
 
                         }
                         else if (choice == 3) {
-                            aux = remove_restaurant(Porto, Lisboa, Faro);
+                            //aux = remove_tec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -234,6 +234,52 @@ int main() {
                         break;
                     }
                     else {
+                        choice = RestaurantsManagement();
+                        if (choice == 1) {
+                            aux = create_restaurant(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 4;
+                            }
+                        }
+                        else if (choice == 2) {
+                            aux = modify_restaurant(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 4;
+                            }
+
+                        }
+                        else if (choice == 3) {
+                            aux = remove_restaurant(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 4;
+                            }
+
+                        }
+                        else if (choice == 0) {
+                            menu = 0;
+                            break;
+                        }
+                    }
+                } while (choice != 4);
+            }
+            else if (menu == 5) {
+                int choice, aux;
+                do {
+                    if (is_client) {
+                        cout << endl << "ATENTION: You do not have access to this functionality.\n" << endl;
+                        choice = 0;
+                        break;
+                    }
+                    else {
                         choice = ProfitsCalculation();
                         if (choice == 1) {
                             aux = ProfitsByBase(Porto, Lisboa, Faro);
@@ -241,7 +287,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
 
                         }
@@ -251,7 +297,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 3) {
@@ -260,7 +306,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 4) {
@@ -269,7 +315,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 0) {
@@ -279,7 +325,7 @@ int main() {
                     }
                 } while (choice != 5);
             }
-            else if (menu == 5) {
+            else if (menu == 6) {
                 int choice, aux;
                 do {
                     if (is_client) {
@@ -295,7 +341,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
 
                         }
@@ -305,7 +351,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if (choice == 3) {
@@ -314,7 +360,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if (choice == 4) {
@@ -323,7 +369,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if (choice == 5) {
@@ -332,7 +378,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if(choice == 6){
@@ -341,7 +387,7 @@ int main() {
                                 break;
                             }
                             else if(aux==2){
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if(choice == 7){
@@ -350,7 +396,7 @@ int main() {
                                 break;
                             }
                             else if(aux==2){
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if (choice == 0) {
@@ -360,7 +406,7 @@ int main() {
                     }
                 } while (choice != 8);
             }
-            else if (menu == 6) {
+            else if (menu == 7) {
                 changeManager(Porto, Lisboa, Faro);
             }
 
@@ -446,7 +492,54 @@ int main() {
                         }
                 } while (choice != 4);
             }
-            else if (menu == 3) {
+            else if(menu == 3){
+                int choice, aux;
+                do {
+                    if (is_client) {
+                        cout << endl << "ATENTION: You do not have access to this functionality.\n" << endl;
+                        choice = 0;
+                        break;
+                    }
+                    else {
+                        choice = TecManagement();
+                        if (choice == 1) {
+                            //aux = createTec(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 3;
+                            }
+                        }
+                        else if (choice == 2) {
+                            //aux = modify_tec(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 3;
+                            }
+
+                        }
+                        else if (choice == 3) {
+                            //aux = remove_tec(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 3;
+                            }
+
+                        }
+                        else if (choice == 0) {
+                            menu = 0;
+                            break;
+                        }
+                    }
+                } while (choice != 4);
+
+            }
+            else if (menu == 4) {
                 int choice, aux;
                 do {
                     if (is_client) {
@@ -462,7 +555,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 3;
+                                menu = 4;
                             }
                         }
                         else if (choice == 2) {
@@ -471,7 +564,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 3;
+                                menu = 4;
                             }
                         }
                         else if (choice == 3) {
@@ -480,7 +573,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 3;
+                                menu = 4;
                             }
                         }
                         else if (choice == 0) {
@@ -490,7 +583,7 @@ int main() {
                     }
                 } while (choice != 4);
             }
-            else if (menu == 4) {
+            else if (menu == 5) {
                 int choice, aux;
                 do {
                     if (is_client) {
@@ -506,7 +599,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 2) {
@@ -515,7 +608,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 3) {
@@ -524,7 +617,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 4) {
@@ -533,7 +626,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 0) {
@@ -544,7 +637,7 @@ int main() {
                     }
                 } while (choice != 5);
             }
-            else if (menu == 5) {
+            else if (menu == 6) {
                 int choice, aux;
                 do {
                     if (is_client) {
@@ -560,7 +653,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
 
                         }
@@ -570,7 +663,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if (choice == 3) {
@@ -579,7 +672,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if (choice == 4) {
@@ -588,7 +681,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if (choice == 5) {
@@ -597,7 +690,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if(choice == 6){
@@ -606,7 +699,7 @@ int main() {
                                 break;
                             }
                             else if(aux==2){
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if(choice == 7){
@@ -615,7 +708,7 @@ int main() {
                                 break;
                             }
                             else if(aux==2){
-                                menu = 5;
+                                menu = 6;
                             }
                         }
                         else if (choice == 0) {
@@ -670,7 +763,54 @@ int main() {
 
                 } while (choice != 4);
             }
-            else if (menu == 2) {
+            else if(menu == 2){
+                int choice, aux;
+                do {
+                    if (is_client) {
+                        cout << endl << "ATENTION: You do not have access to this functionality.\n" << endl;
+                        choice = 0;
+                        break;
+                    }
+                    else {
+                        choice = TecManagement();
+                        if (choice == 1) {
+                            //aux = createTec(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 2;
+                            }
+                        }
+                        else if (choice == 2) {
+                            //aux = modify_tec(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 2;
+                            }
+
+                        }
+                        else if (choice == 3) {
+                            //aux = remove_tec(Porto, Lisboa, Faro);
+                            if (aux == 1) {
+                                break;
+                            }
+                            else if (aux == 2) {
+                                menu = 2;
+                            }
+
+                        }
+                        else if (choice == 0) {
+                            menu = 0;
+                            break;
+                        }
+                    }
+                } while (choice != 4);
+
+            }
+            else if (menu == 3) {
                 int choice, aux;
                 do {
                     if (is_client) {
@@ -686,7 +826,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 2;
+                                menu = 3;
                             }
                         }
                         else if (choice == 2) {
@@ -695,7 +835,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 2;
+                                menu = 3;
                             }
                         }
                         else if (choice == 3) {
@@ -704,7 +844,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 2;
+                                menu = 3;
                             }
                         }
                         else if (choice == 0) {
@@ -714,7 +854,7 @@ int main() {
                     }
                 } while (choice != 4);
             }
-            else if (menu == 3) {
+            else if (menu == 4) {
                 int choice, aux;
                 do {
                     if (is_client) {
@@ -730,7 +870,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 3;
+                                menu = 4;
                             }
                         }
                         else if (choice == 2) {
@@ -739,7 +879,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 3;
+                                menu = 4;
                             }
                         }
                         else if (choice == 3) {
@@ -757,7 +897,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 3;
+                                menu = 4;
                             }
                         }
                         else if (choice == 0) {
@@ -767,7 +907,7 @@ int main() {
                     }
                 } while (choice != 5);
             }
-            else if (menu == 4) {
+            else if (menu == 5) {
                 int choice, aux;
                 do {
                     if (is_client) {
@@ -783,7 +923,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 2) {
@@ -792,7 +932,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 3) {
@@ -801,7 +941,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 4) {
@@ -810,7 +950,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if (choice == 5) {
@@ -819,7 +959,7 @@ int main() {
                                 break;
                             }
                             else if (aux == 2) {
-                                menu = 4;
+                                menu = 5;
                             }
                         }
                         else if(choice == 6){

@@ -15,7 +15,7 @@ false
 Porto
 Rui Teixeira
 122387698
-30/12/1992
+31/12/1992
 Rua Manuel Das Cruzes, Vila Nova De Gaia
 false
 ::::::::
