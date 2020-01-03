@@ -135,6 +135,13 @@ public:
      */
     vector<Tec> getTecs () const;
     /**
+ *
+ * @brief Permite obter os técnicos disponiveis numa fila de prioridade
+ * @return Retorna uma fila de prioridade de tecnicos com os tecnicos sendo o topo da fila o tecnico disponivel mais cedo e que tenha concluido o maior numero de manutençoes
+ *
+ */
+    TecPriorityQueue getTecs_q() const;
+    /**
    * @brief Permite descobrir o indice de um restaurante no vetor de restaurantes da base
    * @param restaurant - restaurante cujo index pretendemos encontrar
    * @return Index do restaurante no vetor de restaurantes da base

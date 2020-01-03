@@ -50,19 +50,13 @@ int remove_tec(Base &Porto, Base &Lisboa, Base &Faro);
 void tec_already_exists(string nif, const Base &p, const Base &l, const Base &f);
 
 /**
- * @brief Função que procura um Funcionário, através do seu nif (x), num vetor de funcionários
- * @param v - vetor de funcionários em que queremos procurar
- * @param x - NIF do funcionário em questão
- * @return Retorna o índice do vetor de funcionários em que se encontra o respetivo funcionário, -1 se não existir
+ * @brief Função que procura um Técnico, através do seu nif (x), na fila de prioridade dos técnicos
+ * @param v - fila de prioridade de tecnicos em que queremos procurar
+ * @param x - NIF do tecnico em questão
+ * @return Retorna o técnico em questao, ou um técnico com nif a 0 se não existir
  */
-//int int_sequential_search_e(const vector<Employee*> &v, int x);
-/**
- * @brief Função que procura um funcionário, através do seu nome (x), num vetor de funcionários
- * @param v - vetor de funcionários em que queremos procurar
- * @param x - nome do funcionário em questão
- * @return Retorna o índice do vetor de funcionários em que se encontra o respetivo funcionário, -1 se não existir
- */
-//int string_sequential_search_e(const vector<Employee*> &v, string x);
+Tec Tec_sequential_search_t( TecPriorityQueue tec , int x);
+
 
 
 

@@ -210,7 +210,7 @@ int main() {
 
                         }
                         else if (choice == 3) {
-                            //aux = remove_tec(Porto, Lisboa, Faro);
+                            aux = remove_tec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -523,7 +523,7 @@ int main() {
 
                         }
                         else if (choice == 3) {
-                            //aux = remove_tec(Porto, Lisboa, Faro);
+                            aux = remove_tec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -794,7 +794,7 @@ int main() {
 
                         }
                         else if (choice == 3) {
-                            //aux = remove_tec(Porto, Lisboa, Faro);
+                            aux = remove_tec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }

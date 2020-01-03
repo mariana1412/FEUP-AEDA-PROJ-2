@@ -64,11 +64,12 @@ void verification_nif(string &aux) {
         if (aux != "") {
             trim(aux);
             verification_int(aux);
+            if(aux == "0") return;
             isValid = (aux.size() == 9);
         }
 
         if (!isValid) {
-            cout << "Invalid nif. Please insert a valid one: ";
+            cout << "Invalid nif. Please insert a valid one (enter 0 to quit): ";
             getline(cin, aux);
             if (cin.fail() && cin.eof()) {
                 cin.clear();
