@@ -457,15 +457,40 @@ void Base::updateBases() {
 
 void Base::sendToMaintenance(Vehicle ve){
     //escolha do tecnico e sua atualização
-    Tec t = tecnicos.top();
+    system("cls");
+    srand(time(NULL));
+    int min = rand()%(5-1 + 1) + 1;
+    cout << "Important Message for the deliverer associated with this order: " << endl;
+    cout << "Your Vehicle " << ve.getBrand() << " " << ve.getType() << " with License Plate " << ve.getLicPlate() << " was sent to maintenance" << endl;
+    cout << "This maintenance requires expertize level " << min << endl;
+    cout << "Searching for technicians..." << endl << endl;
+    bool found = false;
+    priority_queue<Tec> aux = tecnicos;
+    Tec t;
+    while (!aux.empty()){
+        if (aux.top().getNumberOfMaintenances() >= min){
+            t = aux.top();
+            found = true;
+            cout << "A Technician with the required expertize level was found - " << t.getName() << " with " << t.getNumberOfMaintenances() << " maintenances done" << endl;
+            break;
+        }
+        aux.pop();
+    }
+    if (!found){
+        t = tecnicos.top();
+        cout << "A Technician with the required expertize level was not found, another available technician was allocated - "<< t.getName() << " with " << t.getNumberOfMaintenances() << " maintenances done" << endl;
+    }
+    cout << "Press ENTER to proceed.";
     removeTec(t);
     int h = t.getTimeToAvailable();
     t.setTimeToAvailable(h +240); // +4 horas
+    t.addMaintenance();
     addTec(t);
     //atualizaçao do veiculo
     vehicles.remove(ve);
     ve.setNMin(240);
     vehicles.insert(ve);
+    cin.ignore();
 }
 
 void Base::updateVehicles(int m){
@@ -503,7 +528,6 @@ void Base::updateTecs(int m) {
             tec = aux.top();
             if (tec.getTimeToAvailable() - m <= 0){
                 tec.setTimeToAvailable(0);
-                tec.addMaintenance();
             } else{
                 tec.setTimeToAvailable(tec.getTimeToAvailable() - m);
             }
@@ -523,11 +547,12 @@ void Base::updateTecs(int m) {
 void Base::hashUpdate() {
     BSTItrIn<Vehicle> it(vehicles);
     while(!it.isAtEnd()){
+        Vehicle v = it.retrieve();
         for (HashTableEmployees::const_iterator it1 = employeesHash.begin(); it1 != employeesHash.end(); it1++){
             Employee* e = *it1;
             Deliverer* nd = dynamic_cast<Deliverer*>(e);
             if (nd != nullptr){
-                if (nd->getVehicle().getLicPlate() == it.retrieve().getLicPlate())
+                if (nd->getVehicle() == it.retrieve())
                     nd->setVehicle(it.retrieve());
             }
         }
@@ -538,18 +563,18 @@ void Base::hashUpdate() {
 void Base::addDistance(int distance, Deliverer* del) {
     vector<Employee*> employees = getEmployeesHash();
     Vehicle vehicle;
-    for (vector<Employee*>::const_iterator it =  employees.begin(); it != employees.end(); it++){
-        Deliverer* nd = dynamic_cast<Deliverer*>(*it);
-        if (nd != nullptr){
-            if (nd->getNif() == del->getNif()){
-                vehicle = nd->getVehicle();
-                vehicle.setTotalKm(vehicle.getTotalKm() + distance);
-                nd->setVehicle(vehicle);
-            }
+    BSTItrIn<Vehicle> it(vehicles);
+    while (!it.isAtEnd()){
+        if (it.retrieve() == del->getVehicle()){
+            vehicle = it.retrieve();
+            vehicle.setTotalKm(vehicle.getTotalKm() + distance);
+            vehicles.remove(it.retrieve());
+            vehicles.insert(vehicle);
+            break;
         }
+        it.advance();
     }
-    vehicles.remove(vehicle);
-    vehicles.insert(vehicle);
+    return;
 }
 
 

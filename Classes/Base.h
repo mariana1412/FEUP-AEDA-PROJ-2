@@ -8,6 +8,7 @@
 #include <queue>
 #include <cmath>
 #include <unordered_set>
+#include <Windows.h>
 #include "Location.h"
 #include "Person.h"
 #include "bst.h"

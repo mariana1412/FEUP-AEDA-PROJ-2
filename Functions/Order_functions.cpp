@@ -791,9 +791,6 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
         Lisboa.updateVehicles(time);
         Faro.updateTecs(time);
         Faro.updateVehicles(time);
-        Porto.hashUpdate();
-        Lisboa.hashUpdate();
-        Faro.hashUpdate();
     }
     else if (base == "Lisboa") {
         Lisboa.addDelivery(delivery);
@@ -803,9 +800,6 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
         Porto.updateVehicles(time);
         Faro.updateTecs(time);
         Faro.updateVehicles(time);
-        Porto.hashUpdate();
-        Lisboa.hashUpdate();
-        Faro.hashUpdate();
     }
     else if (base == "Faro") {
         Faro.addDelivery(delivery);
@@ -815,10 +809,10 @@ int create_order(Base &Porto, Base &Lisboa, Base &Faro){
         Lisboa.updateVehicles(time);
         Porto.updateTecs(time);
         Porto.updateVehicles(time);
-        Porto.hashUpdate();
-        Lisboa.hashUpdate();
-        Faro.hashUpdate();
     }
+    Porto.hashUpdate();
+    Lisboa.hashUpdate();
+    Faro.hashUpdate();
 
     return 1;
 }
