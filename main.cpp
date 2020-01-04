@@ -200,7 +200,7 @@ int main() {
                             }
                         }
                         else if (choice == 2) {
-                            //aux = modify_tec(Porto, Lisboa, Faro);
+                            aux = modify_tec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -513,7 +513,7 @@ int main() {
                             }
                         }
                         else if (choice == 2) {
-                            //aux = modify_tec(Porto, Lisboa, Faro);
+                            aux = modify_tec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }
@@ -784,7 +784,7 @@ int main() {
                             }
                         }
                         else if (choice == 2) {
-                            //aux = modify_tec(Porto, Lisboa, Faro);
+                            aux = modify_tec(Porto, Lisboa, Faro);
                             if (aux == 1) {
                                 break;
                             }

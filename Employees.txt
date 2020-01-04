@@ -77,13 +77,22 @@ Honda, Motorcycle, 20/07/2019, 72-PO-18, 54, 1 0
 ::::::::
 Faro
 Deliverer
-Eduardo Costa
-111000222
+Joaquim Alberto
+145214521
 false
-18/10/2018
-15
-Seat, Van, 18/10/2018, 90-PL-12, 23, 3 0
-23, 24, 41
+18/10/2017
+18
+Ford, Car, 18/10/2017, 67-PT-21, 53, 4 0
+26, 35, 40, 60
+::::::::
+Faro
+Admin
+Alexandra Costa
+200300200
+false
+17/05/1994
+780
+Secretaria
 ::::::::
 Faro
 Admin
@@ -96,41 +105,22 @@ Marketing
 ::::::::
 Faro
 Admin
-Alexandra Costa
-200300200
-false
-17/05/1994
-780
-Secretaria
-::::::::
-Faro
-Deliverer
-Pedro Silva
-997546325
-false
-17/3/2009
-15
-Suzuki, Motorcycle, 17/03/2009, 54-PB-19, 25, 3 0
-25, 27, 36
-::::::::
-Faro
-Deliverer
-Joaquim Alberto
-145214521
-false
-18/10/2017
-18
-Ford, Car, 18/10/2017, 67-PT-21, 53, 4 0
-26, 35, 40, 60
-::::::::
-Faro
-Admin
 Fernando Almeida
 922654321
 false
 12/10/1997
 3000
 Contabilista
+::::::::
+Faro
+Deliverer
+Eduardo Costa
+111000222
+false
+18/10/2018
+15
+Seat, Van, 18/10/2018, 90-PL-12, 23, 3 0
+23, 24, 41
 ::::::::
 Faro
 Deliverer
@@ -141,3 +131,13 @@ false
 11
 Honda, Car, 20/11/2018, 92-TA-01, 32, 3 0
 5, 6, 11
+::::::::
+Faro
+Deliverer
+Pedro Silva
+997546325
+false
+17/3/2009
+15
+Suzuki, Motorcycle, 17/03/2009, 54-PB-19, 25, 3 0
+25, 27, 36

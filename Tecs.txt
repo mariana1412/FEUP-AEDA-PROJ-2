@@ -10,7 +10,7 @@ Maria Santos
 233012878
 15/02/1978
 228
-4
+3
 ::::::::
 Lisboa
 Tiago Oliveira
@@ -32,6 +32,13 @@ Paulo Pires
 03/11/1970
 0
 2
+::::::::
+Faro
+Luis Goncalves
+121234346
+17/11/1996
+0
+0
 ::::::::
 Faro
 Alvaro Tavares

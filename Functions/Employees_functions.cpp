@@ -118,12 +118,16 @@ int hire_employee(Base &Porto, Base &Lisboa, Base &Faro){
         }
         verification_all_letters(name);
 
-        cout << "NIF: ";
+        cout << "NIF (Enter 0 to quit): ";
         getline(cin, nif);
         while(cin.fail() && cin.eof()){
             cin.clear();
             cout << "Invalid character. Please insert a valid input: ";
             getline(cin, nif);
+        }
+
+        if(nif == "0"){
+            return 2;
         }
         verification_nif(nif);
 
@@ -137,12 +141,15 @@ int hire_employee(Base &Porto, Base &Lisboa, Base &Faro){
                 cout <<endl<< "ATENTION: Employee with NIF "<< msg.getNIF()<<" already exists."<<endl;
                 is_Valid = false;
                 cout << "Try again!"<<endl;
-                cout << "NIF:";
+                cout << "NIF (Enter 0 to quit):";
                 getline(cin, nif);
                 while(cin.fail() && cin.eof()){
                     cin.clear();
                     cout << "Invalid character. Please insert a valid input: ";
                     getline(cin, nif);
+                }
+                if(nif == "0"){
+                    return 2;
                 }
                 verification_nif(nif);
             }
@@ -281,7 +288,6 @@ int modify_employee(Base &Porto, Base &Lisboa, Base &Faro){
     string b, auxiliar, aux;
     int number,i;
     vector <Employee*> v;
-    bool is_valid = false;
     string income;
 
     system("cls");
@@ -325,7 +331,7 @@ int modify_employee(Base &Porto, Base &Lisboa, Base &Faro){
             }
             verification_all_letters(name);
             i = string_sequential_search_e(v, name);
-            break;
+        break;
         case 2:
             cout << "NIF: ";
             getline(cin, auxiliar);
@@ -336,7 +342,7 @@ int modify_employee(Base &Porto, Base &Lisboa, Base &Faro){
             }
             verification_nif(auxiliar);
             i = int_sequential_search_e(v, stoi(auxiliar));
-            break;
+        break;
     }
 
 
@@ -360,7 +366,7 @@ int modify_employee(Base &Porto, Base &Lisboa, Base &Faro){
                 }
                 verification_all_letters(name);
                 i = string_sequential_search_e(v, name);
-                break;
+            break;
             case 2:
                 cout << "NIF: ";
                 getline(cin, auxiliar);
@@ -371,7 +377,7 @@ int modify_employee(Base &Porto, Base &Lisboa, Base &Faro){
                 }
                 verification_nif(auxiliar);
                 i = int_sequential_search_e(v, stoi(auxiliar));
-                break;
+            break;
         }
     }
 

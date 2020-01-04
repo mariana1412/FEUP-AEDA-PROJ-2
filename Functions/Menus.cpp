@@ -44,7 +44,7 @@ int Boss_MainMenu(){
     cout << "---------------- MENU ----------------" << endl << endl;
     cout << "1. Clients Management" << endl;
     cout << "2. Employees Management " << endl;
-    cout << "3. Tecs Management "<<endl;
+    cout << "3. Technicians Management "<<endl;
     cout << "4. Restaurants Management " << endl;
     cout << "5. Profits Calculation " << endl;
     cout << "6. Visualize Information "<<endl;
@@ -167,7 +167,7 @@ int VisualizeInformation(){
     cout << "3. View all employees" << endl;
     cout << "4. View all restaurants " << endl;
     cout << "5. View all deliveries " << endl;
-    cout << "6. View all tecs " << endl;
+    cout << "6. View all technicians " << endl;
     cout << "7. View all vehicles" << endl;
     cout << "8. Return to the main menu"<<endl;
     cout << "0. Exit" << endl;
@@ -182,15 +182,15 @@ int TecManagement(){
     int option;
     system("cls");
     cout << "----------------------------------------------------" << endl;
-    cout << "---------------- TEC MANAGEMENT ----------------" << endl << endl;
-    cout << "1. Hire Tec " << endl;
-    cout << "2. Modify Tec" << endl;
-    cout << "3. Remove Tec " << endl;
+    cout << "---------------- TECHNICIANS MANAGEMENT ----------------" << endl << endl;
+    cout << "1. Hire Technician  " << endl;
+    cout << "2. Modify Technician" << endl;
+    cout << "3. Remove Technician " << endl;
     cout << "4. Return to the main menu " << endl;
     cout << "0. Exit" << endl;
     cout << "--------------------------------------" << endl;
     menu_int_options(option,0,4);
-
     cin.ignore(1000,'\n');
+
     return option;
 }

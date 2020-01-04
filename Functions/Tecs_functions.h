@@ -57,6 +57,16 @@ void tec_already_exists(string nif, const Base &p, const Base &l, const Base &f)
  */
 Tec Tec_sequential_search_t( TecPriorityQueue tec , int x);
 
+/**
+ * @brief Função que procura um técnico, através do seu nif ou do seu nome consoante a variável byName, na fila de prioridade dos técnicos
+ * @param byName - Se for true, a procura do técnico é através de nome; se for false, a procura é através do nif
+ * @param name - Nome do técnico em questão
+ * @param nif - NIF do técnico em questão
+ * @param v -vetor de tecnicos em que queremos procurar
+ * @return Retorna o indice do técnico em questao ou -1 se não existir
+ */
+
+int search_tec(bool byName, string name, int nif, vector<Tec> v);
 
 
 

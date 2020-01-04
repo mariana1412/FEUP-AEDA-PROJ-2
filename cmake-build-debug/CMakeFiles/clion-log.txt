@@ -1,4 +1,4 @@
-"C:\Users\ritap\Downloads\Software universidade\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\ritap\OneDrive\Ambiente de Trabalho\Faculdade\2 Ano\1 Semestre\Algoritmos e Estruturas de Dados\Trabalhos\Trabalho 2\UghEasts2.0"
+"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\maria\OneDrive\Ambiente de Trabalho\FEUP\2ano 1sem\AEDA\UghEats2"
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/ritap/OneDrive/Ambiente de Trabalho/Faculdade/2 Ano/1 Semestre/Algoritmos e Estruturas de Dados/Trabalhos/Trabalho 2/UghEasts2.0/cmake-build-debug
+-- Build files have been written to: C:/Users/maria/OneDrive/Ambiente de Trabalho/FEUP/2ano 1sem/AEDA/UghEats2/cmake-build-debug

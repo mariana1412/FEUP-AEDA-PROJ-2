@@ -45,12 +45,18 @@ int create_client(Base &Porto, Base &Lisboa, Base &Faro, bool is_Client) {
     verification_all_letters(aux);
     new_client.setName(aux);
 
-    cout << "NIF: ";
+
+    cout << "NIF (Enter 0 to quit): ";
     getline(cin, aux);
     while(cin.fail() && cin.eof()){
         cin.clear();
         cout << "Invalid character. Please insert a valid input: ";
         getline(cin, aux);
+    }
+    verification_int(aux);
+
+    if(stoi(aux) == 0){
+        return 2;
     }
     verification_nif(aux);
 
@@ -63,12 +69,17 @@ int create_client(Base &Porto, Base &Lisboa, Base &Faro, bool is_Client) {
             cout << endl << "ATENTION: Client with NIF "<< msg.getNIF() << " already exists." << endl;
             is_Valid = false;
             cout << "Try again!"<<endl;
-            cout << "NIF: ";
+            cout << "NIF (Enter 0 to quit): ";
             getline(cin, aux);
             while(cin.fail() && cin.eof()){
                 cin.clear();
                 cout << "Invalid character. Please insert a valid input: ";
                 getline(cin, aux);
+            }
+            verification_int(aux);
+
+            if(stoi(aux) == 0){
+                return 2;
             }
             verification_nif(aux);
         }

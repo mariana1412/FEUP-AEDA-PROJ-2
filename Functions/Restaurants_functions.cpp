@@ -27,8 +27,12 @@ int create_restaurant(Base &Porto, Base &Lisboa, Base &Faro){
 
     restaurants = base.getRestaurants();
 
-    cout << endl << "Name: ";
+    cout << endl << "Name (Enter 0 to quit): ";
     getline(cin, aux);
+
+    if(aux == "0"){
+        return 2;
+    }
 
     while(cin.fail() && cin.eof()){
         cin.clear();
@@ -45,8 +49,12 @@ int create_restaurant(Base &Porto, Base &Lisboa, Base &Faro){
         catch (RestaurantAlreadyExists &msg){
             cout << endl << endl << "ATENTION: Restaurant '" << msg.getName() << "' already exists." << endl << endl;
             isValid = false;
-            cout << "Try again. Name: ";
+            cout << "Try again. Name (Enter 0 to quit): ";
             getline(cin, aux);
+
+            if(aux == "0"){
+                return 2;
+            }
 
             while(cin.fail() && cin.eof()){
                 cin.clear();
