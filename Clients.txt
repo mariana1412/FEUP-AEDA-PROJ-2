@@ -221,3 +221,10 @@ Luis Teixeira
 05/01/1994
 Largo Alexandrina Negrao, Sao Bras De Alportel
 false
+::::::::
+Faro
+Rita Morais
+260287350
+23/08/2000
+Avenida De Praia, Olhao
+false

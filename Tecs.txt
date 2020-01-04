@@ -9,7 +9,7 @@ Porto
 Marta Santos
 789654320
 12/10/1995
-240
+206
 3
 ::::::::
 Lisboa
@@ -46,6 +46,13 @@ Alvaro Tavares
 20/10/1980
 0
 3
+::::::::
+Faro
+Rafaela Lemos
+195654232
+16/08/1975
+0
+2
 ::::::::
 Faro
 Luis Goncalves
