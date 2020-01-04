@@ -149,7 +149,8 @@ int hire_tec(Base &Porto, Base &Lisboa, Base &Faro){
 int modify_tec(Base &Porto, Base &Lisboa, Base &Faro){
 
     string aux, base;
-    vector<Tec> v;
+    TecPriorityQueue v;
+    Tec t;
 
     system("cls");
     cout << endl << "---------------- MODIFY TECHNICIAN ----------------" << endl << endl;
@@ -164,90 +165,60 @@ int modify_tec(Base &Porto, Base &Lisboa, Base &Faro){
     verification_base(base);
 
     if (base == "Porto") {
-        v = Porto.getTecs();
+        v = Porto.getTecs_q();
     }
     else if (base == "Lisboa") {
-        v = Lisboa.getTecs();
+        v = Lisboa.getTecs_q();
     }
     else if (base == "Faro") {
-        v = Faro.getTecs();
+        v = Faro.getTecs_q();
     }
 
     int number, index;
-    string nif;
-    cout << endl << "What do you know about this technician?\n" << endl;
-    cout << "1. Name\n"<< "2. NIF\n" <<"0. Return to the main menu\n" ;
-    menu_int_options(number,0,2);
-    cin.ignore(1000, '\n');
-    string name;
+    string nif, auxiliar;
 
-    switch (number) {
-        case 0:
-            return 1;
-        case 1:
-            cout << "Name: ";
-            getline(cin, name);
-            while(cin.fail() && cin.eof()){
-                cin.clear();
-                cout << "Invalid character. Please insert a valid input: ";
-                getline(cin, name);
-            }
-            verification_all_letters(name);
-            index = search_tec(true, name, 0, v);
-        break;
-        case 2:
-            cout << "NIF: ";
-            getline(cin, nif);
-            while(cin.fail() && cin.eof()){
-                cin.clear();
-                cout << "Invalid character. Please insert a valid input: ";
-                getline(cin, nif);
-            }
-            verification_nif(nif);
-            index = search_tec(false, "", stoi(nif), v);
-        break;
+    cout << "NIF (Enter 0 to quit): ";
+    getline(cin, auxiliar);
+    while(cin.fail() && cin.eof()){
+        cin.clear();
+        cout << "Invalid character. Please insert a valid input: ";
+        getline(cin, auxiliar);
     }
+    verification_int(auxiliar);
 
-    while(index == -1){
-        cout << endl << "The technician inserted does not exist. Try again:" << endl;//dar opçao de tentar outra vez
-        cout << "What do you know about this technician?\n" << endl;//so vamos ter estas duas opçoes porque sao os atributos nao mutaveis do employee
-        cout << "1. Name\n" << "2. NIF\n"<<"0. Return to the main menu\n";
-        menu_int_options(number,0,2);
-        cin.ignore(1000, '\n');
+    if(auxiliar == "0"){
+        return 2;
+    }
+    verification_nif(auxiliar);
+    t = Tec_sequential_search_t(v, stoi(auxiliar));
 
-        switch(number){
-            case 0:
-                return 1;
-            case 1:
-                cout << "Name: ";
-                getline(cin, name);
-                while(cin.fail() && cin.eof()){
-                    cin.clear();
-                    cout << "Invalid character. Please insert a valid input: ";
-                    getline(cin, name);
-                }
-                verification_all_letters(name);
-                index = search_tec(true, name, 0, v);
-            break;
-            case 2:
-                cout << "NIF: ";
-                getline(cin, nif);
-                while(cin.fail() && cin.eof()){
-                    cin.clear();
-                    cout << "Invalid character. Please insert a valid input: ";
-                    getline(cin, nif);
-                }
-                verification_nif(nif);
-                index = search_tec(false, "", stoi(nif), v);
-            break;
+
+
+    if (t.getName() == "aaaaaa") {
+        cout << "The technician inserted does not exist. Try again:"<<endl;//dar opçao de tentar outra
+        while (t.getName() == "aaaaaa") {
+            cout << "NIF (En    ter 0 to quit): ";
+            getline(cin, auxiliar);
+            while(cin.fail() && cin.eof()){
+                cin.clear();
+                cout << "Invalid character. Please insert a valid input: ";
+                getline(cin, auxiliar);
+            }
+            verification_int(auxiliar);
+
+            if(auxiliar == "0"){
+                return 2;
+            }
+            verification_nif(auxiliar);
+            t = Tec_sequential_search_t(v, stoi(auxiliar));
         }
     }
 
     system("cls");
 
-    Tec tec_aux = v.at(index);
 
-    cout << tec_aux << endl;
+
+    cout << t << endl;
 
     cout << "-----------------------------------------------" << endl;
     cout << "You can only change the number of maintenances. What do you wish to do? "<< endl << endl;
@@ -266,23 +237,27 @@ int modify_tec(Base &Porto, Base &Lisboa, Base &Faro){
             getline(cin, aux);
         }
         verification_int(aux);
-        tec_aux.setNumberOfMaintenances(stoi(aux));
+
     }
 
     cout << endl << "-----------------------------------------------" << endl;
     if(confirm_modifications("modify","technician")){
-        v.erase(v.begin() + index);
-        v.push_back(tec_aux);
+        if(base == "Porto"){
+            Porto.removeTec(t);
+            t.setNumberOfMaintenances(stoi(aux));
+            Porto.addTec(t);
+        }
+        else if(base == "Lisboa"){
+            Lisboa.removeTec(t);
+            t.setNumberOfMaintenances(stoi(aux));
+            Lisboa.addTec(t);
+        }
+        else if (base == "Faro"){
+            Faro.removeTec(t);
+            t.setNumberOfMaintenances(stoi(aux));
+            Faro.addTec(t);
+        }
 
-        if (base == "Porto") {
-            Porto.setTecs(v);
-        }
-        else if (base == "Lisboa") {
-            Lisboa.setTecs(v);
-        }
-        else if (base == "Faro") {
-            Faro.setTecs(v);
-        }
 
         system("cls");
         cout << "Technician was successfully modified!" << endl << endl;
@@ -457,16 +432,4 @@ Tec Tec_sequential_search_t(TecPriorityQueue tec , int x) { //retorna o tecnico 
     }
     t.setName("aaaaaa");
     return t; // não encontrou
-}
-
-int search_tec(bool byName, string name, int nif, vector<Tec> v){
-    for(int i = 0; i < v.size(); i++){
-        if(byName && (v.at(i).getName() == name)){
-            return i;
-        }
-        else if (!byName && (v.at(i).getNif() == nif)){
-            return i;
-        }
-    }
-    return -1;
 }

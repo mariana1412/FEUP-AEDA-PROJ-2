@@ -1,16 +1,16 @@
 Porto
-Jose Antonio
-288455965
-12/12/1968
+Marta Santos
+789654320
+12/10/1995
 0
 2
 ::::::::
 Porto
-Maria Santos
-233012878
-15/02/1978
+Jose Antonio
+288455965
+12/12/1968
 228
-3
+2
 ::::::::
 Lisboa
 Tiago Oliveira
@@ -26,12 +26,26 @@ Jorge Pereira
 0
 2
 ::::::::
+Lisboa
+Antonio Lopes
+145201201
+17/08/1984
+0
+0
+::::::::
 Faro
 Paulo Pires
 125541145
 03/11/1970
 0
 2
+::::::::
+Faro
+Alvaro Tavares
+198563987
+20/10/1980
+0
+3
 ::::::::
 Faro
 Luis Goncalves
@@ -41,8 +55,8 @@ Luis Goncalves
 0
 ::::::::
 Faro
-Alvaro Tavares
-198563987
-20/10/1980
+Luis Borges
+145222110
+06/09/1969
 0
-3
+0

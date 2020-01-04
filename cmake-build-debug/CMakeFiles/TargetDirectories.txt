@@ -1,3 +1,3 @@
-C:/Users/maria/OneDrive/Ambiente de Trabalho/FEUP/2ano 1sem/AEDA/UghEats2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/maria/OneDrive/Ambiente de Trabalho/FEUP/2ano 1sem/AEDA/UghEats2/cmake-build-debug/CMakeFiles/projeto.dir
-C:/Users/maria/OneDrive/Ambiente de Trabalho/FEUP/2ano 1sem/AEDA/UghEats2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/ritap/OneDrive/Ambiente de Trabalho/Faculdade/2 Ano/1 Semestre/Algoritmos e Estruturas de Dados/Trabalhos/Trabalho 2/UghEasts2.0/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ritap/OneDrive/Ambiente de Trabalho/Faculdade/2 Ano/1 Semestre/Algoritmos e Estruturas de Dados/Trabalhos/Trabalho 2/UghEasts2.0/cmake-build-debug/CMakeFiles/projeto.dir
+C:/Users/ritap/OneDrive/Ambiente de Trabalho/Faculdade/2 Ano/1 Semestre/Algoritmos e Estruturas de Dados/Trabalhos/Trabalho 2/UghEasts2.0/cmake-build-debug/CMakeFiles/rebuild_cache.dir

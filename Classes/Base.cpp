@@ -52,7 +52,7 @@ vector<Tec> Base::getTecs () const{
     }
     return final;
 }
-TecPriorityQueue Base:: getTecs_q() const{
+TecPriorityQueue Base:: getTecs_q () const{
     return tecnicos;
 }
 int Base::getIndexrestaurant(Restaurant restaurant){
